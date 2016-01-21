@@ -4,6 +4,5 @@
 
 GERRIT_HOST: True
 CODE_REVIEW_SERVER: https://canary-chromium-review.googlesource.com/
-CC_LIST: crashpad-dev@chromium.org
 VIEW_VC: https://chromium.googlesource.com/chromium/mini_chromium/+/
 PROJECT: mini_chromium
