@@ -41,6 +41,7 @@
 
           'GCC_OBJC_CALL_CXX_CDTORS': 'YES',        # -fobjc-call-cxx-cdtors
           'GCC_PRECOMPILE_PREFIX_HEADER': 'NO',
+          'GCC_PREFIX_HEADER': '',
           'GCC_SYMBOLS_PRIVATE_EXTERN': 'YES',      # -fvisibility=hidden
           'GCC_THREADSAFE_STATICS': 'NO',           # -fno-threadsafe-statics
           'GCC_TREAT_WARNINGS_AS_ERRORS': 'YES',    # -Werror
@@ -54,6 +55,7 @@
             '-Wall',
             '-Wendif-labels',
             '-Wextra',
+            '-Wno-shorten-64-to-32',
 
             # Don't warn about unused function parameters.
             '-Wno-unused-parameter',
