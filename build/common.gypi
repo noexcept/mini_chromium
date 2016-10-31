@@ -145,6 +145,7 @@
         ],
         'ldflags': [
           '-fPIC',
+          '-pie',
           '-pthread',
           '-Wl,--as-needed',
           '-Wl,-z,noexecstack',
