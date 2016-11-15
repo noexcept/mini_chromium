@@ -1,0 +1,152 @@
+# Copyright 2016 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+################################################################################
+# DEFAULT BUILD CONFIGURATION
+################################################################################
+
+config("debug") {
+  if (is_mac) {
+    cflags = [ "-O0" ]
+  }
+}
+
+config("release") {
+  defines = [ "NDEBUG" ]
+
+  if (is_mac) {
+    cflags = [ "-O3" ]
+    ldflags = [ "-Wl,-dead_strip" ]
+  }
+}
+
+config("default") {
+  if (is_mac) {
+    cflags = [
+      "-fno-asm-blocks",
+      "-mdynamic-no-pic",
+      "-fno-rtti",
+      "-mno-pascal-strings",
+      "-fvisibility-inlines-hidden",
+      "-fobjc-call-cxx-cdtors",
+      "-fvisibility=hidden",
+      "-Werror",
+      "-Wnewline-eof",
+      "-fno-strict-aliasing",  # See http://crbug.com/32204
+      "-fstack-protector-all",  # Implies -fstack-protector
+      "-Wall",
+      "-Wendif-labels",
+      "-Wextra",
+      "-Wno-unused-parameter",
+
+      # Don't warn about the "struct foo f = {0};" initialization
+      # pattern.
+      "-Wno-missing-field-initializers",
+    ]
+
+    cflags_c = [ "-std=c99" ]
+
+    if (is_clang) {
+      cflags += [
+        "-Wexit-time-destructors",
+        "-Wheader-hygiene",
+        "-Wno-selector-type-mismatch",
+        "-Wsign-compare",
+        "-Wstring-conversion",
+      ]
+
+      cflags_cc = [ "-std=c++11" ]
+
+      cflags_objc = [
+                      "-Wobjc-missing-property-synthesis",
+                      "-fno-objc-link-runtime",
+                    ] + cflags_c
+
+      cflags_objcc = cflags_cc
+    }
+  }
+
+  if (is_debug) {
+    configs = [ ":debug" ]
+  } else {
+    configs = [ ":release" ]
+  }
+}
+
+config("executable_default") {
+}
+
+################################################################################
+# TOOLCHAIN DEFINITIONS
+################################################################################
+
+toolchain("gcc_like_toolchain") {
+  if (is_clang) {
+    cc = "clang"
+    cxx = "clang++"
+  } else {
+    cc = "gcc"
+    cxx = "g++"
+  }
+
+  tool("cc") {
+    depfile = "{{output}}.d"
+    command = "$cc -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    description = "CXX {{output}}"
+    outputs = [
+      "{{target_out_dir}}/{{source_name_part}}.o",
+    ]
+  }
+
+  tool("cxx") {
+    depfile = "{{output}}.d"
+    command = "$cxx -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_cc}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    description = "CXX {{output}}"
+    outputs = [
+      "{{target_out_dir}}/{{source_name_part}}.o",
+    ]
+  }
+
+  tool("objc") {
+    depfile = "{{output}}.d"
+    command = "$cc -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_objc}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    description = "OBJC {{output}}"
+    outputs = [
+      "{{target_out_dir}}/{{source_name_part}}.o",
+    ]
+  }
+
+  tool("objcxx") {
+    depfile = "{{output}}.d"
+    command = "$cxx -MMD -MF $depfile {{defines}} {{include_dirs}} {{cflags}} {{cflags_objcc}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    description = "OBJCXX {{output}}"
+    outputs = [
+      "{{target_out_dir}}/{{source_name_part}}.o",
+    ]
+  }
+
+  tool("alink") {
+    command = "libtool -static {{arflags}} -o {{output}} {{inputs}}"
+    description = "LIBTOOL-STATIC {{output}}"
+    default_output_dir = "{{target_out_dir}}"
+    default_output_extension = ".a"
+    output_prefix = "lib"
+    outputs = [
+      "{{output_dir}}/{{target_output_name}}{{output_extension}}",
+    ]
+  }
+
+  tool("stamp") {
+    command = "touch {{output}}"
+    description = "STAMP {{output}}"
+  }
+}
+
+toolchain("msvc_toolchain") {
+  # TODO(rsesek): Not it!
+}
