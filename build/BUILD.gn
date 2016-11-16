@@ -18,6 +18,14 @@ config("release") {
   }
 }
 
+config("Wexit_time_destructors") {
+  if (is_clang) {
+    cflags = [
+      "-Wexit-time-destructors",
+    ]
+  }
+}
+
 config("default") {
   if (is_mac) {
     cflags = [
@@ -43,7 +51,6 @@ config("default") {
 
     if (is_clang) {
       cflags += [
-        "-Wexit-time-destructors",
         "-Wheader-hygiene",
         "-Wnewline-eof",
         "-Wstring-conversion",
@@ -70,6 +77,10 @@ toolchain("gcc_like_toolchain") {
     cc = "gcc"
     cxx = "g++"
   }
+  ld = cxx
+
+  lib_switch = "-l"
+  lib_dir_switch = "-L"
 
   tool("cc") {
     depfile = "{{output}}.d"
@@ -120,6 +131,16 @@ toolchain("gcc_like_toolchain") {
     outputs = [
       "{{output_dir}}/{{target_output_name}}{{output_extension}}",
     ]
+  }
+
+  tool("link") {
+    outfile = "{{output_dir}}/{{target_output_name}}{{output_extension}}"
+    rspfile = "$outfile.rsp"
+    command = "$ld {{ldflags}} -o $outfile -Wl,-filelist,$rspfile {{solibs}} {{libs}}"
+    description = "LINK $outfile"
+    rspfile_content = "{{inputs_newline}}"
+    outputs = [ outfile ]
+    default_output_dir = "{{root_out_dir}}"
   }
 
   tool("stamp") {
