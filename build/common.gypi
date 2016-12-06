@@ -49,6 +49,7 @@
             '-fno-strict-aliasing',  # See http://crbug.com/32204
             '-fstack-protector-all',  # Implies -fstack-protector
           ],
+          'SYMROOT': '<(DEPTH)/xcodebuild',
           'USE_HEADERMAP': 'NO',
           'WARNING_CFLAGS': [
             '-Wall',
@@ -216,31 +217,6 @@
           'NOMINMAX',
           'WIN32_LEAN_AND_MEAN',
         ],
-        'conditions': [
-          ['target_arch=="ia32"', {
-            'msvs_settings': {
-              'VCLibrarianTool': {
-                'TargetMachine': '1',  # x86.
-              },
-              'VCLinkerTool': {
-                'MinimumRequiredVersion': '5.01',  # XP.
-                'TargetMachine': '1',  # x86.
-              },
-            },
-          }],
-          ['target_arch=="x64"', {
-            'msvs_configuration_platform': 'x64',
-            'msvs_settings': {
-              'VCLibrarianTool': {
-                'TargetMachine': '17',  # x64.
-              },
-              'VCLinkerTool': {
-                'MinimumRequiredVersion': '5.02',  # Server 2003.
-                'TargetMachine': '17',  # x64.
-              },
-            },
-          }],
-        ],
       }],
 
     ],
@@ -294,6 +270,7 @@
           }],
 
           ['OS=="win"', {
+            'msvs_configuration_platform': 'Win32',
             'msvs_settings': {
               'VCCLCompilerTool': {
                 'RuntimeLibrary': '0',  # /MT.
@@ -301,6 +278,13 @@
                 'AdditionalOptions': [
                   '/Zo',  # Improve debugging optimized builds.
                 ],
+              },
+              'VCLibrarianTool': {
+                'TargetMachine': '1',  # x86.
+              },
+              'VCLinkerTool': {
+                'MinimumRequiredVersion': '5.01',  # XP.
+                'TargetMachine': '1',  # x86.
               },
             },
           }],
@@ -325,10 +309,18 @@
           }],
 
           ['OS=="win"', {
+            'msvs_configuration_platform': 'Win32',
             'msvs_settings': {
               'VCCLCompilerTool': {
                 'RuntimeLibrary': '1',  # /MTd.
                 'Optimization': '0',
+              },
+              'VCLibrarianTool': {
+                'TargetMachine': '1',  # x86.
+              },
+              'VCLinkerTool': {
+                'MinimumRequiredVersion': '5.01',  # XP.
+                'TargetMachine': '1',  # x86.
               },
             },
             'defines': [
@@ -345,20 +337,32 @@
           # gyp-ninja seems to require these, but we don't use them.
           'Debug_x64': {
             'inherit_from': ['Debug'],
+            'msvs_configuration_platform': 'x64',
+            'msvs_settings': {
+              'VCLibrarianTool': {
+                'TargetMachine': '17',  # x64.
+              },
+              'VCLinkerTool': {
+                'MinimumRequiredVersion': '5.02',  # Server 2003.
+                'TargetMachine': '17',  # x64.
+              },
+            },
           },
           'Release_x64': {
             'inherit_from': ['Release'],
-          },
+            'msvs_configuration_platform': 'x64',
+            'msvs_settings': {
+              'VCLibrarianTool': {
+                'TargetMachine': '17',  # x64.
+              },
+              'VCLinkerTool': {
+                'MinimumRequiredVersion': '5.02',  # Server 2003.
+                'TargetMachine': '17',  # x64.
+              },
+            },
+          }
         }],
       ],
     },
   },
-
-  'conditions': [
-    ['OS=="mac"', {
-      'xcode_settings': {
-        'SYMROOT': '<(DEPTH)/xcodebuild',
-      },
-    }],
-  ],
 }
