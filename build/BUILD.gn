@@ -29,9 +29,7 @@ config("release") {
       "/OPT:REF",
       "/LTCG",
     ]
-    arflags = [
-      "/LTCG",
-    ]
+    arflags = [ "/LTCG" ]
   }
 }
 
@@ -163,19 +161,27 @@ toolchain("gcc_like_toolchain") {
 }
 
 toolchain("msvc_toolchain") {
-  # We don't support all the cross blah-de-blah that Chromium does here. The
-  # environment must be pre-setup by a vcvarsall.bat invocation. @rsp files are
-  # also not used, for simplicity, and because mini_chromium/Crashpad shouldn't
-  # require them in any configurations.
+  # @rsp files are not used here for simplicity, and because mini_chromium and
+  # Crashpad aren't likely to require them.
   cc = "cl.exe"
   cxx = "cl.exe"
   ar = "lib.exe"
   ld = "link.exe"
   helper_path = rebase_path("win_helper.py")
 
+  toolchain_data = exec_script(helper_path,
+                               [
+                                 "get-visual-studio-data",
+                                 rebase_path(root_build_dir),
+                               ],
+                               "scope")
+
+  # TODO(scottmg): Both x86 and x64 via a template-something.
+  env = toolchain_data.x64_environment_file
+
   tool("cc") {
     depfile = "{{output}}.d"
-    command = "$cc /nologo /showIncludes {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} /c {{source}} /Fo{{output}}"
+    command = "ninja -t msvc -e $env -- $cc /nologo /showIncludes {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} /c {{source}} /Fo{{output}}"
     depsformat = "msvc"
     description = "CC {{output}}"
     outputs = [
@@ -184,7 +190,7 @@ toolchain("msvc_toolchain") {
   }
   tool("cxx") {
     depfile = "{{output}}.d"
-    command = "$cxx /nologo /showIncludes {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} /c {{source}} /Fo{{output}}"
+    command = "ninja -t msvc -e $env -- $cxx /nologo /showIncludes {{defines}} {{include_dirs}} {{cflags}} {{cflags_c}} /c {{source}} /Fo{{output}}"
     depsformat = "msvc"
     description = "CXX {{output}}"
     outputs = [
@@ -192,7 +198,7 @@ toolchain("msvc_toolchain") {
     ]
   }
   tool("alink") {
-    command = "$python_path $helper_path link-wrapper $ar /nologo /out:{{output}} {{arflags}} {{inputs}}"
+    command = "$python_path $helper_path link-wrapper $env $ar /nologo /out:{{output}} {{arflags}} {{inputs}}"
     description = "LIB {{output}}"
     outputs = [
       "{{target_out_dir}}/{{target_output_name}}{{output_extension}}",
@@ -204,7 +210,7 @@ toolchain("msvc_toolchain") {
     outputs = [
       "{{root_out_dir}}/{{target_output_name}}{{output_extension}}",
     ]
-    command = "$python_path $helper_path link-wrapper $ld /nologo /OUT:{{output}} {{ldflags}} {{inputs}} {{solibs}} {{libs}}"
+    command = "$python_path $helper_path link-wrapper $env $ld /nologo /OUT:{{output}} {{ldflags}} {{inputs}} {{solibs}} {{libs}}"
     description = "LINK {{output}}"
     default_output_extension = ".exe"
   }
