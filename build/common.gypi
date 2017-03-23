@@ -14,6 +14,8 @@
     },
     'clang%': '<(clang)',
 
+    'android_sdk_version%': '',
+
     'mac_sdk%': '',
     'mac_deployment_target%': '',
 
@@ -175,6 +177,20 @@
           }],
         ],
 
+      }],
+
+      ['OS=="android"', {
+        'conditions': [
+          ['android_sdk_version!=""', {
+            'defines': [
+              # Previously, this was available by #including
+              # <android/api-level.h>, but with “unified headers,” the desired
+              # value must be pushed into the build from the outside. See
+              # https://android.googlesource.com/platform/ndk/+/master/docs/UnifiedHeaders.md.
+              '__ANDROID_API__=<(android_sdk_version)',
+            ],
+          }],
+        ],
       }],
 
       ['OS=="win"', {
