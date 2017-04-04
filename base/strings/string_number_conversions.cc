@@ -5,9 +5,13 @@
 #include "base/strings/string_number_conversions.h"
 
 #include <ctype.h>
+#include <errno.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #include <limits>
+
+#include "base/scoped_clear_errno.h"
 
 namespace base {
 
@@ -247,6 +251,22 @@ bool StringToUint64(const StringPiece& input, uint64_t* output) {
 bool StringToSizeT(const StringPiece& input, size_t* output) {
   return IteratorRangeToNumber<IteratorRangeToSizeTTraits>::Invoke(
       input.begin(), input.end(), output);
+}
+
+bool StringToDouble(const std::string& input, double* output) {
+  if (input.empty() || isspace(input[0])) {
+    return false;
+  }
+
+  ScopedClearErrno clear_errno;
+  char* end = nullptr;
+  double converted = strtod(input.c_str(), &end);
+  if (errno != 0 || end != input.c_str() + input.size()) {
+    return false;
+  }
+
+  *output = converted;
+  return true;
 }
 
 bool HexStringToInt(const StringPiece& input, int* output) {

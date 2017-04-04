@@ -20,6 +20,8 @@ bool StringToInt64(const StringPiece& input, int64_t* output);
 bool StringToUint64(const StringPiece& input, uint64_t* output);
 bool StringToSizeT(const StringPiece& input, size_t* output);
 
+bool StringToDouble(const std::string& input, double* output);
+
 bool HexStringToInt(const StringPiece& input, int* output);
 bool HexStringToBytes(const std::string& input, std::vector<uint8_t>* output);
 
