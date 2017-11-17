@@ -33,6 +33,9 @@
 #elif defined(OS_WIN)
 #include <intrin.h>
 #include <windows.h>
+#elif defined(OS_FUCHSIA)
+#include <magenta/process.h>
+#include <magenta/syscalls.h>
 #endif
 
 #include "base/strings/string_util.h"
@@ -316,6 +319,18 @@ void LogMessage::Init(const char* function) {
   pid_t thread = syscall(__NR_gettid);
 #elif defined(OS_WIN)
   DWORD thread = GetCurrentThreadId();
+#elif defined(OS_FUCHSIA)
+  mx_koid_t thread;
+  {
+    mx_info_handle_basic_t info = {};
+    mx_object_get_info(mx_thread_self(),
+                       MX_INFO_HANDLE_BASIC,
+                       &info,
+                       sizeof(info),
+                       nullptr,
+                       nullptr);
+    thread = info.koid;
+  }
 #endif
 
   stream_ << '['
