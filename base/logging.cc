@@ -33,6 +33,9 @@
 #elif defined(OS_WIN)
 #include <intrin.h>
 #include <windows.h>
+#elif defined(OS_FUCHSIA)
+#include <zircon/process.h>
+#include <zircon/syscalls.h>
 #endif
 
 #include "base/strings/string_util.h"
@@ -316,6 +319,18 @@ void LogMessage::Init(const char* function) {
   pid_t thread = syscall(__NR_gettid);
 #elif defined(OS_WIN)
   DWORD thread = GetCurrentThreadId();
+#elif defined(OS_FUCHSIA)
+  zx_koid_t thread;
+  {
+    zx_info_handle_basic_t info = {};
+    zx_object_get_info(zx_thread_self(),
+                       MX_INFO_HANDLE_BASIC,
+                       &info,
+                       sizeof(info),
+                       nullptr,
+                       nullptr);
+    thread = info.koid;
+  }
 #endif
 
   stream_ << '['
