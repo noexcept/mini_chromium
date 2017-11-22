@@ -169,7 +169,7 @@ toolchain("gcc_like_toolchain") {
     depsformat = "gcc"
     description = "CXX {{output}}"
     outputs = [
-      "{{target_out_dir}}/{{source_name_part}}.o",
+      "{{target_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
     ]
   }
 
@@ -179,7 +179,7 @@ toolchain("gcc_like_toolchain") {
     depsformat = "gcc"
     description = "CXX {{output}}"
     outputs = [
-      "{{target_out_dir}}/{{source_name_part}}.o",
+      "{{target_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
     ]
   }
 
@@ -189,7 +189,7 @@ toolchain("gcc_like_toolchain") {
     depsformat = "gcc"
     description = "OBJC {{output}}"
     outputs = [
-      "{{target_out_dir}}/{{source_name_part}}.o",
+      "{{target_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
     ]
   }
 
@@ -199,7 +199,7 @@ toolchain("gcc_like_toolchain") {
     depsformat = "gcc"
     description = "OBJCXX {{output}}"
     outputs = [
-      "{{target_out_dir}}/{{source_name_part}}.o",
+      "{{target_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
     ]
   }
 
@@ -219,11 +219,20 @@ toolchain("gcc_like_toolchain") {
   }
 
   tool("solink_module") {
-    # TODO: Implement.
+    soname = "{{target_output_name}}{{output_extension}}"  # e.g. "libfoo.so".
+    sofile = "{{output_dir}}/$soname"
+    rspfile = sofile + ".rsp"
+
+    command = "$ld -shared {{ldflags}} -o \"$sofile\" -Wl,-soname=\"$soname\" @\"$rspfile\""
+    rspfile_content = "-Wl,--whole-archive {{inputs}} {{solibs}} -Wl,--no-whole-archive {{libs}}"
+    description = "SOLINK_MODULE $sofile"
+
+    default_output_extension = ".so"
+    default_output_dir = "{{root_out_dir}}"
+    output_prefix = "lib"
     outputs = [
-      "{{target_output_name}}{{output_extension}}",
+      sofile,
     ]
-    command = "echo TODO(GN)"
   }
 
   tool("link") {
