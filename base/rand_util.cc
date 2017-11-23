@@ -15,7 +15,9 @@
 #include "base/logging.h"
 #include "build/build_config.h"
 
-#if defined(OS_POSIX)
+#if defined(OS_FUCHSIA)
+#include <zircon/syscalls.h>
+#elif defined(OS_POSIX)
 #include "base/posix/eintr_wrapper.h"
 #elif defined(OS_WIN)
 #include <windows.h>
@@ -29,7 +31,7 @@
 
 #endif  // OS_WIN
 
-#if defined(OS_POSIX)
+#if defined(OS_POSIX) && !defined(OS_FUCHSIA)
 
 namespace {
 
@@ -106,7 +108,23 @@ void RandBytes(void* output, size_t output_length) {
     return;
   }
 
-#if defined(OS_POSIX)
+#if defined(OS_FUCHSIA)
+ size_t remaining = output_length;
+  unsigned char* cur = reinterpret_cast<unsigned char*>(output);
+  while (remaining > 0) {
+    // The syscall has a maximum number of bytes that can be read at once.
+    size_t read_len =
+        std::min(remaining, static_cast<size_t>(ZX_CPRNG_DRAW_MAX_LEN));
+
+    size_t actual;
+    zx_status_t status = zx_cprng_draw(cur, read_len, &actual);
+    CHECK(status == ZX_OK && read_len == actual);
+
+    CHECK(remaining >= actual);
+    remaining -= actual;
+    cur += actual;
+  }
+#elif defined(OS_POSIX)
   int fd = GetUrandomFD();
   bool success = ReadFromFD(fd, static_cast<char*>(output), output_length);
   CHECK(success);
