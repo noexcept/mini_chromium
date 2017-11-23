@@ -43,7 +43,10 @@ if (is_win) {
 }
 
 set_defaults("static_library") {
-  configs = [ "//build:default" ]
+  configs = [
+    "//build:default",
+    "//build:Wexit_time_destructors",
+  ]
 }
 
 ################################################################################
