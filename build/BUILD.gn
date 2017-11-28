@@ -9,15 +9,15 @@
 if (is_fuchsia) {
   declare_args() {
     # Path to Fuchsia SDK.
-    fuchsia_sdk = "//third_party/fuchsia/sdk"
-    fuchsia_clang = "//third_party/fuchsia/clang"
+    fuchsia_sdk = "//third_party/fuchsia/sdk/linux-amd64"
+    fuchsia_clang = "//third_party/fuchsia/clang/" + host_os + "-amd64"
 
     sysroot = ""
   }
 
-  if (current_cpu == "arm64") {
+  if (target_cpu == "arm64") {
     sysroot = fuchsia_sdk + "/sysroot/aarch64-fuchsia"
-  } else if (current_cpu == "x64") {
+  } else if (target_cpu == "x64") {
     sysroot = fuchsia_sdk + "/sysroot/x86_64-fuchsia"
   }
 }
