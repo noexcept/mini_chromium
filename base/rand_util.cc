@@ -106,7 +106,24 @@ void RandBytes(void* output, size_t output_length) {
     return;
   }
 
-#if defined(OS_POSIX)
+#if defined(OS_FUCHSIA)
+  char* output_ptr = reinterpret_cast<unsigned char*>(output);
+  while (output_length > 0) {
+    // The syscall has a maximum number of bytes that can be read at once.
+    const size_t output_bytes_this_pass =
+        std::min(output_length, static_cast<size_t>(ZX_CPRNG_DRAW_MAX_LEN));
+
+    size_t actual;
+    zx_status_t status = zx_cprng_draw(cur, output_bytes_this_pass, &actual);
+    // TODO(scottmg): Add ZX_CHECK, et al. and then use it here. See
+    // https://crbug.com/789213.
+    CHECK(status == ZX_OK);
+
+    DCHECK_GE(output_length, actual);
+    output_length -= actual;
+    output_ptr += actual;
+  }
+#elif defined(OS_POSIX)
   int fd = GetUrandomFD();
   bool success = ReadFromFD(fd, static_cast<char*>(output), output_length);
   CHECK(success);
