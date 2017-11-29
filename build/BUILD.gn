@@ -83,12 +83,13 @@ config("default") {
     cflags_objc = cflags_c
     cflags_objcc = cflags_cc
 
-    cflags += [
-      "-Wexit-time-destructors",
-      "-Wheader-hygiene",
-      "-Wnewline-eof",
-      "-Wstring-conversion",
-    ]
+    if (is_clang) {
+      cflags += [
+        "-Wheader-hygiene",
+        "-Wnewline-eof",
+        "-Wstring-conversion",
+      ]
+    }
   } else if (is_win) {
     cflags = [
       "/DNOMINMAX",
@@ -140,6 +141,12 @@ config("default") {
   }
 }
 
+config("Wexit_time_destructors") {
+  if (is_clang) {
+    cflags = [ "-Wexit-time-destructors" ]
+  }
+}
+
 ################################################################################
 # TOOLCHAIN DEFINITIONS
 ################################################################################
@@ -148,14 +155,20 @@ toolchain("gcc_like_toolchain") {
   lib_switch = "-l"
   lib_dir_switch = "-L"
 
-  if (is_fuchsia) {
-    cc = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang"
-    cxx = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang++"
-    ld = cxx
+  if (is_clang) {
+    if (is_fuchsia) {
+      cc = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang"
+      cxx = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang++"
+      ld = cxx
+    } else {
+      cc = "clang"
+      cxx = "clang++"
+      ld = cxx
+    }
   } else {
-    cc = "clang"
-    cxx = "clang++"
-    ld = cxx
+    cc = "gcc"
+    cxx = "g++"
+    ld = "ld"
   }
 
   tool("cc") {
@@ -214,7 +227,6 @@ toolchain("gcc_like_toolchain") {
   }
 
   tool("solink_module") {
-    # TODO(scottmg): This will need to do -framework, etc. for macOS.
     soname = "{{target_output_name}}{{output_extension}}"  # e.g. "libfoo.so".
     sofile = "{{output_dir}}/$soname"
     rspfile = sofile + ".rsp"
