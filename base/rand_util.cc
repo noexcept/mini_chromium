@@ -120,6 +120,7 @@ void RandBytes(void* output, size_t output_length) {
     // TODO(scottmg): Add ZX_CHECK, et al. and then use it here. See
     // https://crbug.com/789213.
     CHECK(status == ZX_OK && actual == output_bytes_this_pass);
+    CHECK(status == ZX_OK);
 
     DCHECK_GE(output_length, actual);
     output_length -= actual;
