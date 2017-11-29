@@ -119,7 +119,7 @@ void RandBytes(void* output, size_t output_length) {
     zx_status_t status = zx_cprng_draw(cur, output_bytes_this_pass, &actual);
     // TODO(scottmg): Add ZX_CHECK, et al. and then use it here. See
     // https://crbug.com/789213.
-    CHECK(status == ZX_OK && actual == output_bytes_this_pass);
+    CHECK(status == ZX_OK);
 
     DCHECK_GE(output_length, actual);
     output_length -= actual;
