@@ -140,9 +140,6 @@
           '-fvisibility-inlines-hidden',
           '-std=c++14',
         ],
-        'defines': [
-          '_FILE_OFFSET_BITS=64',
-        ],
         'ldflags': [
           '-fPIC',
           '-pthread',
@@ -170,6 +167,10 @@
           }],
 
           ['OS=="linux"', {
+            'defines': [
+              '_FILE_OFFSET_BITS=64',
+            ],
+
             'conditions': [
               ['target_arch=="ia32"', {
                 'cflags': [
@@ -191,15 +192,25 @@
           }],
 
           ['OS=="android"', {
+            'defines': [
+              # With deprecated headers, this was available by #including
+              # <android/api-level.h>, but with unified headers, the desired
+              # value must be pushed into the build from the outside when
+              # building with GCC. See
+              # https://android.googlesource.com/platform/ndk/+/master/docs/UnifiedHeaders.md.
+              # It’s harmless to define this in other configurations.
+              '__ANDROID_API__=<(android_api_level)',
+            ],
+
             'conditions': [
-              ['android_api_level!=""', {
+              ['android_api_level >= 21', {
                 'defines': [
-                  # Previously, this was available by #including
-                  # <android/api-level.h>, but with “unified headers,” the
-                  # desired value must be pushed into the build from the
-                  # outside. See
-                  # https://android.googlesource.com/platform/ndk/+/master/docs/UnifiedHeaders.md.
-                  '__ANDROID_API__=<(android_api_level)',
+                  # This is only available in unified headers, and only
+                  # functional at API 21 and later, where the necessary runtime
+                  # support is available. It’s possible to define this with
+                  # deprecated headers, but it has no effect. Note that off_t is
+                  # always 64 bits in 64-bit builds.
+                  '_FILE_OFFSET_BITS=64',
                 ],
               }],
             ],
