@@ -66,6 +66,7 @@ config("default") {
       "-fstack-protector-all",  # Implies -fstack-protector
       "-fvisibility-inlines-hidden",
       "-fvisibility=hidden",
+      "-fno-exceptions",
     ]
 
     cflags_c = [ "-std=c99" ]
@@ -149,11 +150,13 @@ toolchain("gcc_like_toolchain") {
     cc = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang"
     cxx = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang++"
     ar = rebase_path(fuchsia_clang, root_build_dir) + "/bin/llvm-ar"
+    asm = cxx
     ld = cxx
   } else {
     cc = "clang"
     cxx = "clang++"
     ld = cxx
+    asm = cxx
 
     if (!is_mac) {
       # macOS uses libtool instead of ar.
@@ -201,6 +204,16 @@ toolchain("gcc_like_toolchain") {
     ]
   }
 
+  tool("asm") {
+    depfile = "{{output}}.d"
+    command = "$asm -MMD -MF $depfile {{defines}} {{include_dirs}} {{asmflags}} -c {{source}} -o {{output}}"
+    depsformat = "gcc"
+    description = "ASM {{output}}"
+    outputs = [
+      "{{target_out_dir}}/{{target_output_name}}.{{source_name_part}}.o",
+    ]
+  }
+
   tool("alink") {
     if (is_mac) {
       command = "libtool -static -no_warning_for_no_symbols {{arflags}} -o {{output}} {{inputs}}"
@@ -222,13 +235,29 @@ toolchain("gcc_like_toolchain") {
     sofile = "{{output_dir}}/$soname"
     rspfile = sofile + ".rsp"
 
-    command = "$ld -shared {{ldflags}} -o \"$sofile\" -Wl,-soname=\"$soname\" @\"$rspfile\""
-    rspfile_content = "-Wl,--whole-archive {{inputs}} {{solibs}} -Wl,--no-whole-archive {{libs}}"
+    soname_flag = ""
+    start_whole_flag = ""
+    end_whole_flag = ""
+    if (is_mac) {
+      soname_flag = "-Wl,-install_name,\"$soname\""
+    } else {
+      soname_flag = "-Wl,-soname=\"$soname\""
+      start_whole_flag = "-Wl,--whole-archive"
+      end_whole_flag = "-Wl,--no-whole-archive "
+    }
+    command =
+        "$ld -shared {{ldflags}} -o \"$sofile\" $soname_flag @\"$rspfile\""
+    rspfile_content =
+        "$start_whole_flag {{inputs}} {{solibs}} $end_whole_flag {{libs}}"
     description = "SOLINK_MODULE $sofile"
 
     default_output_extension = ".so"
     default_output_dir = "{{root_out_dir}}"
-    output_prefix = "lib"
+    if (is_mac) {
+      output_prefix = ""
+    } else {
+      output_prefix = "lib"
+    }
     outputs = [
       sofile,
     ]
@@ -239,9 +268,16 @@ toolchain("gcc_like_toolchain") {
     outfile = "{{output_dir}}/$exename"
     rspfile = "$outfile.rsp"
 
-    start_group_flag = "-Wl,--start-group"
-    end_group_flag = "-Wl,--end-group "
-    command = "$ld {{ldflags}} -o \"$outfile\" $start_group_flag @\"$rspfile\" {{solibs}} $end_group_flag {{libs}}"
+    start_group_flag = ""
+    end_group_flag = ""
+    extra_ldflags = ""
+    if (is_mac) {
+      extra_ldflags = "-Wl,-pie"
+    } else {
+      start_group_flag = "-Wl,--start-group"
+      end_group_flag = "-Wl,--end-group"
+    }
+    command = "$ld {{ldflags}} $extra_ldflags -o \"$outfile\" $start_group_flag @\"$rspfile\" {{solibs}} $end_group_flag {{libs}}"
     rspfile_content = "{{inputs}}"
     description = "LINK $outfile"
 
