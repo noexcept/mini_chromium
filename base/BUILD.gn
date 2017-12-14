@@ -29,6 +29,7 @@ static_library("base") {
     "memory/free_deleter.h",
     "memory/ptr_util.h",
     "memory/scoped_policy.h",
+    "metrics/histogram_functions.h",
     "numerics/safe_conversions.h",
     "numerics/safe_conversions_impl.h",
     "numerics/safe_math.h",

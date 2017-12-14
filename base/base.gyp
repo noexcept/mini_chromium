@@ -71,6 +71,7 @@
         'macros.h',
         'memory/free_deleter.h',
         'memory/scoped_policy.h',
+        'metrics/histogram_functions.h',
         'numerics/safe_conversions.h',
         'numerics/safe_conversions_impl.h',
         'numerics/safe_math.h',
