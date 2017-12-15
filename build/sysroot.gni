@@ -2,8 +2,40 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-# TODO(scottmg): Use this file on Fuchsia too.
-
 if (is_mac) {
-  sysroot = exec_script("find_mac_sdk.py", [], "trim string")
+  declare_args() {
+    mac_sdk = ""
+    mac_sdk_min = ""
+    sysroot = ""
+  }
+
+  find_mac_sdk_args = []
+  if (mac_sdk != "") {
+    find_mac_sdk_args += [
+      "--exact",
+      mac_sdk,
+    ]
+  }
+  if (mac_sdk_min != "") {
+    find_mac_sdk_args += [
+      "--minimum",
+      mac_sdk_min,
+    ]
+  }
+  if (sysroot != "") {
+    find_mac_sdk_args += [
+      "--path",
+      sysroot,
+    ]
+  }
+
+  find_mac_sdk_output =
+      exec_script("find_mac_sdk.py", find_mac_sdk_args, "list lines")
+
+  mac_sdk = find_mac_sdk_output[0]
+  sysroot = find_mac_sdk_output[1]
+} else if (is_fuchsia) {
+  declare_args() {
+    sysroot = ""
+  }
 }
