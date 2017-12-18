@@ -7,6 +7,7 @@
 ################################################################################
 
 import("sysroot.gni")
+import("is_posix.gni")
 
 if (is_mac) {
   declare_args() {
@@ -28,7 +29,7 @@ config("debug") {
 config("release") {
   defines = [ "NDEBUG" ]
 
-  if (is_posix) {
+  if (mini_chromium_is_posix) {
     cflags = [ "-O3" ]
     if (is_mac) {
       ldflags = [ "-Wl,-dead_strip" ]
@@ -65,7 +66,7 @@ config("default") {
 
   asmflags = []
   ldflags = []
-  if (is_posix) {
+  if (mini_chromium_is_posix) {
     cflags = [
       "-Wall",
       "-Wendif-labels",
