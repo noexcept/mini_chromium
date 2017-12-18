@@ -112,11 +112,21 @@ config("default") {
     }
   }
 
+  if (is_posix && !is_mac) {
+    cflags += [ "-fPIC" ]
+    ldflags += [
+      "-Wl,--as-needed",
+      "-Wl,-z,noexecstack",
+    ]
+  }
+
   if (is_mac) {
     if (mac_deployment_target != "") {
       common_flags += [ "-mmacosx-version-min=" + mac_deployment_target ]
     }
-  } else if (is_win) {
+  }
+
+  if (is_win) {
     cflags = [
       "/DNOMINMAX",
       "/DUNICODE",
@@ -133,9 +143,14 @@ config("default") {
       "/wd4702",  # Unreachable code.
       "/wd4996",  # 'X' was declared deprecated.
     ]
-  } else if (is_fuchsia) {
-    cflags += [ "-fPIC" ]
+  }
 
+  if (is_linux) {
+    defines = [ "_FILE_OFFSET_BITS=64" ]
+    common_flags += [ "-pthread" ]
+  }
+
+  if (is_fuchsia) {
     if (target_cpu == "arm64") {
       cflags += [ "--target=aarch64-fuchsia" ]
       ldflags += [ "--target=aarch64-fuchsia" ]
@@ -160,6 +175,12 @@ config("default") {
     configs = [ ":debug" ]
   } else {
     configs = [ ":release" ]
+  }
+}
+
+config("executable") {
+  if (is_linux) {
+    ldflags = [ "-pie" ]
   }
 }
 
