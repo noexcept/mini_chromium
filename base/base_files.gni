@@ -1,0 +1,123 @@
+# Copyright 2016 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("../build/platforms.gni")
+
+base_libs = []
+
+base_sources = [
+  rebase_path("../build/build_config.h"),
+  rebase_path("atomicops.h"),
+  rebase_path("atomicops_internals_atomicword_compat.h"),
+  rebase_path("atomicops_internals_portable.h"),
+  rebase_path("auto_reset.h"),
+  rebase_path("bit_cast.h"),
+  rebase_path("compiler_specific.h"),
+  rebase_path("debug/alias.cc"),
+  rebase_path("debug/alias.h"),
+  rebase_path("files/file_path.cc"),
+  rebase_path("files/file_path.h"),
+  rebase_path("files/file_util.h"),
+  rebase_path("files/scoped_file.cc"),
+  rebase_path("files/scoped_file.h"),
+  rebase_path("format_macros.h"),
+  rebase_path("logging.cc"),
+  rebase_path("logging.h"),
+  rebase_path("macros.h"),
+  rebase_path("memory/free_deleter.h"),
+  rebase_path("memory/scoped_policy.h"),
+  rebase_path("metrics/histogram_functions.h"),
+  rebase_path("metrics/histogram_macros.h"),
+  rebase_path("metrics/persistent_histogram_allocator.h"),
+  rebase_path("numerics/safe_conversions.h"),
+  rebase_path("numerics/safe_conversions_impl.h"),
+  rebase_path("numerics/safe_math.h"),
+  rebase_path("numerics/safe_math_impl.h"),
+  rebase_path("process/memory.cc"),
+  rebase_path("process/memory.h"),
+  rebase_path("rand_util.cc"),
+  rebase_path("rand_util.h"),
+  rebase_path("scoped_clear_errno.h"),
+  rebase_path("scoped_generic.h"),
+  rebase_path("strings/string16.cc"),
+  rebase_path("strings/string16.h"),
+  rebase_path("strings/string_number_conversions.cc"),
+  rebase_path("strings/string_number_conversions.h"),
+  rebase_path("strings/string_piece.h"),
+  rebase_path("strings/string_util.h"),
+  rebase_path("strings/stringprintf.cc"),
+  rebase_path("strings/stringprintf.h"),
+  rebase_path("strings/sys_string_conversions.h"),
+  rebase_path("strings/utf_string_conversion_utils.cc"),
+  rebase_path("strings/utf_string_conversion_utils.h"),
+  rebase_path("strings/utf_string_conversions.cc"),
+  rebase_path("strings/utf_string_conversions.h"),
+  rebase_path("synchronization/condition_variable.h"),
+  rebase_path("synchronization/lock.cc"),
+  rebase_path("synchronization/lock.h"),
+  rebase_path("synchronization/lock_impl.h"),
+  rebase_path("sys_byteorder.h"),
+  rebase_path("template_util.h"),
+  rebase_path("third_party/icu/icu_utf.cc"),
+  rebase_path("third_party/icu/icu_utf.h"),
+  rebase_path("threading/thread_local_storage.cc"),
+  rebase_path("threading/thread_local_storage.h"),
+]
+
+if (mini_chromium_is_posix) {
+  base_sources += [
+    rebase_path("files/file_util_posix.cc"),
+    rebase_path("posix/eintr_wrapper.h"),
+    rebase_path("posix/safe_strerror.cc"),
+    rebase_path("posix/safe_strerror.h"),
+    rebase_path("strings/string_util_posix.h"),
+    rebase_path("synchronization/condition_variable_posix.cc"),
+    rebase_path("synchronization/lock_impl_posix.cc"),
+    rebase_path("threading/thread_local_storage_posix.cc"),
+  ]
+}
+
+if (mini_chromium_is_mac) {
+  base_sources += [
+    rebase_path("atomicops_internals_mac.h"),
+    rebase_path("atomicops_internals_x86_msvc.h"),
+    rebase_path("mac/close_nocancel.cc"),
+    rebase_path("mac/foundation_util.h"),
+    rebase_path("mac/foundation_util.mm"),
+    rebase_path("mac/mach_logging.cc"),
+    rebase_path("mac/mach_logging.h"),
+    rebase_path("mac/scoped_cftyperef.h"),
+    rebase_path("mac/scoped_ioobject.h"),
+    rebase_path("mac/scoped_launch_data.h"),
+    rebase_path("mac/scoped_mach_port.cc"),
+    rebase_path("mac/scoped_mach_port.h"),
+    rebase_path("mac/scoped_mach_vm.cc"),
+    rebase_path("mac/scoped_mach_vm.h"),
+    rebase_path("mac/scoped_nsautorelease_pool.h"),
+    rebase_path("mac/scoped_nsautorelease_pool.mm"),
+    rebase_path("mac/scoped_nsobject.h"),
+    rebase_path("mac/scoped_typeref.h"),
+    rebase_path("strings/sys_string_conversions_mac.mm"),
+  ]
+  base_libs += [
+    "ApplicationServices.framework",
+    "CoreFoundation.framework",
+    "Foundation.framework",
+    "IOKit.framework",
+    "Security.framework",
+  ]
+} else if (mini_chromium_is_win) {
+  base_sources += [
+    rebase_path("strings/string_util_win.cc"),
+    rebase_path("strings/string_util_win.h"),
+    rebase_path("synchronization/lock_impl_win.cc"),
+    rebase_path("threading/thread_local_storage_win.cc"),
+  ]
+  base_libs += [ "advapi32.lib" ]
+} else if (mini_chromium_is_fuchsia) {
+  base_sources += [
+    rebase_path("fuchsia/fuchsia_logging.cc"),
+    rebase_path("fuchsia/fuchsia_logging.h"),
+  ]
+}
