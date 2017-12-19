@@ -2,7 +2,9 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-if (is_mac || is_fuchsia) {
+import("platforms.gni")
+
+if (mini_chromium_is_mac || mini_chromium_is_fuchsia) {
   declare_args() {
     # A directory containing the system’s header files and libraries. If empty,
     # a suitable default will be chosen.
@@ -10,7 +12,7 @@ if (is_mac || is_fuchsia) {
   }
 }
 
-if (is_mac) {
+if (mini_chromium_is_mac) {
   declare_args() {
     # The version of the macOS SDK to use. If |target_sysroot| is empty, this
     # will inform which SDK version will be chosen. If |mac_sdk| is also empty,
@@ -49,7 +51,7 @@ if (is_mac) {
 
   mac_sdk = find_mac_sdk_output[0]
   target_sysroot = find_mac_sdk_output[1]
-} else if (is_fuchsia) {
+} else if (mini_chromium_is_fuchsia) {
   declare_args() {
     # Path to the Fuchsia SDK.
     fuchsia_sdk = "//third_party/fuchsia/sdk/linux-amd64"
