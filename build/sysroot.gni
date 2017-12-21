@@ -5,18 +5,62 @@
 import("platform.gni")
 
 if (mini_chromium_is_posix) {
+  default_target_sysroot = ""
+  default_target_sysroot_lib = ""
+
+  if (mini_chromium_is_android) {
+    if (current_cpu == "x86" || current_cpu == "arm") {
+      default_android_api_level = 16
+    } else if (current_cpu == "x64" || current_cpu == "arm64") {
+      default_android_api_level = 21
+    }
+
+    declare_args() {
+      # Path to the Android NDK
+      android_ndk = ""
+
+      # Android API level to target.
+      android_api_level = default_android_api_level
+    }
+
+    default_target_sysroot = android_ndk + "/sysroot"
+    android_arch = target_cpu
+    if (android_arch == "x64") {
+      android_arch = "x86_64"
+    }
+    default_target_sysroot_lib = android_ndk + "/platforms/android-" +
+                                 android_api_level + "/arch-" + android_arch
+  } else if (mini_chromium_is_fuchsia) {
+    declare_args() {
+      # Path to the Fuchsia SDK.
+      fuchsia_sdk = "//third_party/fuchsia/sdk/linux-amd64"
+    }
+
+    if (target_cpu == "arm64") {
+      default_target_sysroot = fuchsia_sdk + "/sysroot/aarch64-fuchsia"
+    } else if (target_cpu == "x64") {
+      default_target_sysroot = fuchsia_sdk + "/sysroot/x86_64-fuchsia"
+    }
+  }
+
   declare_args() {
     # A directory containing the system’s header files and libraries. If empty,
     # a suitable default will be chosen.
-    target_sysroot = ""
+    target_sysroot = default_target_sysroot
+
+    # A |target_sysroot| that only applies to link steps. This is useful if
+    # different sysroots need to be applied to compilation (to #include headers)
+    # and linking (to link against libraries). If empty, |target_sysroot| will
+    # be used.
+    target_sysroot_lib = default_target_sysroot_lib
   }
 }
 
 if (mini_chromium_is_mac) {
   declare_args() {
     # The version of the macOS SDK to use. If |target_sysroot| is empty, this
-    # will inform which SDK version will be chosen. If |mac_sdk| is also empty,
-    # a suitable default will be chosen. See also |mac_sdk_min|.
+    # will inform which SDK version will be chosen. If |mac_sdk| is also
+    # empty, a suitable default will be chosen. See also |mac_sdk_min|.
     mac_sdk = ""
 
     # The minimum version of the macOS system SDK to use. SDK versions older
@@ -51,23 +95,12 @@ if (mini_chromium_is_mac) {
 
   mac_sdk = find_mac_sdk_output[0]
   target_sysroot = find_mac_sdk_output[1]
-} else if (mini_chromium_is_fuchsia) {
-  declare_args() {
-    # Path to the Fuchsia SDK.
-    fuchsia_sdk = "//third_party/fuchsia/sdk/linux-amd64"
-  }
-
-  if (target_sysroot == "") {
-    if (target_cpu == "arm64") {
-      target_sysroot = fuchsia_sdk + "/sysroot/aarch64-fuchsia"
-    } else if (target_cpu == "x64") {
-      target_sysroot = fuchsia_sdk + "/sysroot/x86_64-fuchsia"
-    }
-  }
 }
 
 if (current_os == target_os && current_cpu == target_cpu) {
   sysroot = target_sysroot
+  sysroot_lib = target_sysroot_lib
 } else {
   sysroot = ""
+  sysroot_lib = ""
 }

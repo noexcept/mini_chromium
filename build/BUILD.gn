@@ -17,6 +17,20 @@ if (mini_chromium_is_mac) {
     # older of the SDK version and the build host’s OS version.
     mac_deployment_target = "10.9"
   }
+} else if (mini_chromium_is_android) {
+  if (host_os == "mac") {
+    android_host_tag = "darwin"
+  } else if (host_os == "linux") {
+    android_host_tag = "linux"
+  } else if (host_os == "win") {
+    android_host_tag = "windows"
+  }
+  if (host_cpu == "x64") {
+    android_host_tag += "-x86_64"
+  }
+
+  # TODO: On Windows, if “windows-x86_64” doesn’t exist, fall back to plain
+  # “windows”.
 } else if (mini_chromium_is_fuchsia) {
   declare_args() {
     # Path to the Fuchsia Clang toolchain.
@@ -65,6 +79,7 @@ config("release") {
 config("default") {
   common_flags = []
 
+  defines = []
   asmflags = []
   ldflags = []
   if (mini_chromium_is_posix) {
@@ -103,14 +118,31 @@ config("default") {
       } else {
         sysroot_path = rebase_path(sysroot, root_build_dir)
       }
+      sysroot_flags = []
       if (mini_chromium_is_mac) {
-        common_flags += [
+        sysroot_flags += [
           "-isysroot",
           sysroot_path,
         ]
       } else {
-        common_flags += [ "--sysroot=" + sysroot_path ]
+        sysroot_flags += [ "--sysroot=" + sysroot_path ]
       }
+      if (sysroot_lib == "") {
+        common_flags += sysroot_flags
+      } else {
+        cflags += sysroot_flags
+        asmflags += sysroot_flags
+      }
+    }
+
+    if (sysroot_lib != "") {
+      if (sysroot_lib == rebase_path(sysroot_lib)) {
+        # If it’s already system-absolute, leave it alone.
+        sysroot_lib_path = sysroot_lib
+      } else {
+        sysroot_lib_path = rebase_path(sysroot_lib, root_build_dir)
+      }
+      ldflags += [ "--sysroot=" + sysroot_lib_path ]
     }
   }
 
@@ -139,18 +171,90 @@ config("default") {
     ]
   }
 
-  if (mini_chromium_is_linux) {
-    defines = [ "_FILE_OFFSET_BITS=64" ]
+  if (mini_chromium_is_linux || mini_chromium_is_android) {
     common_flags += [ "-pthread" ]
+  }
+
+  if (mini_chromium_is_android) {
+    if (target_cpu == "x86") {
+      common_flags += [
+        "-target",
+        "i686-none-linux-android",
+      ]
+      android_abi = "x86"
+      android_triple = "i686-linux-android"
+      android_gnu_toolchain = android_abi
+    } else if (target_cpu == "x64") {
+      common_flags += [
+        "-target",
+        "x86_64-none-linux-android",
+      ]
+      android_abi = "x86_64"
+      android_triple = "x86_64-linux-android"
+      android_gnu_toolchain = android_abi
+    } else if (target_cpu == "arm") {
+      common_flags += [
+        "-target",
+        "armv7a-none-linux-androideabi",
+      ]
+      android_abi = "armeabi-v7a"  # @@@ Or just armeabi for pre-v7?
+      android_triple = "arm-linux-androideabi"
+      android_gnu_toolchain = android_triple
+    } else if (target_cpu == "arm64") {
+      common_flags += [
+        "-target",
+        "aarch64-none-linux-android",
+      ]
+      android_abi = "arm64-v8a"
+      android_triple = "aarch64-linux-android"
+      android_gnu_toolchain = android_triple
+    } else {
+      assert(false, "Unsupported architecture")
+    }
+
+    defines += [ "__ANDROID_API__=" + android_api_level ]
+
+    android_ndk_path = android_ndk
+    if (android_ndk_path != rebase_path(android_ndk_path)) {
+      # If it’s already system-absolute, leave it alone.
+      android_ndk_path = rebase_path(android_ndk_path, root_build_dir)
+    }
+    android_libcxx_path = android_ndk_path + "/sources/cxx-stl/llvm-libc++"
+
+    common_flags +=
+        [ "--gcc-toolchain=" + android_ndk_path + "/toolchains/" +
+          android_gnu_toolchain + "-4.9/prebuilt/" + android_host_tag ]
+    cflags_c += [
+      "-isystem",
+      android_ndk_path + "/sources/android/support/include",
+      "-isystem",
+      sysroot + "/usr/include/" + android_triple,
+    ]
+    cflags_cc += [
+      "-isystem",
+      android_libcxx_path + "/include",
+      "-isystem",
+      android_libcxx_path + "abi/include",
+      "-stdlib=libc++",
+
+      # These are also in cflags_c, but since they need to follow the C++
+      # include directories, they need to be listed separately in cflags_cc
+      # rather than being listed in cflags.
+      "-isystem",
+      android_ndk_path + "/sources/android/support/include",
+      "-isystem",
+      sysroot + "/usr/include/" + android_triple,
+    ]
+    lib_dirs = [ android_libcxx_path + "/libs/" + android_abi ]
+    ldflags += [ "-stdlib=libc++" ]
+    libs = [ "android_support" ]
   }
 
   if (mini_chromium_is_fuchsia) {
     if (target_cpu == "arm64") {
-      cflags += [ "--target=aarch64-fuchsia" ]
-      ldflags += [ "--target=aarch64-fuchsia" ]
+      common_flags += [ "--target=aarch64-fuchsia" ]
     } else if (target_cpu == "x64") {
-      cflags += [ "--target=x86_64-fuchsia" ]
-      ldflags += [ "--target=x86_64-fuchsia" ]
+      common_flags += [ "--target=x86_64-fuchsia" ]
     } else {
       assert(false, "Unsupported architecture")
     }
@@ -162,9 +266,7 @@ config("default") {
     # come before -Wl,--as-needed below.
     ldflags += [ "-lfdio" ]
 
-    libs = [
-      "zircon",
-    ]
+    libs = [ "zircon" ]
   }
 
   if (mini_chromium_is_posix && !mini_chromium_is_mac) {
@@ -189,7 +291,7 @@ config("default") {
 }
 
 config("executable") {
-  if (mini_chromium_is_linux) {
+  if (mini_chromium_is_linux || mini_chromium_is_android) {
     ldflags = [ "-pie" ]
   }
 }
@@ -197,6 +299,13 @@ config("executable") {
 config("Wexit_time_destructors") {
   if (mini_chromium_is_clang) {
     cflags = [ "-Wexit-time-destructors" ]
+  }
+}
+
+config("file_offset_bits_64") {
+  if ((mini_chromium_is_linux || mini_chromium_is_android) &&
+      (current_cpu == "x86" || current_cpu == "arm")) {
+    defines = [ "_FILE_OFFSET_BITS=64" ]
   }
 }
 
@@ -208,7 +317,20 @@ toolchain("gcc_like_toolchain") {
   lib_switch = "-l"
   lib_dir_switch = "-L"
 
-  if (mini_chromium_is_fuchsia) {
+  if (mini_chromium_is_android) {
+    android_llvm_dir =
+        android_ndk + "/toolchains/llvm/prebuilt/" + android_host_tag
+    if (android_llvm_dir != rebase_path(android_llvm_dir)) {
+      # If it’s already system-absolute, leave it alone.
+      android_llvm_dir = rebase_path(android_llvm_dir, root_build_dir)
+    }
+
+    cc = android_llvm_dir + "/bin/clang"
+    cxx = android_llvm_dir + "/bin/clang++"
+    asm = cxx
+    ar = android_llvm_dir + "/bin/llvm-ar"
+    ld = cxx
+  } else if (mini_chromium_is_fuchsia) {
     cc = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang"
     cxx = rebase_path(fuchsia_clang, root_build_dir) + "/bin/clang++"
     asm = cxx
@@ -308,8 +430,7 @@ toolchain("gcc_like_toolchain") {
       start_whole_flag = "-Wl,--whole-archive"
       end_whole_flag = "-Wl,--no-whole-archive "
     }
-    command =
-        "$ld -shared {{ldflags}} -o \"$sofile\" $soname_flag $start_whole_flag {{inputs}} {{solibs}} $end_whole_flag {{libs}}"
+    command = "$ld -shared {{ldflags}} -o \"$sofile\" $soname_flag $start_whole_flag {{inputs}} {{solibs}} $end_whole_flag {{libs}}"
     description = "SOLINK_MODULE $sofile"
 
     default_output_dir = "{{root_out_dir}}"
