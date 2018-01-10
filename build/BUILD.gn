@@ -135,6 +135,7 @@ config("default") {
       "/wd4351",  # New behavior: elements of array will be default initialized.
       "/wd4530",  # Exceptions disabled.
       "/wd4702",  # Unreachable code.
+      "/wd4815",  # Zero-sized array in stack object will have no elements.
       "/wd4996",  # 'X' was declared deprecated.
     ]
   }

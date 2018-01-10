@@ -245,6 +245,7 @@
           4351,  # New behavior: elements of array will be default initialized.
           4530,  # Exceptions are disabled.
           4702,  # Unreachable code. https://crbug.com/346399
+          4815,  # Zero-sized array in stack object will have no elements.
           4996,  # 'X' was declared deprecated.
         ],
         'defines': [
