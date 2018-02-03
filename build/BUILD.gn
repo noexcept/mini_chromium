@@ -139,6 +139,10 @@ config("default") {
     ]
   }
 
+  if (mini_chromium_is_clang) {
+    cflags += [ "-Wimplicit-fallthrough" ]
+  }
+
   if (mini_chromium_is_linux) {
     defines = [ "_FILE_OFFSET_BITS=64" ]
     common_flags += [ "-pthread" ]
