@@ -237,8 +237,14 @@ toolchain("gcc_like_toolchain") {
     ar = rebase_path(fuchsia_clang, root_build_dir) + "/bin/llvm-ar"
     ld = cxx
   } else {
-    cc = "clang"
-    cxx = "clang++"
+    cc = getenv("CC")
+    cxx = getenv("CXX")
+    if (cc == "") {
+      cc = "clang"
+    }
+    if (cxx == "") {
+      cxx = "clang++"
+    }
     asm = cxx
     ld = cxx
 
