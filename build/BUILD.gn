@@ -157,6 +157,18 @@ config("default") {
   if (mini_chromium_is_linux) {
     defines = [ "_FILE_OFFSET_BITS=64" ]
     common_flags += [ "-pthread" ]
+
+    # The sysroot being built against is based on Stretch, which is newer than
+    # the libstdc++ that's on Trusty (14.04) which is the Chromium minspec. This
+    # minspec determines what the available buildbots are. Chromium doesn't have
+    # a problem with libstdc++ despite this, because it links against a local
+    # copy of libc++ instead. As this build file only affects the standalone
+    # Crashpad build, simply link libstdc++ statically to avoid the problem.
+    ldflags += [
+      "-Wl,-Bstatic",
+      "-lstdc++",
+      "-Wl,-Bdynamic",
+    ]
   }
 
   if (mini_chromium_is_fuchsia) {
