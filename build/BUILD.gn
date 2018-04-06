@@ -93,6 +93,10 @@ config("default") {
       "-fvisibility=hidden",
     ]
 
+    if (mini_chromium_is_fuchsia) {
+      cflags += [ "-fno-sanitize=safe-stack" ]
+    }
+
     cflags_c = [ "-std=c99" ]
     cflags_cc = [ "-std=c++14" ]
     cflags_objc = cflags_c
