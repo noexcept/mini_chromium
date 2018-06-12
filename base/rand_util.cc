@@ -117,14 +117,12 @@ void RandBytes(void* output, size_t output_length) {
     const size_t requested_bytes_this_pass =
         std::min(output_length, static_cast<size_t>(ZX_CPRNG_DRAW_MAX_LEN));
 
-    size_t actual;
     zx_status_t status =
-        zx_cprng_draw(output_ptr, requested_bytes_this_pass, &actual);
+        zx_cprng_draw_new(output_ptr, requested_bytes_this_pass);
     ZX_CHECK(status == ZX_OK, status) << "zx_cprng_draw";
 
-    DCHECK_GE(output_length, actual);
-    output_length -= actual;
-    output_ptr += actual;
+    output_length -= requested_bytes_this_pass;
+    output_ptr += requested_bytes_this_pass;
   }
 #elif defined(OS_POSIX)
   int fd = GetUrandomFD();
