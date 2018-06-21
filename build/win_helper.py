@@ -11,6 +11,10 @@ import subprocess
 import sys
 
 
+REPO_ROOT = os.path.normpath(os.path.join(
+  os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..'))
+
+
 def _RegistryGetValue(key, value):
   """Use the _winreg module to obtain the value of a registry key.
 
@@ -83,7 +87,10 @@ def _GenerateEnvironmentFiles(install_dir, out_dir, script_path):
   for arch in archs:
     # Extract environment variables for subprocesses.
     args = [os.path.join(install_dir, script_path)]
-    args.extend((arch, '&&', 'set'))
+    script_arch_name = arch
+    if script_path.endswith('SetEnv.cmd') and arch == 'amd64':
+      script_arch_name = '/x64'
+    args.extend((script_arch_name, '&&', 'set'))
     popen = subprocess.Popen(
         args, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     variables, _ = popen.communicate()
@@ -155,7 +162,14 @@ class WinTool(object):
     return popen.returncode
 
   def _GetVisualStudioInstallDirOrDie(self):
-    # Try the VS2017.2+ way first. Note that earlier VS2017s will not be found.
+    # Try the CIPD packaged toolchain first.
+    cipd_install_path = os.path.join(REPO_ROOT, 'third_party', 'win', 'win_sdk')
+    cipd_setenv_path = os.path.join('bin', 'SetEnv.cmd')
+    if os.path.exists(os.path.join(cipd_install_path, cipd_setenv_path)):
+      return cipd_install_path, cipd_setenv_path
+
+    # Next, use vswhere, which will find VS2017.2+. Note that earlier
+    # VS2017s will not be found.
     vswhere_path = os.path.join(os.environ.get('ProgramFiles(x86)'),
         'Microsoft Visual Studio', 'Installer', 'vswhere.exe')
     if os.path.exists(vswhere_path):
