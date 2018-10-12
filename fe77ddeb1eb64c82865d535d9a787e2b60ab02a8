@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a8b966b_1aeddea9",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "There’s a .gyp file here that’s still relevant too.",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae35a68c_ab499605",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "Usually remove the (c) in mini_chromium",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80c33b3f_5e564c60",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "and drop all other comments, less stuff to have to worry about diverging from upstream.",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60a18b5d_bfe78ed5",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "Revise #include guards to be MINI_CHROMIUM_BASE_…",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96cb5eb7_a9026441",
+        "filename": "base/process/process_metrics_win.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "Don’t need me.",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4f49049_d619ed3f",
+        "filename": "base/process/process_metrics_win.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-12T17:50:46Z",
+      "side": 1,
+      "message": "I’d just have written 4 * 1024 inline, there’s no reason to have a single-use constant at namespace scope.",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
