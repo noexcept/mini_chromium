@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ded7bd3_0694c490",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done, though I\u0027m unfamiliar with gyp--is there a precommit step that tests the gyp build or should I try to use it with crashpad to confirm?",
+      "parentUuid": "3a8b966b_1aeddea9",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ae35a68c_ab499605",
         "filename": "base/process/process_metrics.h",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e64a051_c019abc7",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae35a68c_ab499605",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "6714b67d_205446ff",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80c33b3f_5e564c60",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60a18b5d_bfe78ed5",
         "filename": "base/process/process_metrics.h",
         "patchSetId": 1
@@ -67,6 +121,24 @@
       "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddce6c61_565aab61",
+        "filename": "base/process/process_metrics.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60a18b5d_bfe78ed5",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "45a9f04e_6fa3f22f",
+        "filename": "base/process/process_metrics_win.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96cb5eb7_a9026441",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a4f49049_d619ed3f",
         "filename": "base/process/process_metrics_win.cc",
         "patchSetId": 1
@@ -101,6 +191,24 @@
       "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9411956_973db303",
+        "filename": "base/process/process_metrics_win.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1238767
+      },
+      "writtenOn": "2018-10-12T21:18:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4f49049_d619ed3f",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
