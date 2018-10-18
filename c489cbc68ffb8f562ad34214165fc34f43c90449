@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aff3ecb_354fe809",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-18T03:22:30Z",
+      "side": 1,
+      "message": "I suggest doing this second because it’s used second, but no biggie either way.\n\nWasn’t really worth doing “else” in place of “elif” just to move this closer to the point of use. I get it.",
+      "revId": "c489cbc68ffb8f562ad34214165fc34f43c90449",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
