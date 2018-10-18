@@ -16,6 +16,24 @@
       "revId": "c489cbc68ffb8f562ad34214165fc34f43c90449",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e137a9e_1c78d335",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-10-18T05:07:00Z",
+      "side": 1,
+      "message": "Done.\n\nYeah, it\u0027s amazing how sometimes you can ponder for many minutes over one line of simple code. I actually had an else at first, but my first try had a more complicated second block, so it seemed too convoluted, so then I was going to pull the first two arms out into a helper function but that seemed a bit heavy, but then I realized it didn\u0027t need to be so complicated, etc.\n\nAnyyyway, I think you\u0027re right that moving from_env into a nested else is probably clearer.\n\n...\n\nThough now that I write that, maybe some nested functions are actually better, and it reduces the stuttering of (install_dir, script_path). Or maybe that\u0027s a bit too cute I shouldn\u0027t fiddle late at night. We\u0027ll see in the morning. :)",
+      "parentUuid": "7aff3ecb_354fe809",
+      "revId": "c489cbc68ffb8f562ad34214165fc34f43c90449",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
