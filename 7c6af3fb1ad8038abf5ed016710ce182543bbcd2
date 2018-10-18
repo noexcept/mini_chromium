@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95e86410_609170c3",
+        "filename": "build/win_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-18T02:55:28Z",
+      "side": 1,
+      "message": "Missing an os.path.join()?",
+      "revId": "7c6af3fb1ad8038abf5ed016710ce182543bbcd2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
