@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8aca3417_550fb97f",
+        "filename": "build/win_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-18T11:53:49Z",
+      "side": 1,
+      "message": "If you’re gonna go this way, then this method ought to be a nested function too, a sibling to its pals.",
+      "range": {
+        "startLine": 172,
+        "startChar": 32,
+        "endLine": 172,
+        "endChar": 63
+      },
+      "revId": "ea8ac03f9a76ae37659ea00a6fdb17c66bfcec79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77c75b88_9b0c0565",
+        "filename": "build/win_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-18T11:53:49Z",
+      "side": 1,
+      "message": "And for equity’s sake, it shouldn’t be OrDie, the deathiness aspect should happen right in ExecGetVisualStudioData().",
+      "range": {
+        "startLine": 172,
+        "startChar": 63,
+        "endLine": 172,
+        "endChar": 68
+      },
+      "revId": "ea8ac03f9a76ae37659ea00a6fdb17c66bfcec79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
