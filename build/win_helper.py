@@ -154,10 +154,15 @@ class WinTool(object):
     raise Exception('Visual Studio installation dir not found')
 
   def ExecGetVisualStudioData(self, outdir, toolchain_path):
-    # Use an explicitly specified toolchain path, if provided and found.
+    from_env = os.environ.get('VSINSTALLDIR')
     setenv_path = os.path.join('win_sdk', 'bin', 'SetEnv.cmd')
+
     if os.path.exists(os.path.join(toolchain_path, setenv_path)):
+      # Use an explicitly specified toolchain path, if provided and found.
       install_dir, script_path = toolchain_path, setenv_path
+    elif from_env and os.path.exists(from_env, setenv_path):
+      # Next, try the environment.
+      install_dir, script_path = from_env, setenv_path
     else:
       # Otherwise, try to autodetect.
       install_dir, script_path = self._GetVisualStudioInstallDirOrDie()
