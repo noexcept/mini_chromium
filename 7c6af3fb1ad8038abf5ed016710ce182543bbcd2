@@ -16,6 +16,24 @@
       "revId": "7c6af3fb1ad8038abf5ed016710ce182543bbcd2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91fcbcd5_413694c3",
+        "filename": "build/win_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-10-18T02:59:13Z",
+      "side": 1,
+      "message": "Thank you!",
+      "parentUuid": "95e86410_609170c3",
+      "revId": "7c6af3fb1ad8038abf5ed016710ce182543bbcd2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
