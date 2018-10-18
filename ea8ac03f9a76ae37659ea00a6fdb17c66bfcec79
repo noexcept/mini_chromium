@@ -45,6 +45,54 @@
       "revId": "ea8ac03f9a76ae37659ea00a6fdb17c66bfcec79",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38f177fb_0ca30efb",
+        "filename": "build/win_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-10-18T16:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8aca3417_550fb97f",
+      "range": {
+        "startLine": 172,
+        "startChar": 32,
+        "endLine": 172,
+        "endChar": 63
+      },
+      "revId": "ea8ac03f9a76ae37659ea00a6fdb17c66bfcec79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39c8a3e4_f06903cf",
+        "filename": "build/win_helper.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2018-10-18T16:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77c75b88_9b0c0565",
+      "range": {
+        "startLine": 172,
+        "startChar": 63,
+        "endLine": 172,
+        "endChar": 68
+      },
+      "revId": "ea8ac03f9a76ae37659ea00a6fdb17c66bfcec79",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
