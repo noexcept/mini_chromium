@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9953e6e8_593ac0f3",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-10-22T17:47:46Z",
+      "side": 1,
+      "message": "\u003e Done, though I\u0027m unfamiliar with gyp--is there a precommit step that tests the gyp build or should I try to use it with crashpad to confirm?\n\nThere was, but in between the time I asked for this and now, I think the gyp build actually became irrelevant here.",
+      "parentUuid": "3ded7bd3_0694c490",
+      "revId": "fe77ddeb1eb64c82865d535d9a787e2b60ab02a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae35a68c_ab499605",
         "filename": "base/process/process_metrics.h",
         "patchSetId": 1
