@@ -54,9 +54,11 @@ inline Atomic32 NoBarrier_AtomicIncrement(volatile Atomic32* ptr,
 }
 
 inline void MemoryBarrier() {
-#if defined(ARCH_CPU_64_BITS)
+#if defined(ARCH_CPU_X86_64)
   // See #undef and note at the top of this file.
   __faststorefence();
+#elif defined(ARCH_CPU_ARM64)
+  __dmb(_ARM64_BARRIER_SY);
 #else
   // We use MemoryBarrier from WinNT.h
   ::MemoryBarrier();
