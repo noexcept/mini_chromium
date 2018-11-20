@@ -64,6 +64,11 @@
 #define ARCH_CPU_ARM_FAMILY 1
 #define ARCH_CPU_ARM64 1
 #define ARCH_CPU_64_BITS 1
+#elif defined(_M_ARM64)
+#define ARCH_CPU_ARM_FAMILY 1
+#define ARCH_CPU_ARM64 1
+#define ARCH_CPU_64_BITS 1
+#define ARCH_CPU_LITTLE_ENDIAN 1
 #elif defined(__MIPSEL__)
 #define ARCH_CPU_MIPS_FAMILY 1
 #if !defined(__LP64__)

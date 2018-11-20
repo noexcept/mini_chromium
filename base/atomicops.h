@@ -180,7 +180,7 @@ extern struct AtomicOps_x86CPUFeatureStruct AtomicOps_Internalx86CPUFeatures;
 #  include "base/atomicops_internals_portable.h"
 #else  // Otherwise use a platform specific implementation.
 #  if (defined(OS_WIN) && defined(COMPILER_MSVC) && \
-         defined(ARCH_CPU_X86_FAMILY))
+         (defined(ARCH_CPU_X86_FAMILY) || defined(ARCH_CPU_ARM64)))
 #    include "base/atomicops_internals_x86_msvc.h"
 #  elif defined(OS_MACOSX)
 #    include "base/atomicops_internals_mac.h"
