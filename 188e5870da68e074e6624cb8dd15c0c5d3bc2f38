@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4532a226_73d7f4de",
+        "filename": "base/atomicops.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-11-21T16:30:44Z",
+      "side": 1,
+      "message": "This was some transitional stuff, but I think that at this point, we don’t need to worry about “compilers that support C++11 language but not C++11 library” at all. We can simplify all of this considerably and just use atomicops_internals_portable.h unconditionally, lose the preprocessor conditionals and comment blocks, and delete the unreachable files.",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c4e8f7f_23d64d70",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-11-21T16:30:44Z",
+      "side": 1,
+      "message": "Follow the surrounding style, which was to use the cuddly } else {.",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6781152_2c5597fa",
+        "filename": "build/build_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-11-21T16:30:44Z",
+      "side": 1,
+      "message": "__aarch64__ \u003d\u003d _M_ARM64 in the same way that __x86_64__ \u003d\u003d _M_X64.\n\nSo instead of what you’ve done below, just put “|| defined(_M_ARM64)” here. (Or actually, put _M_ARM64 first, because we put the MSVC++-style macros first on lines 49 and 54 above.)",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8140d6a6_f4430b92",
+        "filename": "build/build_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-11-21T16:30:44Z",
+      "side": 1,
+      "message": "And bring this with you, wherever _M_ARM64 goes, unless the __LITTLE_ENDIAN__ and __BYTE_ORDER__ things below work in MSVC++ now.",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22a4b7dc_dfa1fa03",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-11-21T16:30:44Z",
+      "side": 1,
+      "message": "Is there no such thing as x64_amd64?",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
