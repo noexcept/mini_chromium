@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "abef672f_d9361507",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-11-21T22:38:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2c4e8f7f_23d64d70",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f6781152_2c5597fa",
         "filename": "build/build_config.h",
         "patchSetId": 3
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1b5c7256_8b7aad43",
+        "filename": "build/build_config.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-11-21T22:38:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8140d6a6_f4430b92",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "22a4b7dc_dfa1fa03",
         "filename": "build/win_helper.py",
         "patchSetId": 3
@@ -84,6 +120,24 @@
       "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d4bcf009_1bb07794",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-11-21T22:38:54Z",
+      "side": 1,
+      "message": "Seems yes, no x64_amd64. Host and target is the same which is represented by a single \u0027x64\u0027 or \u0027amd64\u0027 parameter to vcvarsall.cmd.",
+      "parentUuid": "22a4b7dc_dfa1fa03",
+      "revId": "188e5870da68e074e6624cb8dd15c0c5d3bc2f38",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
