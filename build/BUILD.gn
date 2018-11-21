@@ -499,6 +499,8 @@ if (mini_chromium_is_win) {
       tool("asm") {
         if (invoker.current_cpu == "x64") {
           ml = "ml64.exe"
+        } else if (invoker.current_cpu == "arm64") {
+          ml = "armasm64.exe"
         } else {
           ml = "ml.exe"
         }
@@ -529,5 +531,10 @@ if (mini_chromium_is_win) {
   msvc_toolchain("x86") {
     environment_file = toolchain_data.x86_environment_file
     current_cpu = "x86"
+  }
+
+  msvc_toolchain("arm64") {
+    environment_file = toolchain_data.arm64_environment_file
+    current_cpu = "arm64"
   }
 }
