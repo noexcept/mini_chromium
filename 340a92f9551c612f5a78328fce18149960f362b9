@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6fc68e08_139fea99",
+        "filename": "base/atomicops.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-11-21T02:38:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eafbd4a4_ba55a5a3",
+      "revId": "340a92f9551c612f5a78328fce18149960f362b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf8e6a95_223cdbae",
         "filename": "build/BUILD.gn",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "340a92f9551c612f5a78328fce18149960f362b9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "723aaf75_23f14860",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-11-21T02:38:20Z",
+      "side": 1,
+      "message": "Seems mini_chromium only supports MSVC for Windows build. Will leave this to Mark to comment.",
+      "parentUuid": "bf8e6a95_223cdbae",
+      "revId": "340a92f9551c612f5a78328fce18149960f362b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
