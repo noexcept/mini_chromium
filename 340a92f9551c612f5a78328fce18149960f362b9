@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eafbd4a4_ba55a5a3",
+        "filename": "base/atomicops.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-11-21T01:15:50Z",
+      "side": 1,
+      "message": "I\u0027m confused. Doesn\u0027t ARM64 need a different header file? base/atomicops_internals_portable.h - that\u0027s what Chromium\u0027s atomicops.h does.",
+      "revId": "340a92f9551c612f5a78328fce18149960f362b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf8e6a95_223cdbae",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 1128439
+      },
+      "writtenOn": "2018-11-21T01:15:50Z",
+      "side": 1,
+      "message": "How come this is different from in chromium\\src\\build\\toolchain\\win\\BUILD.gn? In there we use ${clang_cl} --target\u003darm64-windows as the assembler.",
+      "revId": "340a92f9551c612f5a78328fce18149960f362b9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
