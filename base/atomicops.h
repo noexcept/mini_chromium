@@ -174,9 +174,12 @@ extern struct AtomicOps_x86CPUFeatureStruct AtomicOps_Internalx86CPUFeatures;
 // Some toolchains support C++11 language features without supporting library
 // features (recent compiler, older STL). Whitelist libstdc++ and libc++ that we
 // know will have <atomic> when compiling C++11.
+// Both clang and MSVC for Windows ARM64 support C++11 atomics, so use portable
+// atomics for Windows ARM64.
 #if ((__cplusplus >= 201103L) &&                            \
      ((defined(__GLIBCXX__) && (__GLIBCXX__ > 20110216)) || \
-      (defined(_LIBCPP_VERSION) && (_LIBCPP_STD_VER >= 11))))
+      (defined(_LIBCPP_VERSION) && (_LIBCPP_STD_VER >= 11)) || \
+     (defined(OS_WIN) && defined(ARCH_CPU_ARM64))))
 #  include "base/atomicops_internals_portable.h"
 #else  // Otherwise use a platform specific implementation.
 #  if (defined(OS_WIN) && defined(COMPILER_MSVC) && \
