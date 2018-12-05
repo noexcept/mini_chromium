@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68f8a60c_446c0dc3",
+        "filename": "base/atomicops.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T19:35:37Z",
+      "side": 1,
+      "message": "This comment is no longer necessary at all.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 20
+      },
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2aa4f8e_74617ff9",
+        "filename": "base/atomicops.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T19:35:37Z",
+      "side": 1,
+      "message": "Remove the extra spaces between # and include.\n\n(Those were there to reflect the #if nesting, but now that the #ifs are gone, the spaces should go too.)",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a586bcf_244e67b4",
+        "filename": "base/logging.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T19:35:37Z",
+      "side": 1,
+      "message": "Confirming that this __debugbreak() becomes brk #0 on arm64.\n\n(See below, for the non-COMPILER_MSVC case, where arm64 wants to be brk #0; hlt #0.)",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "224c9ce7_ddf30ac6",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 4
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T19:35:37Z",
+      "side": 1,
+      "message": "At this point, ml.exe should probably get an explicit invoker.current_cpu like the others, too, to reflect its x86-specific status. As elsewhere, we should order it (x86_64, x86, arm64).",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f507c2b7_2478ac9e",
+        "filename": "build/build_config.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T19:35:37Z",
+      "side": 1,
+      "message": "Owing to how we handled _M_X64 and _M_IX86 above, we don’t even really need the clutter of this #if.",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
