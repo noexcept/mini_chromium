@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ce314ef9_ea1ad016",
+        "filename": "base/atomicops.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-12-05T21:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68f8a60c_446c0dc3",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 20
+      },
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2aa4f8e_74617ff9",
         "filename": "base/atomicops.h",
         "patchSetId": 4
@@ -39,6 +63,24 @@
       "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "038abae0_60f98b00",
+        "filename": "base/atomicops.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-12-05T21:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2aa4f8e_74617ff9",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "7b72e8fd_31ca1d4f",
+        "filename": "base/logging.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-12-05T21:06:57Z",
+      "side": 1,
+      "message": "__debugbreak() is compiled to \"brk #f000\". Do we need keep the same bit as \"brk #0\" for Windows ARM64. Windows ARM64 ABI defines \"brk #f000\" as break point instruction so it could be recognized by debugger and exception handling code.\n\nSeems clang-cl.exe also defines COMPILER_MSVC which also works here.",
+      "parentUuid": "2a586bcf_244e67b4",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "224c9ce7_ddf30ac6",
         "filename": "build/BUILD.gn",
         "patchSetId": 4
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "a45315bb_1ca72383",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 4
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-12-05T21:06:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "224c9ce7_ddf30ac6",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f507c2b7_2478ac9e",
         "filename": "build/build_config.h",
         "patchSetId": 4
@@ -90,6 +168,24 @@
       "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6204bae4_99492ed1",
+        "filename": "build/build_config.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1307249
+      },
+      "writtenOn": "2018-12-05T21:06:57Z",
+      "side": 1,
+      "message": "But for __aarch64__, it should be non-Windows and big-endian? So I only enable little-endian explicitly for Windows here.",
+      "parentUuid": "f507c2b7_2478ac9e",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
