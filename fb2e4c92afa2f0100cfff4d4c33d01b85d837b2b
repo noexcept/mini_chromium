@@ -119,6 +119,24 @@
     },
     {
       "key": {
+        "uuid": "f3899258_3df8e10b",
+        "filename": "base/logging.cc",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T21:15:55Z",
+      "side": 1,
+      "message": "\u003e __debugbreak() is compiled to \"brk #f000\". Do we need keep the same bit as \"brk #0\" for Windows ARM64. Windows ARM64 ABI defines \"brk #f000\" as break point instruction so it could be recognized by debugger and exception handling code.\n\u003e \n\u003e Seems clang-cl.exe also defines COMPILER_MSVC which also works here.\n\nOK, this is fine, then. I care more about it being brk [something] than it being brk [something_specific].\n\nTo expand: mostly, we want these to result in exception codes that are immediately recognizable by the crash report processing infrastructure, and there’s value in keeping things uniform. Here, the exception code will necessarily be different than the signal numbers we see on other platforms, so we’re just looking at a conceptual equivalence between EXCEPTION_BREAKPOINT and SIGTRAP\u003e There’s only limited value in keeping the details like the immediate-encoded parameter constant.",
+      "parentUuid": "7b72e8fd_31ca1d4f",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "224c9ce7_ddf30ac6",
         "filename": "build/BUILD.gn",
         "patchSetId": 4
@@ -183,6 +201,24 @@
       "side": 1,
       "message": "But for __aarch64__, it should be non-Windows and big-endian? So I only enable little-endian explicitly for Windows here.",
       "parentUuid": "f507c2b7_2478ac9e",
+      "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f9073fa_1ee27e62",
+        "filename": "build/build_config.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2018-12-05T21:15:55Z",
+      "side": 1,
+      "message": "\u003e But for __aarch64__, it should be non-Windows and big-endian? So I only enable little-endian explicitly for Windows here.\n\nTrue. We may have even talked about that a couple of weeks ago. Sorry if I experienced a fault while trying to page that all back in. ;)",
+      "parentUuid": "6204bae4_99492ed1",
       "revId": "fb2e4c92afa2f0100cfff4d4c33d01b85d837b2b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
