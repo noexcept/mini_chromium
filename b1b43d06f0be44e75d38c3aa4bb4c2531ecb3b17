@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd74c3d9_8c3e1e68",
+        "filename": "build/win_helper.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-02-12T20:01:17Z",
+      "side": 1,
+      "message": "Make both of these os.pardir.",
+      "range": {
+        "startLine": 194,
+        "startChar": 52,
+        "endLine": 194,
+        "endChar": 56
+      },
+      "revId": "b1b43d06f0be44e75d38c3aa4bb4c2531ecb3b17",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
