@@ -100,6 +100,8 @@ config("default") {
       "-fstack-protector-all",  # Implies -fstack-protector
       "-fvisibility-inlines-hidden",
       "-fvisibility=hidden",
+
+      "-Wno-c++98-compat-extra-semi",
     ]
 
     cflags_c = [ "-std=c99" ]

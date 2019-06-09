@@ -1,0 +1,148 @@
+# Copyright 2019 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+licenses(["notice"])  # BSD 3-clause
+
+cc_library(
+    name = "headers",
+    hdrs = [
+        "atomicops.h",
+        "atomicops_internals_atomicword_compat.h",
+        "atomicops_internals_portable.h",
+        "auto_reset.h",
+        "bit_cast.h",
+        "compiler_specific.h",
+        "debug/alias.h",
+        "files/file_path.h",
+        "files/file_util.h",
+        "files/scoped_file.h",
+        "format_macros.h",
+        "logging.h",
+        "macros.h",
+        "memory/free_deleter.h",
+        "memory/scoped_policy.h",
+        "metrics/histogram_functions.h",
+        "metrics/histogram_macros.h",
+        "metrics/persistent_histogram_allocator.h",
+        "numerics/checked_math.h",
+        "numerics/checked_math_impl.h",
+        "numerics/clamped_math.h",
+        "numerics/clamped_math_impl.h",
+        "numerics/safe_conversions.h",
+        "numerics/safe_conversions_arm_impl.h",
+        "numerics/safe_conversions_impl.h",
+        "numerics/safe_math.h",
+        "numerics/safe_math_arm_impl.h",
+        "numerics/safe_math_clang_gcc_impl.h",
+        "numerics/safe_math_shared_impl.h",
+        "process/memory.h",
+        "process/process_metrics.h",
+        "rand_util.h",
+        "scoped_clear_errno.h",
+        "scoped_generic.h",
+        "stl_util.h",
+        "strings/string16.h",
+        "strings/string_number_conversions.h",
+        "strings/string_piece.h",
+        "strings/string_util.h",
+        "strings/stringprintf.h",
+        "strings/sys_string_conversions.h",
+        "strings/utf_string_conversion_utils.h",
+        "strings/utf_string_conversions.h",
+        "synchronization/condition_variable.h",
+        "synchronization/lock.h",
+        "synchronization/lock_impl.h",
+        "sys_byteorder.h",
+        "template_util.h",
+        "third_party/icu/icu_utf.h",
+        "threading/thread_local_storage.h",
+    ] + [
+        # if (mini_chromium_is_posix || mini_chromium_is_fuchsia)
+        "posix/eintr_wrapper.h",
+        "strings/string_util_posix.h",
+        "posix/safe_strerror.h",
+    ] + [
+        # if (mini_chromium_is_mac)
+        "mac/foundation_util.h",
+        "mac/mach_logging.h",
+        "mac/scoped_cftyperef.h",
+        "mac/scoped_ioobject.h",
+        "mac/scoped_launch_data.h",
+        "mac/scoped_mach_port.h",
+        "mac/scoped_mach_vm.h",
+        "mac/scoped_nsautorelease_pool.h",
+        "mac/scoped_nsobject.h",
+        "mac/scoped_typeref.h",
+    ],
+    include_prefix = "base",
+    deps = [
+        "//build:build_config",
+    ],
+)
+
+objc_library(
+    name = "mac",
+    copts = [
+        "-std=c++14",
+    ],
+    non_arc_srcs = [
+        # if (mini_chromium_is_mac)
+        "mac/foundation_util.mm",
+        "mac/scoped_nsautorelease_pool.mm",
+        "strings/sys_string_conversions_mac.mm",
+    ],
+    sdk_frameworks = [
+        # if (mini_chromium_is_mac)
+        "ApplicationServices",
+        "CoreFoundation",
+        "Foundation",
+        "IOKit",
+        "Security",
+    ],
+    deps = [
+        ":headers",
+    ],
+)
+
+cc_library(
+    name = "base",
+    srcs = [
+        "debug/alias.cc",
+        "files/file_path.cc",
+        "files/scoped_file.cc",
+        "logging.cc",
+        "process/memory.cc",
+        "rand_util.cc",
+        "strings/string16.cc",
+        "strings/string_number_conversions.cc",
+        "strings/stringprintf.cc",
+        "strings/utf_string_conversion_utils.cc",
+        "strings/utf_string_conversions.cc",
+        "synchronization/lock.cc",
+        "third_party/icu/icu_utf.cc",
+        "threading/thread_local_storage.cc",
+    ] + [
+        # if (mini_chromium_is_posix || mini_chromium_is_fuchsia)
+        "files/file_util_posix.cc",
+        "posix/safe_strerror.cc",
+        "process/process_metrics_posix.cc",
+        "synchronization/condition_variable_posix.cc",
+        "synchronization/lock_impl_posix.cc",
+        "threading/thread_local_storage_posix.cc",
+    ] + [
+        # if (mini_chromium_is_mac)
+        "mac/close_nocancel.cc",
+        "mac/mach_logging.cc",
+        "mac/scoped_mach_port.cc",
+        "mac/scoped_mach_vm.cc",
+    ],
+    include_prefix = "base",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":headers",
+    ] + [
+        # if (mini_chromium_is_mac)
+        ":mac",
+    ],
+)
