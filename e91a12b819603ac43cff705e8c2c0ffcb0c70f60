@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5845920c_82fadf0d",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-06-20T13:45:14Z",
+      "side": 1,
+      "message": "Rather than testing the value of the “ml” variable, this would be better if it were part of the conditional cascade above, which can be modified slightly to handle this:\n\n  if (invoker.current_cpu \u003d\u003d \"arm64\") {\n    ml \u003d \"armasm64.exe\"\n    command \u003d …  # arm64 (armasm64)-specific\n  } else {\n    if (invoker.current_cpu \u003d\u003d \"x86\") {\n      ml \u003d \"ml.exe\"\n    } else if (invoker.current_cpu \u003d\u003d \"x64\") {\n      ml \u003d \"ml64.exe\"\n    }\n    command \u003d …  # x86-family (ml, ml64)-specific\n  }",
+      "revId": "e91a12b819603ac43cff705e8c2c0ffcb0c70f60",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
