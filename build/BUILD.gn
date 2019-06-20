@@ -513,7 +513,12 @@ if (mini_chromium_is_win) {
         } else if (invoker.current_cpu == "arm64"){
           ml = "armasm64.exe"
         }
-        command = "$python_path $helper_path asm-wrapper $env $ml {{defines}} {{include_dirs}} {{asmflags}} /c /Fo{{output}} {{source}}"
+
+        if (ml == "ml.exe" || ml == "ml64.exe") {
+          command = "$python_path $helper_path asm-wrapper $env $ml {{defines}} {{include_dirs}} {{asmflags}} /c /Fo{{output}} {{source}}"
+        } else {
+          command = "$python_path $helper_path asm-wrapper $env $ml {{include_dirs}} {{asmflags}} -o {{output}} {{source}}"
+        }
         description = "ASM {{output}}"
         outputs = [
           "{{source_out_dir}}/{{label_name}}.{{source_name_part}}.obj",
