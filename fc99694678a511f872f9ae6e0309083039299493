@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4deb6661_5c16f261",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-06-21T13:56:38Z",
+      "side": 1,
+      "message": "Omit “Bug:” if there isn’t anything good to link to.",
+      "revId": "fc99694678a511f872f9ae6e0309083039299493",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8d1b0e2_3e7ee58c",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 4
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-06-21T13:56:38Z",
+      "side": 1,
+      "message": "This and line 519 are obvious from context. I was just giving a hint in my snippet to show where it made sense for “comment” to be set. I don’t think that the comments are necessary here.",
+      "revId": "fc99694678a511f872f9ae6e0309083039299493",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
