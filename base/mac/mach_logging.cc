@@ -4,12 +4,15 @@
 
 #include "base/mac/mach_logging.h"
 
-#include <servers/bootstrap.h>
-
 #include <iomanip>
 #include <string>
 
 #include "base/strings/stringprintf.h"
+#include "build/build_config.h"
+
+#if !defined(OS_IOS)
+#include <servers/bootstrap.h>
+#endif  // !OS_IOS
 
 namespace {
 
@@ -41,6 +44,8 @@ MachLogMessage::~MachLogMessage() {
            << mach_error_string(mach_err_)
            << FormatMachErrorNumber(mach_err_);
 }
+
+#if !defined(OS_IOS)
 
 BootstrapLogMessage::BootstrapLogMessage(const char* function,
                                          const char* file_path,
@@ -79,5 +84,7 @@ BootstrapLogMessage::~BootstrapLogMessage() {
     }
   }
 }
+
+#endif  // !OS_IOS
 
 }  // namespace logging
