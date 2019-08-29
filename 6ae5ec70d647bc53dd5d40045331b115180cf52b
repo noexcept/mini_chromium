@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f91406e_96ad70f5",
+        "filename": "base/logging.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-08-29T18:04:20Z",
+      "side": 1,
+      "message": "Lowercase m, it’s macOS now.",
+      "range": {
+        "startLine": 21,
+        "startChar": 6,
+        "endLine": 21,
+        "endChar": 7
+      },
+      "revId": "6ae5ec70d647bc53dd5d40045331b115180cf52b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e477569b_b72f166d",
+        "filename": "base/mac/foundation_util.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-08-29T18:04:20Z",
+      "side": 1,
+      "message": "#include \"build/build_config.h\"",
+      "revId": "6ae5ec70d647bc53dd5d40045331b115180cf52b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62c67bd6_65b6f023",
+        "filename": "base/mac/mach_logging.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-08-29T18:04:20Z",
+      "side": 1,
+      "message": "In the header, not here.",
+      "revId": "6ae5ec70d647bc53dd5d40045331b115180cf52b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d37ce74_a247aa03",
+        "filename": "base/mac/mach_logging.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-08-29T18:04:20Z",
+      "side": 1,
+      "message": "#include \"build/build_config.h\"",
+      "revId": "6ae5ec70d647bc53dd5d40045331b115180cf52b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
