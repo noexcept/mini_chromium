@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "535334f7_99875a7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-03T19:44:05Z",
+      "side": 1,
+      "message": "Not a great commit message in the mini_chromium repository. Assume that messages in here are already read with the context of this being mini_chromium.\n\nMy suggestion: “iOS build support”.",
+      "revId": "e31c43dd1770b59c8945168819992a594a902810",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
