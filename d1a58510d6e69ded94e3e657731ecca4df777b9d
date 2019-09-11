@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ed7a6d0_37be58cd",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T16:45:59Z",
+      "side": 1,
+      "message": "Copied and adapted from the version in Chromium.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6875aa34_a72b84e7",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T16:45:59Z",
+      "side": 1,
+      "message": "Do I need to prefix all of these variables with mini_chromium_?  They generally mirror variables that exist in chromium.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea8ce367_8f39519c",
+        "filename": "build/ios/plist_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T16:45:59Z",
+      "side": 1,
+      "message": "Copied straight from the Chromium repo.  Is it ok to keep the original header?  Are there any license issues with copying this file?",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25e9cca7_d3b2ee35",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T16:45:59Z",
+      "side": 1,
+      "message": "Copied and heavily simplified from the version in Chromium.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc23d6db_74eb65d2",
+        "filename": "build/ios/sdk_info.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T16:45:59Z",
+      "side": 1,
+      "message": "Copied straight from Chromium.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
