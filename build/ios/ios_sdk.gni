@@ -1,0 +1,59 @@
+# Copyright 2015 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+declare_args() {
+  # The minimum runtime iOS version that built products are expected to run
+  # on.  If empty, the toolchain will choose its own default, typically the
+  # most recent OS version.
+  mini_chromium_ios_deployment_target = "12.0"
+
+  # SDK path to use. When empty this will use the default SDK based on the
+  # value of use_ios_simulator.
+  mini_chromium_ios_sdk_path = ""
+  mini_chromium_ios_sdk_name = ""
+  mini_chromium_ios_sdk_version = ""
+  mini_chromium_ios_sdk_platform = ""
+  mini_chromium_ios_sdk_platform_path = ""
+  mini_chromium_xcode_version = ""
+  mini_chromium_xcode_version_int = 0
+  mini_chromium_xcode_build = ""
+  mini_chromium_machine_os_build = ""
+
+  # Prefix for CFBundleIdentifier property of iOS bundles (correspond to the
+  # "Organization Identifier" in Xcode). Code signing will fail if no mobile
+  # provisioning for the selected code signing identify support that prefix.
+  mini_chromium_ios_app_bundle_id_prefix = "org.chromium"
+}
+
+_use_ios_simulator = current_cpu == "x86" || current_cpu == "x64"
+
+if (mini_chromium_ios_sdk_path == "") {
+  # Compute default target.
+  if (_use_ios_simulator) {
+    mini_chromium_ios_sdk_name = "iphonesimulator"
+    mini_chromium_ios_sdk_platform = "iPhoneSimulator"
+  } else {
+    mini_chromium_ios_sdk_name = "iphoneos"
+    mini_chromium_ios_sdk_platform = "iPhoneOS"
+  }
+
+  ios_sdk_info_args = [ "--get_sdk_info" ]
+  ios_sdk_info_args += [ mini_chromium_ios_sdk_name ]
+  _ios_sdk_result = exec_script("sdk_info.py", ios_sdk_info_args, "scope")
+  mini_chromium_ios_sdk_path = _ios_sdk_result.sdk_path
+  mini_chromium_ios_sdk_version = _ios_sdk_result.sdk_version
+  mini_chromium_ios_sdk_platform_path = _ios_sdk_result.sdk_platform_path
+  mini_chromium_ios_sdk_build = _ios_sdk_result.sdk_build
+  mini_chromium_xcode_version = _ios_sdk_result.xcode_version
+  mini_chromium_xcode_version_int = _ios_sdk_result.xcode_version_int
+  mini_chromium_xcode_build = _ios_sdk_result.xcode_build
+  mini_chromium_machine_os_build = _ios_sdk_result.machine_os_build
+  if (_use_ios_simulator) {
+    # This is weird, but Xcode sets DTPlatformBuild to an empty field for
+    # simulator builds.
+    mini_chromium_ios_platform_build = ""
+  } else {
+    mini_chromium_ios_platform_build = ios_sdk_build
+  }
+}
