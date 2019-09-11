@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ade0a635_ffc6575c",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T18:18:53Z",
+      "side": 1,
+      "message": "These variables could come from either chromium or mini_chromium, but for now crashpad doesn\u0027t actually read them, so namespacing shouldn\u0027t be needed.",
+      "parentUuid": "bf9ce0c9_225a65b0",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c6bf5216_3c045ad3",
         "filename": "build/ios/ios_sdk.gni",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2019-09-11T17:27:11Z",
       "side": 1,
       "message": "…but should all of these really even be declare_args? declare_args is for things that the user might want to change in args.gn.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5e00171_eb66d2be",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T18:18:53Z",
+      "side": 1,
+      "message": "A few should, but I\u0027ll try to move the rest out.",
+      "parentUuid": "c6bf5216_3c045ad3",
       "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -117,6 +153,23 @@
       "writtenOn": "2019-09-11T16:45:59Z",
       "side": 1,
       "message": "Copied and heavily simplified from the version in Chromium.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "086b0c50_36186b78",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-11T18:18:53Z",
+      "side": 1,
+      "message": "Is there a way to invoke this script from a template without using an absolute path?  As written this assumes mini_chromium lives in a specific location.",
       "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
