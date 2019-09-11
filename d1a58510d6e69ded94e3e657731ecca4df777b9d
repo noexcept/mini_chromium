@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "bf9ce0c9_225a65b0",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-11T17:27:11Z",
+      "side": 1,
+      "message": "\u003e Do I need to prefix all of these variables with mini_chromium_?\n\nHopefully not for declare_args things. For non-declare_args, it’s dependent on use. We have things like “mini_chromium_is_mac” for silly integration reasons: that OR is_mac feeds crashpad_is_mac which is what we use in Crashpad, but there was some kind of problem when we tried to just have a single is_mac that could come from disparate sources.",
+      "parentUuid": "6875aa34_a72b84e7",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6bf5216_3c045ad3",
+        "filename": "build/ios/ios_sdk.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-11T17:27:11Z",
+      "side": 1,
+      "message": "…but should all of these really even be declare_args? declare_args is for things that the user might want to change in args.gn.",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea8ce367_8f39519c",
         "filename": "build/ios/plist_util.py",
         "patchSetId": 1
@@ -47,6 +82,24 @@
       "writtenOn": "2019-09-11T16:45:59Z",
       "side": 1,
       "message": "Copied straight from the Chromium repo.  Is it ok to keep the original header?  Are there any license issues with copying this file?",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2656b8f8_752d9442",
+        "filename": "build/ios/plist_util.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-11T17:27:11Z",
+      "side": 1,
+      "message": "\u003e Copied straight from the Chromium repo.  Is it ok to keep the original header?\n\nIn mini_chromium, yes, use the original Chromium license header with the original Chromium date.\n\n\u003e Are there any license issues with copying this file?\n\nNo, none.",
+      "parentUuid": "ea8ce367_8f39519c",
       "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
