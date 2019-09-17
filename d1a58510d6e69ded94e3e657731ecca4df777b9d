@@ -176,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "79cbf451_b079a562",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-17T20:05:41Z",
+      "side": 1,
+      "message": "\u003e Is there a way to invoke this script from a template without using an absolute path?  As written this assumes mini_chromium lives in a specific location.\n\nAs you point out, this isn’t entirely correct. This won’t work with the “external” build type, for example. (Not that we know that we’ll ever have anyone that cares about that…)\n\nCan you use rebase_path() here?\n\nhttps://gn.googlesource.com/gn/+/master/docs/reference.md#func_rebase_path",
+      "parentUuid": "086b0c50_36186b78",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bc23d6db_74eb65d2",
         "filename": "build/ios/sdk_info.py",
         "patchSetId": 1

@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "791d39f4_4ad67dfb",
+        "filename": "build/ios/plist_util.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-17T20:05:41Z",
+      "side": 1,
+      "message": "#!/usr/bin/env python\n(blank line)\n# Copyright 2016 …",
+      "revId": "5e1955f1e3e6e6c80f499f766f6feb4d3d8a9f7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9743dbf1_4ef22d92",
+        "filename": "build/ios/sdk_info.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-09-17T20:05:41Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "5e1955f1e3e6e6c80f499f766f6feb4d3d8a9f7c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
