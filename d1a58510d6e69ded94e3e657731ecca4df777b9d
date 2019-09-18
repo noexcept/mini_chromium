@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "6580ddc7_a7aa3e8b",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-09-18T13:50:44Z",
+      "side": 1,
+      "message": "Chatted with sdefresne and there\u0027s no easy way to use relative paths in templates.  I can add a mini_chromium_root_dir variable to each of these templates and construct the correct path that way, which would require the caller to set the appropriate value based on where mini_chromium lives.\n\nSince adding a variable increases complexity and we don\u0027t have a clear use case for it, I\u0027m inclined to leave this hardcoded for now.",
+      "parentUuid": "79cbf451_b079a562",
+      "revId": "d1a58510d6e69ded94e3e657731ecca4df777b9d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bc23d6db_74eb65d2",
         "filename": "build/ios/sdk_info.py",
         "patchSetId": 1
