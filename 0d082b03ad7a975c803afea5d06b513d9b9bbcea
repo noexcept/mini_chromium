@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "94d08f7f_745e37c8",
+        "filename": "build/ios/Module-Info.plist",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2019-11-01T15:19:15Z",
+      "side": 1,
+      "message": "This one, having spaces and not tabs, is obviously not canonical.\n\nCan you run each of these plists through “plutil -convert xml1” before committing to make sure they’re all canonical?",
+      "revId": "0d082b03ad7a975c803afea5d06b513d9b9bbcea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
