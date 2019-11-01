@@ -16,6 +16,24 @@
       "revId": "0d082b03ad7a975c803afea5d06b513d9b9bbcea",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d825125_52cbbcd5",
+        "filename": "build/ios/Module-Info.plist",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2019-11-01T15:31:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "94d08f7f_745e37c8",
+      "revId": "0d082b03ad7a975c803afea5d06b513d9b9bbcea",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
