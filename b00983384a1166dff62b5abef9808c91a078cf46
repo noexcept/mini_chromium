@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fe383c4_3f9b0052",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-01-29T20:46:21Z",
+      "side": 1,
+      "message": "Except if mini_chromium_is_win, on the basis of the kind of thing that happens on line 66.",
+      "revId": "b00983384a1166dff62b5abef9808c91a078cf46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "399777c7_d6b78c38",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-01-29T20:46:21Z",
+      "side": 1,
+      "message": "Please use just -g.",
+      "range": {
+        "startLine": 46,
+        "startChar": 16,
+        "endLine": 46,
+        "endChar": 17
+      },
+      "revId": "b00983384a1166dff62b5abef9808c91a078cf46",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
