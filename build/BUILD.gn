@@ -43,6 +43,7 @@ if (mini_chromium_is_mac) {
 }
 
 config("debug") {
+  cflags = [ "-g2" ]
 }
 
 config("release") {
