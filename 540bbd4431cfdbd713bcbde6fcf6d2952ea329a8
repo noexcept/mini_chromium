@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f03cc565_2b7dadf1",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1000119
+      },
+      "writtenOn": "2020-01-31T15:11:44Z",
+      "side": 1,
+      "message": "If I remove this block, then I get the following error message:\n\nERROR at //third_party/mini_chromium/mini_chromium/build/ios/rules.gni:517:31: Assignment had no effect.\n    extra_system_frameworks \u003d [\n                              ^\nYou set the variable \"extra_system_frameworks\" here and it was unused before it went\nout of scope.\nSee //third_party/mini_chromium/mini_chromium/build/ios/rules.gni:507:3: whence it was called.\n  ios_app_bundle(_host_target) {\n  ^-----------------------------\nSee //build/test.gni:31:7: whence it was called.\n      ios_xctest_test(target_name) {\n      ^-----------------------------\nSee //BUILD.gn:137:3: whence it was called.\n  test(\"crashpad_client_test\") {\n  ^-----------------------------\n\n\nWhy would storing extra_system_frameworks into a temp variable affect whether or not it is forwarded at line 303 below?  I\u0027m not even using the temp variable anywhere.\n\nI\u0027ve confirmed that the extra frameworks only get copied if I have line 303 present.",
+      "revId": "540bbd4431cfdbd713bcbde6fcf6d2952ea329a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
