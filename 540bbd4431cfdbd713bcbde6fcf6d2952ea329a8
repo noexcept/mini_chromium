@@ -16,6 +16,24 @@
       "revId": "540bbd4431cfdbd713bcbde6fcf6d2952ea329a8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf51975f_fdf710e2",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 2
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2020-01-31T16:01:58Z",
+      "side": 1,
+      "message": "As replied in chat, the reason this assignment \"works\" is that:\n\n1. by assigning the variable to a private variable, it is marked as used\n\n2. as the assignment is in a template body, it is marked as used in all function scopes below (this is weird, but this allow defining non-private variable in a template body without having error in all function scopes)\n\n3. private variable are not subject to unused check\n\nThe proper fix however is to pass not forward the extra_system_frameworks variable in the source_set line 303.",
+      "parentUuid": "f03cc565_2b7dadf1",
+      "revId": "540bbd4431cfdbd713bcbde6fcf6d2952ea329a8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
