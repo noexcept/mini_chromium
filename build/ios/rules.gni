@@ -204,6 +204,13 @@ template("ios_app_bundle") {
     _plist_extra_substitutions += invoker.extra_substitutions
   }
 
+  _extra_system_frameworks = []
+  if (defined(invoker.extra_system_frameworks)) {
+    _extra_system_frameworks = invoker.extra_system_frameworks
+  } else {
+    _extra_system_frameworks = []
+  }
+
   _executable_sources_target = _target_name + "_executable_sources"
   _generate_executable_target = _target_name + "_generate_executable"
   source_set(_executable_sources_target) {
@@ -290,8 +297,10 @@ template("ios_app_bundle") {
   create_signed_bundle(_target_name) {
     forward_variables_from(invoker,
                            [
+                             "bundle_deps",
                              "data_deps",
                              "deps",
+                             "extra_system_frameworks",
                              "public_configs",
                              "public_deps",
                              "testonly",
@@ -463,6 +472,82 @@ template("ios_xctest_bundle") {
     ]
   }
 }
+
+
+
+
+
+
+
+
+template("ios_xctest_test") {
+  # Invokers must specify their own target for the xctest module.
+  assert(defined(invoker.xctest_module_target),
+         "xctest_module_target is required.")
+
+  _target_name = target_name
+  _output_name = target_name
+
+  _xctest_target = _target_name + "_module"
+  _xctest_output = _output_name + "_module"
+
+  _host_target = _target_name
+  _host_output = _output_name
+
+  _xctest_module_target = invoker.xctest_module_target
+
+  ios_xctest_bundle(_xctest_target) {
+    output_name = _xctest_output
+    product_type = _ios_xcode_xctest_bundle_id
+    host_target = _host_target
+    xcode_test_application_name = _host_output
+
+    deps = [ _xctest_module_target ]
+  }
+
+  ios_app_bundle(_host_target) {
+    forward_variables_from(invoker, "*", [ "testonly" ])
+
+    testonly = true
+    #configs += [ "//build/config/ios:xctest_config" ]
+
+    # Xcode needs the following frameworks installed in the application (and
+    # signed) for the XCTest to run, so install them using
+    # extra_system_frameworks.
+    _ios_platform_library = "$ios_sdk_platform_path/Developer/Library"
+    extra_system_frameworks = [
+      "$_ios_platform_library/Frameworks/XCTest.framework",
+      "$ios_sdk_platform_path/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework",
+      "$ios_sdk_platform_path/Developer/usr/lib/libXCTestBundleInject.dylib",
+    ]
+
+    _xctest_bundle = _xctest_target + "_bundle"
+    if (current_toolchain == default_toolchain) {
+      if (!defined(bundle_deps)) {
+        bundle_deps = []
+      }
+      bundle_deps += [ ":$_xctest_bundle" ]
+    }
+
+    if (!defined(ldflags)) {
+      ldflags = []
+    }
+    ldflags += [
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "@executable_path/Frameworks",
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "@loader_path/Frameworks",
+    ]
+  }
+}
+
+
+
+
 
 template("ios_xcuitest_test_runner_bundle") {
   assert(defined(invoker.xctest_bundle),
