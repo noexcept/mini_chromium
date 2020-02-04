@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fef9262_9c49c33c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-04T19:13:36Z",
+      "side": 1,
+      "message": "work with Microsoft\u0027s toolchain. Crashpad still supports building with\nthis toolchain.",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "f8c13c583342a8fdd4fee02a09d04f86c19854d0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
