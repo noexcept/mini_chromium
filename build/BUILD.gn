@@ -42,6 +42,41 @@ if (mini_chromium_is_mac) {
   }
 }
 
+declare_args() {
+  # Extra flags passed to the C compiler.
+  # A list of strings.
+  # "cflags" are passed to all invocations of the C, C++, Objective C, and
+  # Objective C++ compilers.
+  extra_cflags = []
+
+  # Extra flags passed to the C compiler.
+  # A list of strings.
+  extra_cflags_c = []
+
+  # Extra flags passed to the C++ compiler.
+  # A list of strings.
+  extra_cflags_cc = []
+
+  # Extra flags passed to the linker.
+  # A list of strings.
+  # These flags are passed on the command-line to the linker and generally
+  # specify various linking options.
+  extra_ldflags = []
+
+  # Extra arguments passed to static_library archiver
+  # A list of flags passed to the archive/lib command that creates static
+  # libraries.
+  extra_arflags = []
+}
+
+config("extra_flags") {
+  cflags = extra_cflags
+  cflags_c = extra_cflags_c
+  cflags_cc = extra_cflags_cc
+  ldflags = extra_ldflags
+  arflags = extra_arflags
+}
+
 config("debug") {
   if (!mini_chromium_is_win) {
     cflags = [ "-g" ]
