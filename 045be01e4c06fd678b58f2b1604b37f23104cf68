@@ -34,6 +34,24 @@
       "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ada89c42_9318ae4a",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T19:33:27Z",
+      "side": 1,
+      "message": "\u003e If I understand correctly from https://gn.googlesource.com/gn/+/master/docs/reference.md#configs-on-a-config, wouldn\u0027t this also change the order that the flags are applied?\n\nYes, is that a problem for you?\n\nFlags can still be applied after this config even as you have it placed now, so if you were hoping to be the last flags on the command line just by being last in here, it’s not going to work.",
+      "parentUuid": "5ab205b2_47bc200e",
+      "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
