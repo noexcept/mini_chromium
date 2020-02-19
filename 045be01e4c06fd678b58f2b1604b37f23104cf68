@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b1d7984_e05b44d5",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T19:15:50Z",
+      "side": 1,
+      "message": "It’s clearer to do this unconditionally by assignment (\u003d instead of +\u003d) just above line 315, and then make the :debug and :release additions use the +\u003d append form.",
+      "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
