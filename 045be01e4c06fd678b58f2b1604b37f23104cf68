@@ -16,6 +16,24 @@
       "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ab205b2_47bc200e",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1335120
+      },
+      "writtenOn": "2020-02-19T19:31:33Z",
+      "side": 1,
+      "message": "If I understand correctly from https://gn.googlesource.com/gn/+/master/docs/reference.md#configs-on-a-config, wouldn\u0027t this also change the order that the flags are applied?",
+      "parentUuid": "5b1d7984_e05b44d5",
+      "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
