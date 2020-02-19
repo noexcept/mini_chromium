@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe2f1d_06c7cffb",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T18:37:42Z",
+      "side": 1,
+      "message": "Following up from https://chromium-review.googlesource.com/c/crashpad/crashpad/+/1692990\n\nMy comment at https://chromium-review.googlesource.com/c/crashpad/crashpad/+/1692990/1/build/BUILDCONFIG.gn#56 meant that these extra flags should be applied by mini_chromium/build:default.\n\nAs written now, this imposes a requirement on all consumers to add this extra_flags config locally wherever needed, but I think it’s more desirable to have it applied directly by mini_chromium/build:default, which is what, for example, Crashpad is already using to get flags from mini_chromium.",
+      "revId": "7990e111d776107a25ea9710900e6fd03515d172",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
