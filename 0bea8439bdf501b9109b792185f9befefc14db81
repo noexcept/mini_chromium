@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1d0d82b2_d443e96a",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T20:10:56Z",
+      "side": 1,
+      "message": "The other thing you could do would be to not prime cflags like this via a config, but to bring them into the tool invocations in the toolchain specifications below. That would be most like what Chromium does. See https://chromium.googlesource.com/chromium/src/+/14b686f408617c9953d665171f550ea0a9fb06b7/build/toolchain/gcc_toolchain.gni, for example.",
+      "revId": "0bea8439bdf501b9109b792185f9befefc14db81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f0b5f5d_210ea8b4",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 5
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T20:10:56Z",
+      "side": 1,
+      "message": "…this is where I’m talking about…",
+      "revId": "0bea8439bdf501b9109b792185f9befefc14db81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "727f6e2d_e326a6d5",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 5
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-02-19T20:10:56Z",
+      "side": 1,
+      "message": "…and this too.",
+      "revId": "0bea8439bdf501b9109b792185f9befefc14db81",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
