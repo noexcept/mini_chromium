@@ -70,6 +70,24 @@
       "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71d263b4_747a3d6f",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 3
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-04T19:10:00Z",
+      "side": 1,
+      "message": "(resolving open comment)",
+      "parentUuid": "0beb338f_a6d845af",
+      "revId": "045be01e4c06fd678b58f2b1604b37f23104cf68",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
