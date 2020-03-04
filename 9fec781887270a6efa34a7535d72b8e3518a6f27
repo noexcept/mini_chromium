@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5cdafebf_cecff81c",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-04T18:46:00Z",
+      "side": 1,
+      "message": "Nit: Objective-C, Objective-C++ (with hyphens). Same on lines 60 an 64.",
+      "range": {
+        "startLine": 48,
+        "startChar": 58,
+        "endLine": 48,
+        "endChar": 69
+      },
+      "revId": "9fec781887270a6efa34a7535d72b8e3518a6f27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
