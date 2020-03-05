@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23fe7477_a18fe177",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-05T03:30:33Z",
+      "side": 1,
+      "message": "Remove the blank spaces on this line.",
+      "revId": "ae37cbea34607b7c014b3e800f320289c9df1580",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
