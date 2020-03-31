@@ -33,6 +33,24 @@
       "revId": "ba89d618b65b23e232e9bbadb96794b333c69e11",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d99f60ea_46404c5b",
+        "filename": "build/ios/strip_arm64e.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2020-03-31T20:06:47Z",
+      "side": 1,
+      "message": "Weird, I just cut and pasted this from the chromium CL, not sure where all the spaces went.\n\nI re-cut-and-pasted, and added a #!/usr/bin/env python at the top of the file.",
+      "parentUuid": "da4562f4_fad76370",
+      "revId": "ba89d618b65b23e232e9bbadb96794b333c69e11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
