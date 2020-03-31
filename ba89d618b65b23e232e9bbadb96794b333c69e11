@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d664512e_7d63c095",
+        "filename": "build/ios/strip_arm64e.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-31T19:35:53Z",
+      "side": 1,
+      "message": "#!/usr/bin/env python\n(blank line)\n# Copyright...\n# Blah blah\n(blank line)\n\"\"\"Your stuff\"\"\"\n(blank line)\nimport ...\nimport ...\n(blank line)\ndef ...",
+      "revId": "ba89d618b65b23e232e9bbadb96794b333c69e11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da4562f4_fad76370",
+        "filename": "build/ios/strip_arm64e.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-31T19:35:53Z",
+      "side": 1,
+      "message": "I mean, there are no blank lines where you need them, except for the first byte of the file where you don\u0027t.\n\nThis is unnecessarily hard to read.",
+      "revId": "ba89d618b65b23e232e9bbadb96794b333c69e11",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
