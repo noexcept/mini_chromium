@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "341a4cc6_d80e9672",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 5
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-31T20:29:15Z",
+      "side": 1,
+      "message": "Stay within 80 columns.",
+      "revId": "4138b0c3489ad9790677b96bb365a0f72b258ba5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88e1740a_729ba962",
+        "filename": "build/ios/strip_arm64e.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-03-31T20:29:15Z",
+      "side": 1,
+      "message": "I think this could probably be simplified a little bit, but if it’s just a copy of what’s in Chromium, I guess it’s fine as-is.",
+      "revId": "4138b0c3489ad9790677b96bb365a0f72b258ba5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
