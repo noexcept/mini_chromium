@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f93ad08c_86a85190",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 5
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2020-03-31T21:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "341a4cc6_d80e9672",
+      "revId": "4138b0c3489ad9790677b96bb365a0f72b258ba5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "88e1740a_729ba962",
         "filename": "build/ios/strip_arm64e.py",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "4138b0c3489ad9790677b96bb365a0f72b258ba5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a475b3d7_2ff48ba9",
+        "filename": "build/ios/strip_arm64e.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2020-03-31T21:12:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88e1740a_729ba962",
+      "revId": "4138b0c3489ad9790677b96bb365a0f72b258ba5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
