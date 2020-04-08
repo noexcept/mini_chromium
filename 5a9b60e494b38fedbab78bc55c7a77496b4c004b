@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "225e8dde_78e49e04",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-08T20:07:22Z",
+      "side": 1,
+      "message": "Nope.",
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a53b8da7_9daade12",
+        "filename": "base/scoped_clear_last_error_win.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-08T20:07:22Z",
+      "side": 1,
+      "message": "We don’t use :: in here unless it’s necessary for disambiguation. Throughout this file.",
+      "range": {
+        "startLine": 12,
+        "startChar": 25,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc00535a_b9c0d7f2",
+        "filename": "base/strings/stringprintf.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-08T20:07:22Z",
+      "side": 1,
+      "message": "This is wrong. It needs to be ScopedClearLastErrorBase…",
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0039fecb_8799c8c0",
+        "filename": "base/strings/stringprintf.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-08T20:07:22Z",
+      "side": 1,
+      "message": "…because we’re referring to errno here, and not GetLastError on Windows.\n\nIncidentally, this is why I think that ScopedClearLastError/ScopedClearLastErrorBase are bad names, specifically when it comes to deciding between errno and something else.",
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
