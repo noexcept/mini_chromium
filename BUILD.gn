@@ -4,6 +4,6 @@
 
 group("mini_chromium") {
   deps = [
-    "//base",
+    "//base"
   ]
 }
