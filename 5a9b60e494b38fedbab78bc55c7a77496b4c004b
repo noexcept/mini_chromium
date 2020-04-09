@@ -91,6 +91,24 @@
       "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "368e77ee_05e6fa28",
+        "filename": "base/strings/stringprintf.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:18:40Z",
+      "side": 1,
+      "message": "\u003e ScopedClearLastError saves both errno and GetLastError (on windows). Review history says the intent was to avoid people needing to select which error saver to use.\n\u003e \n\u003e Looking at where they\u0027re used, I think all the cases (there aren\u0027t many) are only really interested in either errno or GetLastError() so they could be split apart.\n\nOh, OK. I missed the inheritance. I guess I focused on the constructor, where a ScopedClearLastErrorBase() in the initializer list would have been a reminder.",
+      "parentUuid": "70033e5d_b2ff4eab",
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
