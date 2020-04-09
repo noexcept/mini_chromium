@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56720c91_b438e60e",
+        "filename": "testing/BUILD.gn",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T18:22:53Z",
+      "side": 1,
+      "message": "Not +\u003d, just \u003d.",
+      "revId": "59a9d79f350ef45d65ca7376dc7516b02146d360",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f9d3ac6_7eaae662",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T18:22:53Z",
+      "side": 1,
+      "message": "No (c).",
+      "revId": "59a9d79f350ef45d65ca7376dc7516b02146d360",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa75e547_796b4f62",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T18:22:53Z",
+      "side": 1,
+      "message": "gtest/gtest.h is not a system header, so it should be in \"quotes\". And it should sort after build/build_config.h.\n\n(If it was a system header, then the blank line between sections for system and local headers would be missing.)",
+      "revId": "59a9d79f350ef45d65ca7376dc7516b02146d360",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
