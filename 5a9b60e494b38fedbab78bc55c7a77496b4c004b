@@ -73,6 +73,24 @@
       "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70033e5d_b2ff4eab",
+        "filename": "base/strings/stringprintf.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-04-09T16:12:54Z",
+      "side": 1,
+      "message": "ScopedClearLastError saves both errno and GetLastError (on windows). Review history says the intent was to avoid people needing to select which error saver to use.\n\nLooking at where they\u0027re used, I think all the cases (there aren\u0027t many) are only really interested in either errno or GetLastError() so they could be split apart.",
+      "parentUuid": "0039fecb_8799c8c0",
+      "revId": "5a9b60e494b38fedbab78bc55c7a77496b4c004b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
