@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "01a65b57_4404cdc1",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-04-09T16:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a30fc89_fcb108e5",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f3aa370_a859515e",
         "filename": "base/scoped_clear_last_error.h",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40f8b61e_24c4ff09",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-04-09T16:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f3aa370_a859515e",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 32
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     },
     {
       "key": {
@@ -85,6 +133,48 @@
       "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "396b7078_a885fffa",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-04-09T16:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b2bd7f6e_b612d519",
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "055f2acb_303701c5",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-04-09T16:53:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14a0f10c_92c59809",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
