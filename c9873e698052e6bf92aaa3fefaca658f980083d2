@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a30fc89_fcb108e5",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:33:57Z",
+      "side": 1,
+      "message": "No (c). Same in the other file.",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f3aa370_a859515e",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:33:57Z",
+      "side": 1,
+      "message": "You can remove all of these comments in mini_chromium if you like. We don’t need them when all we’re doing is duplicating a Chromium interface (which is pretty much all we do here). Line 35 too.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 32
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2bd7f6e_b612d519",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:33:57Z",
+      "side": 1,
+      "message": "Dunno why this wouldn’t be const like in the base class.",
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14a0f10c_92c59809",
+        "filename": "base/scoped_clear_last_error.h",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:33:57Z",
+      "side": 1,
+      "message": "I guess this is “DWORD without \u003cwindows.h\u003e”, but DWORD is unsigned long, not unsigned int.",
+      "range": {
+        "startLine": 42,
+        "startChar": 2,
+        "endLine": 42,
+        "endChar": 14
+      },
+      "revId": "c9873e698052e6bf92aaa3fefaca658f980083d2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
