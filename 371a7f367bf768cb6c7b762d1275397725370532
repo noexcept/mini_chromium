@@ -1,0 +1,198 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b2faa6be_8457cd79",
+        "filename": "BUILD.gn",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "How does this work? There’s no BUILD.gn in testing. (Did you forget to “git add?”\n\nI don’t think that we want to list testing in this target, though.",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cbe7a68_a5c88279",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "No (c). Just 2008, no range. Chromium was sloppy with these old files.",
+      "range": {
+        "startLine": 1,
+        "startChar": 13,
+        "endLine": 1,
+        "endChar": 26
+      },
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32ed8bcc_4ebb5aa4",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "Add a MINI_CHROMIUM prefix to anything you’re bringing into mini_chromium.",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 32
+      },
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb0c0876_ede185dd",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "We should use our own OS detection macros, not some other library’s. #include \"build/build_config.h\" and change this to defined(OS_MACOSX). Don’t forget the comment on line 34.\n\nBut you’ve got \u003cFoundation/Foundation.h\u003e outside of this #if, so this already won’t work on anything that’s not Apple.",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "979ce103_4d802787",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "Unused, remove.",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2335f440_73ebe11c",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "This comment has errors in substance (and spelling!) But in mini_chromium, you’re allowed to remove these interface documentation and implementation detail comments when they’re redundant with respect to Chromium! So maybe just do that. Lines 27–29 too.\n\nI would say something about the weirdo .h-no-.mm thing, because that is a difference from Chromium:\n\n// The implementation is in this header because mini_chromium does not directly\n// depend on googletest. Consumers are free to use this interface if they do\n// depend on googletest.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 73
+      },
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d453a46_fc9292d0",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "A better way to handle this, that eliminates the need for any comment, would have been:\n\n private:\n#if !defined(__has_feature) || !__has_feature(objc_arc)\n  using PoolType \u003d NSAutoreleasePool*;\n#else\n  using PoolType \u003d id;\n#endif\n\n  PoolType pool_;",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e86f55dc_79c5ec1e",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "#include \"base/macros.h\" and DISALLOW_COPY_AND_ASSIGN.",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff790fc1_204d9153",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "This should be “using”, which reads so much better than “typedef”:\n\nusing PlatformTest \u003d testing::Test;",
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ab6e25d_19476544",
+        "filename": "testing/platform_test.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-09T16:15:59Z",
+      "side": 1,
+      "message": "There are supposed to be two spaces before these //s.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 34
+      },
+      "revId": "371a7f367bf768cb6c7b762d1275397725370532",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
