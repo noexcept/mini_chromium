@@ -16,6 +16,24 @@
       "revId": "791e403b33348b43526b5e6cd5f434200dfccbf6",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a32e5266_febe3fe4",
+        "filename": "build/sysroot.gni",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-04-24T19:37:47Z",
+      "side": 1,
+      "message": "\u003e I don’t have this path (third_party/fuchsia/sdk/build). Is there something else that’s going to happen Crashpad-side that I’m not seeing yet?\n\nhttps://chromium-review.googlesource.com/c/2165494, got it now.",
+      "parentUuid": "e612abd8_7eaef546",
+      "revId": "791e403b33348b43526b5e6cd5f434200dfccbf6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
