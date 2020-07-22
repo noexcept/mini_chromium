@@ -16,6 +16,23 @@
       "revId": "97d2057a18d5718c728e3b506e0385a3fc2ad88c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b346767_619a1787",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-22T01:51:47Z",
+      "side": 1,
+      "message": "LGTM.\n\nWe already did this in Crashpad, guess we forgot about mini_chromium. We ought to roll buildtools in Crashpad to pick up a new GN there.",
+      "revId": "97d2057a18d5718c728e3b506e0385a3fc2ad88c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
