@@ -114,7 +114,7 @@ static_library("base") {
       "mac/scoped_typeref.h",
       "strings/sys_string_conversions_mac.mm",
     ]
-    libs = [
+    frameworks = [
       "ApplicationServices.framework",
       "CoreFoundation.framework",
       "Foundation.framework",
