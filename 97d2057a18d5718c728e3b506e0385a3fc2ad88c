@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee838400_50c69750",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2020-07-22T01:51:41Z",
+      "side": 1,
+      "message": "This lgtm if the bots are happy, but Crashpad get its gn from depot_tools so we\u0027ll need to ensure that\u0027s up to date.\n\nThere\u0027s no CQ here so I\u0027ll land this, updating DEPS in Crashpad will allow for tryjob-ing this change.",
+      "revId": "97d2057a18d5718c728e3b506e0385a3fc2ad88c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
