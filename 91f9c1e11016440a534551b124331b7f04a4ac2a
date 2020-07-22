@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "601ffe54_b86f2c0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000336
+      },
+      "writtenOn": "2020-07-22T01:26:13Z",
+      "side": 1,
+      "message": "I\u0027m a chromium committer still AFAIK but I don\u0027t have ACL rights for this repo.",
+      "revId": "91f9c1e11016440a534551b124331b7f04a4ac2a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
