@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a73c83a5_d8c2deb8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001385
+      },
+      "writtenOn": "2020-07-22T14:15:44Z",
+      "side": 1,
+      "message": "nit: Chromium refers to the platform as \"Mac\", in general, and we tend to use the [tag] form for tags.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "85e41f6b6cb5dd31521c4a06b15c25d3345a6194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1903ee2c_2dea4c82",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1001385
+      },
+      "writtenOn": "2020-07-22T14:15:44Z",
+      "side": 1,
+      "message": "fuchsia:56683",
+      "range": {
+        "startLine": 11,
+        "startChar": 5,
+        "endLine": 11,
+        "endChar": 20
+      },
+      "revId": "85e41f6b6cb5dd31521c4a06b15c25d3345a6194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d90f7ef_ec37d371",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001385
+      },
+      "writtenOn": "2020-07-22T14:15:44Z",
+      "side": 1,
+      "message": "Awesome - thanks!",
+      "revId": "85e41f6b6cb5dd31521c4a06b15c25d3345a6194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
