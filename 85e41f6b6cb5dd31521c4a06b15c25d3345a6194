@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "d2e5bd5e_2dda2331",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001385
+      },
+      "writtenOn": "2020-07-23T14:51:07Z",
+      "side": 1,
+      "message": "Thanks for the correction. :)",
+      "parentUuid": "170bdadb_e0c0f05c",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "85e41f6b6cb5dd31521c4a06b15c25d3345a6194",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1903ee2c_2dea4c82",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
