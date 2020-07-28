@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca79b4e2_2b7ebe66",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-28T01:41:15Z",
+      "side": 1,
+      "message": "and remove OS_MACOSX",
+      "revId": "1cb1731fb18a688ae91e463035f673fba293c456",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c863d08_7a1f70ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-28T01:41:15Z",
+      "side": 1,
+      "message": "A couple of IWYUs that aren’t your doing, but you can be their undoing. LG otherwise.",
+      "revId": "1cb1731fb18a688ae91e463035f673fba293c456",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
