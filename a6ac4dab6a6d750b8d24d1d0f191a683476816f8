@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2a9eaa6_3e0fedec",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-28T00:00:02Z",
+      "side": 1,
+      "message": "Thanks for bringing this here, Avi! LGTM with this change.",
+      "revId": "a6ac4dab6a6d750b8d24d1d0f191a683476816f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95d13d68_7d01d440",
+        "filename": "build/build_config.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-28T00:00:02Z",
+      "side": 1,
+      "message": "I don’t know what this is all about, but it’s more complicated than it needs to be. TARGET_OS_IOS won’t ever be 1 without TAGET_OS_IPHONE, so there’s no need to check both individually. The “#if defined(x) #if x” construct is a little unnecessary also. Let’s just do:\n\n  #if defined(TARGET_OS_OSX) \u0026\u0026 TARGET_OS_OSX\n  #define OS_MAC 1\n  #elif defined(TARGET_OS_IPHONE) \u0026\u0026 TARGET_OS_IPHONE\n  #define OS_IOS 1\n  #endif\n\nwhich is also more similar to what Chromium does. (But in Crashpad, we try to put Mac before iOS.)",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "a6ac4dab6a6d750b8d24d1d0f191a683476816f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
