@@ -16,6 +16,23 @@
       "revId": "fd4dd583cfad83ab04007e9e1770e5278f2fc481",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e5ace4f_d26024c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-07-28T01:25:09Z",
+      "side": 1,
+      "message": "LGTM\n\nThere are some OS_MACOSXes elsehwere in mini_chromium that we’ll need to clean up before getting rid of the #define altogether.",
+      "revId": "fd4dd583cfad83ab04007e9e1770e5278f2fc481",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
