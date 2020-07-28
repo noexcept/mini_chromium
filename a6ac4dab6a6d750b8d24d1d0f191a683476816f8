@@ -39,6 +39,30 @@
       "revId": "a6ac4dab6a6d750b8d24d1d0f191a683476816f8",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29408a45_46593196",
+        "filename": "build/build_config.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000023
+      },
+      "writtenOn": "2020-07-28T00:43:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95d13d68_7d01d440",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 28
+      },
+      "revId": "a6ac4dab6a6d750b8d24d1d0f191a683476816f8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
