@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7be8efce_df1a9d11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1437943
+      },
+      "writtenOn": "2020-08-06T22:44:31Z",
+      "side": 1,
+      "message": "Updated win_helper.py to detect VS build tools.",
+      "revId": "fee7a08a7dcd185f5cd0ad4a9cd4a640cdc2515b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
