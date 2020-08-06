@@ -176,9 +176,19 @@ class WinTool(object):
       # not be found.
       vswhere_path = os.path.join(os.environ.get('ProgramFiles(x86)'),
           'Microsoft Visual Studio', 'Installer', 'vswhere.exe')
+
+      # By default, vswhere will only detect VS Community, Professional,
+      # or Enterprise. Specifying "-products" lets use include build tools
+      # as well, in case the develop does not use the VS editor.
       if os.path.exists(vswhere_path):
-        installation_path = subprocess.check_output(
-            [vswhere_path, '-latest', '-property', 'installationPath']).strip()
+        vswhere_command = [vswhere_path,
+          '-latest', '-property', 'installationPath', '-products',
+          'Microsoft.VisualStudio.Product.Community',
+          'Microsoft.VisualStudio.Product.Professional',
+          'Microsoft.VisualStudio.Product.Enterprise',
+          'Microsoft.VisualStudio.Product.BuildTools']
+
+        installation_path = subprocess.check_output(vswhere_command).strip()
         if installation_path:
           return (installation_path,
                   os.path.join('VC', 'Auxiliary', 'Build', 'vcvarsall.bat'))
