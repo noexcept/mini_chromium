@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "cb611c9d_0a0fcaa2",
+        "filename": "build/win_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-07T03:15:43Z",
+      "side": 1,
+      "message": "in case the developer",
+      "range": {
+        "startLine": 182,
+        "startChar": 17,
+        "endLine": 182,
+        "endChar": 35
+      },
+      "revId": "fee7a08a7dcd185f5cd0ad4a9cd4a640cdc2515b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "751e9d40_e85017d7",
         "filename": "build/win_helper.py",
         "patchSetId": 1
@@ -36,6 +59,23 @@
         "endLine": 189,
         "endChar": 54
       },
+      "revId": "fee7a08a7dcd185f5cd0ad4a9cd4a640cdc2515b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d074a4e_b647e942",
+        "filename": "build/win_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-07T03:15:43Z",
+      "side": 1,
+      "message": "If there are multiple products installed, will this return the first detected (good) or more than one (will require more work)?",
       "revId": "fee7a08a7dcd185f5cd0ad4a9cd4a640cdc2515b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
