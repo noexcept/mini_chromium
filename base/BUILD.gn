@@ -165,4 +165,5 @@ static_library("base") {
   }
 
   public_configs = [ ":base_public_config" ]
+  configs += [ "//build/config:Wno-conversion" ]
 }
