@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "8ff12c0a_63418198",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T22:27:57Z",
+      "side": 1,
+      "message": "\u003e I have not yet tested with MSVC because the crashpad bots are my most convenient way of doing that.\n\nOK, we’ll see what happens when we feed it to them, then.",
+      "parentUuid": "116e278a_ac2fc2f9",
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2fd7fad2_da5d5fbb",
         "filename": "base/compiler_specific.h",
         "patchSetId": 2

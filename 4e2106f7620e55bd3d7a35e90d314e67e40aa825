@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e0001ff5_8c76c284",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T22:27:57Z",
+      "side": 1,
+      "message": "LGTM with one more change.",
+      "revId": "4e2106f7620e55bd3d7a35e90d314e67e40aa825",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "620910cc_d34a2022",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T22:27:57Z",
+      "side": 1,
+      "message": "This can be more direct:\n\n  #if defined(__has_attribute) \u0026\u0026 __has_attribute(no_sanitize)\n  // do the thing\n  #else\n  // define it to be empty\n  #endif",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 32
+      },
+      "revId": "4e2106f7620e55bd3d7a35e90d314e67e40aa825",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
