@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c97d4109_35456451",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-08-12T22:14:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6125ff52_2403be32",
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b59983e3_b2962027",
         "filename": "base/compiler_specific.h",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2020-08-12T21:27:22Z",
       "side": 1,
       "message": "Does this work with MSVC?",
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "116e278a_ac2fc2f9",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-08-12T22:14:45Z",
+      "side": 1,
+      "message": "I have not yet tested with MSVC because the crashpad bots are my most convenient way of doing that.\n\nI think this should work because:\n1. I expect __has_attribute wasn\u0027t defined so NO_SANITIZE(\"cfi-icall\") expands to nothing.\n2. __declspec(guard(nocf)) is the msvc way of disabling CFI, except they call it CFG: https://blog.trailofbits.com/2016/12/27/lets-talk-about-cfi-microsoft-edition/",
+      "parentUuid": "b59983e3_b2962027",
       "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
@@ -56,6 +92,30 @@
       "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1052f924_ecdc1718",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2020-08-12T22:14:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fd7fad2_da5d5fbb",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 6
+      },
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
