@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6125ff52_2403be32",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T21:27:22Z",
+      "side": 1,
+      "message": "Remove this and the matching #endif on line 68.",
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b59983e3_b2962027",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T21:27:22Z",
+      "side": 1,
+      "message": "Does this work with MSVC?",
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fd7fad2_da5d5fbb",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-12T21:27:22Z",
+      "side": 1,
+      "message": "It’s never not defined at this point, so these three lines don’t do anything and should be removed.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 6
+      },
+      "revId": "bc27d5dc2f41819fa25f322fe44cbf831a510715",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
