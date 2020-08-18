@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ce8e0bd_fcd6fae7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-18T21:17:58Z",
+      "side": 1,
+      "message": "I tested the GN version of this change, but not the GYP version. It’s the same thing, so unless a VLA shows up in Android-only code that’s built by the standalone Android GYP build, this should be fine. No buildbot for that, so if a developer build stops working, we can just fix it when it breaks.\n\nChromium doesn’t use -Wvla (yet?) so it wouldn’t have caught VLAs in Android code either.",
+      "revId": "75b11d0ac3016581f2df8678bd7eba3356d894fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
