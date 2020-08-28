@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6eba565f_56668fb1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2020-08-28T13:23:54Z",
+      "side": 1,
+      "message": "Hi Mark, do you mind taking a look? This introduces some of the changes I mentioned over email. I wasn\u0027t quite sure how to test this, I suppose you only have a CQ in the crashpad repo, correct?",
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
