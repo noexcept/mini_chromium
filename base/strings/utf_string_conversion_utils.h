@@ -28,6 +28,8 @@ size_t WriteUnicodeCharacter(uint32_t code_point, std::string* output);
 
 size_t WriteUnicodeCharacter(uint32_t code_point, string16* output);
 
+size_t WriteUnicodeCharacter(uint32_t code_point, std::wstring* output);
+
 template<typename CHAR>
 void PrepareForUTF8Output(const CHAR* src, size_t src_len, std::string* output);
 

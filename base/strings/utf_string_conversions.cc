@@ -58,4 +58,24 @@ std::string UTF16ToUTF8(const StringPiece16& utf16) {
   return ret;
 }
 
+bool UTF8ToUTF16(const char* src, size_t src_len, string16* output) {
+  base::PrepareForUTF16Or32Output(src, src_len, output);
+  return ConvertUnicode(src, src_len, output);
+}
+
+#if defined(WCHAR_T_IS_UTF16)
+std::string WideToUTF8(WStringPiece wide) {
+  std::string ret;
+  UTF16ToUTF8(reinterpret_cast<const char16*>(wide.data()), wide.size(), &ret);
+  return ret;
+}
+
+std::wstring UTF8ToWide(StringPiece utf8) {
+  std::wstring ret;
+  base::PrepareForUTF16Or32Output(utf8.data(), utf8.size(), &ret);
+  ConvertUnicode(utf8.data(), utf8.size(), &ret);
+  return ret;
+}
+#endif  // defined(WCHAR_T_IS_UTF16)
+
 }  // namespace
