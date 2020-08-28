@@ -16,6 +16,86 @@
       "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a8785641_29dcc52f",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-28T21:00:28Z",
+      "side": 1,
+      "message": "Templatize on the string type itself, not on the template parameters that make up the string. If you need to refer to CharT or Traits, reference typename StringType::value_type and typename StringType::traits_type [but you will almost definitely not need to refer to traits_type at all].\n\nTemplatizing on CharT or CharT and Traits directly breaks down for basic_strings that use a non-default allocator (which admittedly we don’t do), has caused subtle bugs for us in the past (which admittedly may not occur here), and most importantly, is just more extra and unnecessary legwork when you already have a perfectly good string type that you can use as a template parameter and as a type for the out-parameter pointer argument directly.",
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "127fe0e9_b39c85c5",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-28T21:00:28Z",
+      "side": 1,
+      "message": "Style nit: inline comments like this use [at least] two spaces between the last non-comment thing on the line and the // that starts the comment.\n\nhttps://google.github.io/styleguide/cppguide.html#Implementation_Comments\n\nThis comment applies elsewhere in this change.",
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70b22384_91e164a9",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-28T21:00:28Z",
+      "side": 1,
+      "message": "I don’t see this macro in mini_chromium anywhere, and I don’t see anything in this change #defining it. Should I?",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76ad97d1_7d96667b",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-08-28T21:00:28Z",
+      "side": 1,
+      "message": "In Chromium code, the * goes on the type, not on the variable. (mini_chromium and Crashpad follow Chromium style on this, perhaps more closely than even Chromium does.)\n\nThis comment applies throughout this change.",
+      "range": {
+        "startLine": 33,
+        "startChar": 50,
+        "endLine": 33,
+        "endChar": 70
+      },
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
