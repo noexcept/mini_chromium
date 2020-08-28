@@ -6,6 +6,7 @@
 #define MINI_CHROMIUM_BASE_STRINGS_UTF_STRING_CONVERSION_UTILS_H_
 
 #include "base/strings/string16.h"
+#include "build/build_config.h"
 
 namespace base {
 
@@ -27,6 +28,10 @@ bool ReadUnicodeCharacter(const char16* src,
 size_t WriteUnicodeCharacter(uint32_t code_point, std::string* output);
 
 size_t WriteUnicodeCharacter(uint32_t code_point, string16* output);
+
+#if defined(BASE_STRING16_IS_STD_U16STRING) && defined(WCHAR_T_IS_UTF16)
+size_t WriteUnicodeCharacter(uint32_t code_point, std::wstring *output);
+#endif
 
 template<typename CHAR>
 void PrepareForUTF8Output(const CHAR* src, size_t src_len, std::string* output);
