@@ -136,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "3a783adc_5bb0ac1a",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-08T14:04:00Z",
+      "side": 1,
+      "message": "\u003e No. This is meant to future proof the code for when std::wstring and base::string16 are distinct types. Due to the ODR I currently can\u0027t define the method twice, which is why I use this macro to disable this code for now. Once base::string16 is switched I will define this macro, and then remove usages afterwards. Does this sound good to you or do you have another suggestion?\n\nmini_chromium is small enough and only has one relevant consumer (Crashpad) that I generally assume that all of mini_chromium can change at once, meaning that base::string16 would switch along with the new code landing. Immediately afterward, Crashpad would have a DEPS roll along with adapting it to interface changes as needed. We don’t normally leave dead code hanging around in mini_chromium, even for something forward-looking like this. We’d just make the change all at once.\n\nThe stuff that’s not protected by the dead macro is uncontroversial, but the stuff that’s behind the macro? It’s not even compile-tested anywhere…\n\nIt’s a small amount of code so I won’t argue against it any more than the above. But this is the way that we’d normally handle these transitions. Your call.",
+      "parentUuid": "2898a889_d4251762",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "76ad97d1_7d96667b",
         "filename": "base/strings/utf_string_conversion_utils.h",
         "patchSetId": 7
