@@ -16,6 +16,57 @@
       "revId": "9fd4b2214a86f67dccfe8f4ed3ca65afd17c36e5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be1eb1a4_b3c3cfe8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-08T15:15:21Z",
+      "side": 1,
+      "message": "Yeah, no CQ here means it\u0027s a manual process. I\u0027ll submit when this is ready.",
+      "revId": "9fd4b2214a86f67dccfe8f4ed3ca65afd17c36e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e12284ff_580c65d2",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-08T15:15:21Z",
+      "side": 1,
+      "message": "This too.",
+      "revId": "9fd4b2214a86f67dccfe8f4ed3ca65afd17c36e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95899520_782c59d5",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-08T15:15:21Z",
+      "side": 1,
+      "message": "Remove this too, not yet used.",
+      "revId": "9fd4b2214a86f67dccfe8f4ed3ca65afd17c36e5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
