@@ -5,8 +5,29 @@
 #include "base/strings/utf_string_conversion_utils.h"
 
 #include "base/third_party/icu/icu_utf.h"
+#include "build/build_config.h"
 
 namespace base {
+
+namespace {
+
+// Appends `code_point` to `*output`. Requires `*output` to be a UTF16 string.
+// Returns the number of code units written.
+template <typename StringT>
+size_t WriteUTF16Character(uint32_t code_point, StringT* output) {
+  using CharT = typename StringT::value_type;
+  static_assert(sizeof(CharT) == 2, "Error: *output is not a UTF16 string");
+  if (CBU16_LENGTH(code_point) == 1) {
+    output->push_back(static_cast<CharT>(code_point));
+    return 1;
+  }
+  size_t char_offset = output->length();
+  output->resize(char_offset + CBU16_MAX_LENGTH);
+  CBU16_APPEND_UNSAFE(&(*output)[0], char_offset, code_point);
+  return CBU16_MAX_LENGTH;
+}
+
+}  // namespace
 
 bool ReadUnicodeCharacter(const char* src,
                           int32_t src_len,
@@ -59,15 +80,14 @@ size_t WriteUnicodeCharacter(uint32_t code_point, std::string* output) {
 }
 
 size_t WriteUnicodeCharacter(uint32_t code_point, string16* output) {
-  if (CBU16_LENGTH(code_point) == 1) {
-    output->push_back(static_cast<char16>(code_point));
-    return 1;
-  }
-  size_t char_offset = output->length();
-  output->resize(char_offset + CBU16_MAX_LENGTH);
-  CBU16_APPEND_UNSAFE(&(*output)[0], char_offset, code_point);
-  return CBU16_MAX_LENGTH;
+  return WriteUTF16Character(code_point, output);
 }
+
+#if defined(BASE_STRING16_IS_STD_U16STRING) && defined(WCHAR_T_IS_UTF16)
+size_t WriteUnicodeCharacter(uint32_t code_point, std::wstring* output) {
+  return WriteUTF16Character(code_point, output);
+}
+#endif
 
 template<typename CHAR>
 void PrepareForUTF8Output(const CHAR* src,
@@ -101,5 +121,9 @@ void PrepareForUTF16Or32Output(const char* src,
 }
 
 template void PrepareForUTF16Or32Output(const char*, size_t, string16*);
+
+#if defined(BASE_STRING16_IS_STD_U16STRING)
+template void PrepareForUTF16Or32Output(const char*, size_t, std::wstring*);
+#endif
 
 }  // namespace base
