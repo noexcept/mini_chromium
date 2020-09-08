@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "e6bd010d_777bc69d",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2020-09-08T13:29:00Z",
+      "side": 1,
+      "message": "Ack. I initially did this to narrow down the amount of types that could be passed to this function. When simply using a StringType template param and just requiring value_type, push_back(), and resize() to be well-formed we open up the possibility to pass in other types like std::vector or std::deque which might not be desired. However, I do agree that it is simpler and avoids some of the problems you mentioned. Fixed now.",
+      "parentUuid": "a8785641_29dcc52f",
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "127fe0e9_b39c85c5",
         "filename": "base/strings/utf_string_conversion_utils.cc",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "49afc47c_5dd4affd",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2020-09-08T13:29:00Z",
+      "side": 1,
+      "message": "Done (similar to the above comment re `git cl format`).",
+      "parentUuid": "127fe0e9_b39c85c5",
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "70b22384_91e164a9",
         "filename": "base/strings/utf_string_conversion_utils.h",
         "patchSetId": 7
@@ -64,6 +100,30 @@
       "writtenOn": "2020-08-28T21:00:28Z",
       "side": 1,
       "message": "I don’t see this macro in mini_chromium anywhere, and I don’t see anything in this change #defining it. Should I?",
+      "range": {
+        "startLine": 32,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 42
+      },
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2898a889_d4251762",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2020-09-08T13:29:00Z",
+      "side": 1,
+      "message": "No. This is meant to future proof the code for when std::wstring and base::string16 are distinct types. Due to the ODR I currently can\u0027t define the method twice, which is why I use this macro to disable this code for now. Once base::string16 is switched I will define this macro, and then remove usages afterwards. Does this sound good to you or do you have another suggestion?",
+      "parentUuid": "70b22384_91e164a9",
       "range": {
         "startLine": 32,
         "startChar": 12,
@@ -96,6 +156,30 @@
       "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "caecd96a_133f5208",
+        "filename": "base/strings/utf_string_conversion_utils.h",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1179305
+      },
+      "writtenOn": "2020-09-08T13:29:00Z",
+      "side": 1,
+      "message": "Done. I had run `git cl format`, but looks like the Chromium style is not applied to mini_chromium when checked out independently. Fixed this now.",
+      "parentUuid": "76ad97d1_7d96667b",
+      "range": {
+        "startLine": 33,
+        "startChar": 50,
+        "endLine": 33,
+        "endChar": 70
+      },
+      "revId": "cc8c380eaf693e1c689e226df533f33a1f43c01b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
