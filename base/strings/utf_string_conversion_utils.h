@@ -6,6 +6,7 @@
 #define MINI_CHROMIUM_BASE_STRINGS_UTF_STRING_CONVERSION_UTILS_H_
 
 #include "base/strings/string16.h"
+#include "build/build_config.h"
 
 namespace base {
 
