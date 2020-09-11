@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "a53ccfbf_798c4175",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-11T01:50:34Z",
+      "side": 1,
+      "message": "\u003e Thanks for catching this.\n\u003e Would it be alright to add cflags \u003d [ \"-Wno-conversion\" ]?\n\nI guess so, since it only affects target-Fuchsia (it’d be in mini_chromium_is_fuchsia) and it only affects things that are using mini_chromium (so Chromium would never see this, but most others would).\n\nBut if you’re ever going to build this library in Fuchsia for the build host, you’d need to suppress this warning even when mini_chromium_is_fuchsia is false, which means that you’d have to open it up a lot more broadly here, and I wouldn’t be so happy about that.\n\nIf you are able to do this entirely with mini_chromium_is_fuchsia, I suggest adding an expanded comment summarizing our discussion to explain that this really should be if (mini_chromium_is_in_fuchsia) { configs +\u003d [ \"//build/config:Wno-conversion\" ] }, but it’s not possible because there’s no such thing as mini_chromium_is_in_fuchsia, and that’s why you’re doing this other slightly weird thing instead.",
+      "parentUuid": "4030aa20_629e47cb",
+      "revId": "01a9284a8ea9e6fd4f79fddb7e084530c65c6ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2c516c4d_a096753e",
         "filename": "base/BUILD.gn",
         "patchSetId": 1
