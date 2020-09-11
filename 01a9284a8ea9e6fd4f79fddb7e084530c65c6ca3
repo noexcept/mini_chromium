@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "231632b2_7415e52e",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2020-09-11T02:24:07Z",
+      "side": 1,
+      "message": "I think I understand. LG?",
+      "parentUuid": "a53ccfbf_798c4175",
+      "revId": "01a9284a8ea9e6fd4f79fddb7e084530c65c6ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2c516c4d_a096753e",
         "filename": "base/BUILD.gn",
         "patchSetId": 1
