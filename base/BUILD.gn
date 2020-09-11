@@ -165,4 +165,9 @@ static_library("base") {
   }
 
   public_configs = [ ":base_public_config" ]
+
+  if (mini_chromium_is_fuchsia) {
+    # TODO(fxb/58162): delete the below and fix compiler warnings
+    configs += [ "//build/config:Wno-conversion" ]
+  }
 }
