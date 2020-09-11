@@ -50,6 +50,24 @@
       "revId": "01a32af81e95c7b6d35a2a9b6f5f2bb74036d7be",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8a7c27fd_171404db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2020-09-11T21:00:10Z",
+      "side": 1,
+      "message": "The submit button is greyed out for me.",
+      "parentUuid": "601b9300_2a7338c2",
+      "revId": "01a32af81e95c7b6d35a2a9b6f5f2bb74036d7be",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
