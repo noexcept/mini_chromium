@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfa4feda_c07b0a0a",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-11T00:23:04Z",
+      "side": 1,
+      "message": "This is wrong, is_fuchsia doesn’t mean is_in_fuchsia. But there’s no such thing as is_in_fuchsia in mini_chromium. The Crashpad version is based on crashpad_dependencies, which is meaningless in mini_chromium.",
+      "revId": "01a9284a8ea9e6fd4f79fddb7e084530c65c6ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c516c4d_a096753e",
+        "filename": "base/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-11T00:23:04Z",
+      "side": 1,
+      "message": "https://chromium-review.googlesource.com/c/crashpad/crashpad/+/2405375/comment/fb4e8e9e_b5a70619/",
+      "revId": "01a9284a8ea9e6fd4f79fddb7e084530c65c6ca3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
