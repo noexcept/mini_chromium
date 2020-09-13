@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d996b95a_ac5b59b6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2020-09-13T22:05:40Z",
+      "side": 1,
+      "message": "Hmm, I actually can\u0027t find where mini_chromium_is_fuchsia is set. Either way, it appears to be false in the Fuchsia build. Does anyone have any idea what\u0027s happening?",
+      "revId": "3baa0e09ceaa071f6cbbd8fc718d6046533e1f1f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
