@@ -149,6 +149,10 @@ config("default") {
       "-fvisibility=hidden",
     ]
 
+    if (mini_chromium_is_fuchsia) {
+      cflags += [ "-Wno-conversion" ]
+    }
+
     cflags_c = [ "-std=c11" ]
     cflags_cc = [ "-std=c++14" ]
     cflags_objc = cflags_c
