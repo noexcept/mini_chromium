@@ -184,8 +184,9 @@ inline bool operator==(const StringPiece16& x, const StringPiece16& y) {
 #define HASH_STRING_PIECE(StringPieceType, string_piece)         \
   std::size_t result = 0;                                        \
   for (StringPieceType::const_iterator i = string_piece.begin(); \
-       i != string_piece.end(); ++i)                             \
-    result = (result * 131) + *i;                                \
+       i != string_piece.end();                                  \
+       ++i)                                                      \
+    result = (result * 131) + static_cast<unsigned>(*i);         \
   return result;
 
 struct StringPieceHash {
