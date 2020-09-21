@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de5dcb00_d5dd1630",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-21T18:29:44Z",
+      "side": 1,
+      "message": "So our gn check works better than Chromium\u0027s. Doesn\u0027t seem like something we should give up on. Maybe we need a distinct mini_chromium build_config target that both mini_chromium base and other Crashpad users that don\u0027t want base can depend on.",
+      "revId": "75a19ce1639cb4b1b2ae939b00d268133abba479",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
