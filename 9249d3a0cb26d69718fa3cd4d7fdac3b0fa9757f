@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "763b6ba5_efd5a387",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-21T20:11:15Z",
+      "side": 1,
+      "message": "1. This should have a public_config that adds .. to include_dirs.\n\n2. Can this just be a source_set, since it doesn’t have anything that needs to be compiled? (Xcode’s libtool, what it uses as an ar work-alike, will complain if there are no symbols in a static library.)",
+      "revId": "9249d3a0cb26d69718fa3cd4d7fdac3b0fa9757f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
