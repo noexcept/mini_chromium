@@ -78,6 +78,15 @@ declare_args() {
   extra_arflags = ""
 }
 
+config("build_public_config") {
+  include_dirs = [ ".." ]
+}
+
+source_set("build") {
+  sources = [ "build_config.h" ]
+  public_configs = [ ":build_public_config" ]
+}
+
 config("debug") {
   if (!mini_chromium_is_win) {
     cflags = [ "-g" ]
@@ -121,8 +130,6 @@ config("release") {
 
 config("default") {
   common_flags = []
-
-  include_dirs = [ ".." ]
 
   asmflags = []
   ldflags = []
