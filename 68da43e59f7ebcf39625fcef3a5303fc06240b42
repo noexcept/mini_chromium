@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a2143f1_007921d7",
+        "filename": "build/BUILD.gn",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-21T20:34:39Z",
+      "side": 0,
+      "message": "Oh, I didn’t realize this was already here (and presumably it gets used for the new source_set?) In that case, the previous patch set is probably better. Sorry for a few extra keystrokes.",
+      "revId": "68da43e59f7ebcf39625fcef3a5303fc06240b42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
+    }
+  ]
+}
