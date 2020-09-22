@@ -20,6 +20,54 @@
 
 namespace logging {
 
+// A bitmask of potential logging destinations.
+using LoggingDestination = uint32_t;
+
+// Specifies where logs will be written. Multiple destinations can be specified
+// with bitwise OR.
+// Unless destination is LOG_NONE, all logs with severity ERROR and above will
+// be written to stderr in addition to the specified destination.
+enum : LoggingDestination {
+  LOG_NONE = 0,
+  LOG_TO_FILE = 1 << 0,
+  LOG_TO_SYSTEM_DEBUG_LOG = 1 << 1,
+  LOG_TO_STDERR = 1 << 2,
+
+  LOG_TO_ALL = LOG_TO_FILE | LOG_TO_SYSTEM_DEBUG_LOG | LOG_TO_STDERR,
+
+// On Windows, use a file next to the exe.
+// On POSIX platforms, where it may not even be possible to locate the
+// executable on disk, use stderr.
+// On Fuchsia, use the Fuchsia logging service.
+#if defined(OS_FUCHSIA)
+  LOG_DEFAULT = LOG_TO_SYSTEM_DEBUG_LOG,
+#elif defined(OS_WIN)
+  LOG_DEFAULT = LOG_TO_FILE,
+#elif defined(OS_POSIX)
+  LOG_DEFAULT = LOG_TO_SYSTEM_DEBUG_LOG | LOG_TO_STDERR,
+#endif
+};
+
+struct LoggingSettings {
+  LoggingDestination logging_dest = LOG_DEFAULT;
+};
+
+// Sets the log file name and other global logging state. Calling this function
+// is recommended, and is normally done at the beginning of application init.
+// If you don't call it, all the flags will be initialized to their default
+// values, and there is a race condition that may leak a critical section
+// object if two threads try to do the first log at the same time.
+// See the definition of the enums above for descriptions and default values.
+//
+// The default log file is initialized to "debug.log" in the application
+// directory. You probably don't want this, especially since the program
+// directory may not be writable on an enduser's system.
+//
+// This function may be called a second time to re-direct logging (e.g after
+// loging in to a user partition), however it should never be called more than
+// twice.
+bool InitLogging(const LoggingSettings& settings);
+
 typedef int LogSeverity;
 const LogSeverity LOG_VERBOSE = -1;
 const LogSeverity LOG_INFO = 0;
