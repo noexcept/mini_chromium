@@ -1,0 +1,11 @@
+# Copyright 2020 The Crashpad Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+# This is separate from build/BUILD.gn to avoid including various .gni that it
+# requires, which in turn conflict with settings from BUILDCONFIG.gn when
+# building in other trees.
+
+source_set("buildconfig") {
+  sources = [ "build_config.h" ]
+}

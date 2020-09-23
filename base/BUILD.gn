@@ -159,5 +159,5 @@ static_library("base") {
     libs = [ "zircon" ]
   }
 
-  public_deps = [ "../build" ]
+  public_deps = [ "../build/buildconfig" ]
 }
