@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "afed354d_c369002f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2020-09-23T20:21:13Z",
+      "side": 1,
+      "message": "Thanks, hopefully this version sticks everywhere.",
+      "revId": "86b0416207b3c45b41a1ffc62e351bd916d1e2fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f7ee1995_2906eed0",
         "filename": "build/config/BUILD.gn",
         "patchSetId": 5
