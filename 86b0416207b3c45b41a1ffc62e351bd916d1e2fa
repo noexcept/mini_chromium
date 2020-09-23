@@ -22,6 +22,30 @@
       "revId": "86b0416207b3c45b41a1ffc62e351bd916d1e2fa",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8cf6339a_f9d0fef7",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-23T19:23:57Z",
+      "side": 1,
+      "message": "\u003e Is the copyright year for the file, which is new, or the content, which is old?\n\nIt\u0027s ok to retain the year as-is for a file move.",
+      "parentUuid": "f7ee1995_2906eed0",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 16
+      },
+      "revId": "86b0416207b3c45b41a1ffc62e351bd916d1e2fa",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
