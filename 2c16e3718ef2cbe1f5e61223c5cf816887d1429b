@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "96e79209_e833cb72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2020-09-23T17:24:12Z",
+      "side": 1,
+      "message": "build/BUILD.gn should be the one with the target, and something like build/config/BUILD.gn should be the one with the config. Anything else is, I think, confusing.",
+      "revId": "2c16e3718ef2cbe1f5e61223c5cf816887d1429b",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
