@@ -5,6 +5,8 @@
 import("../build/platform.gni")
 
 static_library("base") {
+  public_configs = [ "../build:mini_chromium_config" ]
+
   sources = [
     "atomicops.h",
     "atomicops_internals_atomicword_compat.h",
