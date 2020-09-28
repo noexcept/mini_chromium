@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "93122c74_8d901dde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2020-09-28T06:15:42Z",
+      "side": 1,
+      "message": "Not sure why this only fails on Fuchsia\u0027s host mac build, but here we are.\nSee for instance:\nhttps://ci.chromium.org/p/fuchsia/builders/try/fuchsia-host-mac-subbuild/b8867938246335549936?",
+      "revId": "fb51ea22853fbe86e19ef4579089648843706993",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
