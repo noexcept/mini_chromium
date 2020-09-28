@@ -39,6 +39,30 @@
       "revId": "fb51ea22853fbe86e19ef4579089648843706993",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b7b29ec_b7859f92",
+        "filename": "base/threading/thread_local_storage.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2020-09-28T16:59:52Z",
+      "side": 1,
+      "message": "That\u0027s what I thought. Although maybe a more elegant change can be made. This cast sort of suppresses the problem rather than dealing with it (if there is indeed a problem to be dealt with).\n\nDo I need to add someone else for a +2 please?",
+      "parentUuid": "1d9c4130_ed88d530",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 64
+      },
+      "revId": "fb51ea22853fbe86e19ef4579089648843706993",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
