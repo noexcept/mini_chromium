@@ -16,6 +16,29 @@
       "revId": "fb51ea22853fbe86e19ef4579089648843706993",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d9c4130_ed88d530",
+        "filename": "base/threading/thread_local_storage.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2020-09-28T16:55:56Z",
+      "side": 1,
+      "message": "It looks like g_native_tls_key is already Atomic32 above, so I guess this is no worse than it was.",
+      "range": {
+        "startLine": 80,
+        "startChar": 48,
+        "endLine": 80,
+        "endChar": 64
+      },
+      "revId": "fb51ea22853fbe86e19ef4579089648843706993",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": true
     }
   ]
 }
