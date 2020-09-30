@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a986e94_781f0b7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2020-09-30T23:33:26Z",
+      "side": 1,
+      "message": "Barf, had to download to bracket-match in my editor, but looks ok to me.",
+      "revId": "a1f7836fe381aa362307970a878a552f23a1fff6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
+    }
+  ]
+}
