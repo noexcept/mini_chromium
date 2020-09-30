@@ -34,6 +34,24 @@
       "revId": "2b6cfa31f918e5acbed67ac91a483d15d4742204",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "25be810e_47790831",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1144260
+      },
+      "writtenOn": "2020-09-30T16:46:54Z",
+      "side": 1,
+      "message": "Yeah, the Fuchsia roller looks at Crashpad\u0027s DEPS file and rolls Crashpad-and-mini_chromium as a unit so that they stay in sync. So in order to see a change in mini_chromium in Fuchsia, mini_chromium needs to be rolled into Crashpad.",
+      "parentUuid": "f50f2f84_5729e44c",
+      "revId": "2b6cfa31f918e5acbed67ac91a483d15d4742204",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba",
+      "unresolved": false
     }
   ]
 }
