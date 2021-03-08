@@ -496,3 +496,7 @@ ErrnoLogMessage::~ErrnoLogMessage() {
 #endif  // OS_POSIX
 
 }  // namespace logging
+
+std::ostream &operator<<(std::ostream &out, const std::u16string &str) {
+  return out << base::UTF16ToUTF8(str);
+}
