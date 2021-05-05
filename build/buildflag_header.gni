@@ -15,12 +15,15 @@ template("buildflag_header") {
 
     outputs = [ "$root_gen_dir/$header_file" ]
 
-    # Always write --flags to the file so it's not empty. Empty will confuse GN
-    # into thinking the response file isn't used.
-    response_file_contents = [ "--flags" ]
+    # Write flags to a file just in case they exceed the system's maximum
+    # command line length.
+    flags = [ "--flags" ]
     if (defined(invoker.flags)) {
-      response_file_contents += invoker.flags
+      flags += invoker.flags
     }
+    flags_file = "${root_gen_dir}/${header_file}.flags"
+    write_file(flags_file, flags)
+    inputs = [ flags_file ]
 
     args = [
       "--output",
@@ -30,7 +33,7 @@ template("buildflag_header") {
       "--gen-dir",
       rebase_path(root_gen_dir, root_build_dir),
       "--definitions",
-      "{{response_file_name}}",
+      rebase_path(flags_file, root_build_dir),
     ]
 
     forward_variables_from(invoker,
