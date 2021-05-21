@@ -50,6 +50,8 @@
 #include <windows.h>
 #elif defined(OS_ANDROID)
 #include <android/log.h>
+#elif defined(OS_FUCHSIA)
+#include <lib/syslog/global.h>
 #endif
 
 #include "base/stl_util.h"
@@ -61,6 +63,7 @@ namespace logging {
 
 namespace {
 
+#if !defined(OS_FUCHSIA)
 const char* const log_severity_names[] = {
   "INFO",
   "WARNING",
@@ -68,6 +71,7 @@ const char* const log_severity_names[] = {
   "ERROR_REPORT",
   "FATAL"
 };
+#endif
 
 LogMessageHandlerFunction g_log_message_handler = nullptr;
 
@@ -326,6 +330,24 @@ LogMessage::~LogMessage() {
     }
     // The Android system may truncate the string if it's too long.
     __android_log_write(priority, "chromium", str_newline.c_str());
+#elif defined(OS_FUCHSIA)
+  fx_log_severity_t fx_severity;
+  switch (severity_) {
+    case LOG_INFO:
+      fx_severity = FX_LOG_INFO;
+      break;
+    case LOG_WARNING:
+      fx_severity = FX_LOG_WARNING;
+      break;
+    case LOG_ERROR:
+      fx_severity = FX_LOG_ERROR;
+      break;
+    case LOG_FATAL:
+      fx_severity = FX_LOG_FATAL;
+      break;
+  }
+  fx_logger_log_with_source(fx_log_get_logger(), fx_severity, /*tag=*/nullptr,
+                            file_path_, line_, str_newline.c_str());
 #endif  // OS_*
   }
 
@@ -380,10 +402,9 @@ void LogMessage::Init(const char* function) {
 #endif
 
   // On Fuchsia, the platform is responsible for adding the process id, thread
-  // id and log timestamp, not the process itself.
-#if defined(OS_FUCHSIA)
-  stream_ << '[';
-#else
+  // id and log timestamp, not the process itself. ~LogMessage() will add the
+  // severity, filename and line number.
+#if !defined(OS_FUCHSIA)
   stream_ << '['
           << pid
           << ':'
@@ -420,8 +441,6 @@ void LogMessage::Init(const char* function) {
           << std::setw(3) << local_time.wMilliseconds
           << ':';
 #endif
-#endif
-
 
   if (severity_ >= 0) {
     stream_ << log_severity_names[severity_];
@@ -434,6 +453,7 @@ void LogMessage::Init(const char* function) {
           << ':'
           << line_
           << "] ";
+#endif
 
   message_start_ = stream_.str().size();
 }
