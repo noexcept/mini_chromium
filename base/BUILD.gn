@@ -45,7 +45,7 @@ static_library("base") {
     "numerics/safe_math_shared_impl.h",
     "process/memory.cc",
     "process/memory.h",
-    "process/process_metrics.h",
+    "memory/page_size.h",
     "rand_util.cc",
     "rand_util.h",
     "scoped_clear_last_error.h",
@@ -79,7 +79,7 @@ static_library("base") {
       "posix/eintr_wrapper.h",
       "posix/safe_strerror.cc",
       "posix/safe_strerror.h",
-      "process/process_metrics_posix.cc",
+      "memory/page_size_posix.cc",
       "strings/string_util_posix.h",
       "synchronization/condition_variable_posix.cc",
       "synchronization/lock_impl_posix.cc",
@@ -140,7 +140,7 @@ static_library("base") {
     ]
   } else if (mini_chromium_is_win) {
     sources += [
-      "process/process_metrics_win.cc",
+      "memory/page_size_win.cc",
       "scoped_clear_last_error_win.cc",
       "strings/string_util_win.cc",
       "strings/string_util_win.h",
