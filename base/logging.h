@@ -86,12 +86,18 @@ static inline int GetVlogLevel(const char*) {
 }
 
 #if defined(OS_WIN)
+typedef unsigned long SystemErrorCode;
+#elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+typedef int SystemErrorCode;
+#endif
+
+#if defined(OS_WIN)
 // This is just ::GetLastError, but out-of-line to avoid including windows.h in
 // such a widely used place.
-unsigned long GetLastSystemErrorCode();
+SystemErrorCode GetLastSystemErrorCode();
 std::string SystemErrorCodeToString(unsigned long error_code);
 #elif defined(OS_POSIX)
-static inline int GetLastSystemErrorCode() {
+static inline SystemErrorCode GetLastSystemErrorCode() {
   return errno;
 }
 #endif
@@ -273,11 +279,10 @@ const LogSeverity LOG_0 = LOG_ERROR;
 #if defined(NDEBUG)
 #define DLOG_IS_ON(severity) 0
 #define DVLOG_IS_ON(verbose_level) 0
-#define DCHECK_IS_ON() 0
+
 #else
 #define DLOG_IS_ON(severity) LOG_IS_ON(severity)
 #define DVLOG_IS_ON(verbose_level) VLOG_IS_ON(verbose_level)
-#define DCHECK_IS_ON() 1
 #endif
 
 #define DLOG(severity) LAZY_STREAM(LOG_STREAM(severity), DLOG_IS_ON(severity))
