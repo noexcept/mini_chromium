@@ -46,6 +46,30 @@
       },
       "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7329d684_a9afd41c",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-08-05T15:37:12Z",
+      "side": 1,
+      "message": "Link to the problem we investigated when using hardlinks:\nhttps://bugs.chromium.org/p/chromium/issues/detail?id\u003d642711\n\nNote that this does not cause build failure, just unnecessary build steps when doing the following step:\n\n  $ ninja -C ... \u0026\u0026 git checkout HEAD \u0026\u0026 ninja -C ...\n  \nYou would expect the second build to be a no-op but it was not.",
+      "parentUuid": "bb7bdf61_2c8f97dd",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
