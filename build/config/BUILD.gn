@@ -514,12 +514,9 @@ toolchain("gcc_like_toolchain") {
     }
 
     tool("copy_bundle_data") {
-      _copydir = "mkdir -p {{output}} && cd {{source}} && " +
-                 "pax -rwl . \"\$OLDPWD\"/{{output}}"
-      copy_command = "ln -f {{source}} {{output}} 2>/dev/null || (rm -rf {{output}} && cp -af {{source}} {{output}})"
-      command = "rm -rf {{output}} && if [[ -d {{source}} ]]; then " +
-                _copydir + "; else " + copy_command + "; fi"
-
+      command =
+          "rm -rf {{output}} && cp -fRc {{source}} {{output}} 2>/dev/null " +
+          "|| (rm -rf {{output}} && cp -fR {{source}} {{output}})"
       description = "COPY_BUNDLE_DATA {{source}} {{output}}"
     }
 
