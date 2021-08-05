@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e61719c_cb9078f8",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-08-05T14:59:55Z",
+      "side": 1,
+      "message": "1. This loses the “-a” of the fallback case from copy_command before.\n\n2. Previously, _copydir used a mkdir + pax concoction. Presumably if it could have been done with a single “cp”, it would have. What was the reason for _copydir being done the way it was? I recall that there was a reason, but unfortunately there’s no comment here. We ought to make sure that we’re still good to copy directories as appropriate even in the fallback case.",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
