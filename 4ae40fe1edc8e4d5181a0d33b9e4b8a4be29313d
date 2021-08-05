@@ -22,6 +22,30 @@
       },
       "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bb7bdf61_2c8f97dd",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1116027
+      },
+      "writtenOn": "2021-08-05T15:32:40Z",
+      "side": 1,
+      "message": "2.\n\nThe original intention of the code in chromium was to recursively create hardlinks at dst/... pointing to src/... to avoid copying the files if possible (avoid filling disk and reduce wall time).\n\nThis was initially coded using `pax` because `cp` on macOS did not allow to recursively create hardlinks (nor clonefile). We found by trial and error that hardlinks caused issues on the bots that forced unnecessary rebuilds.\n\nIIRC, when a hardlink is created in $build_dir to some file in $src_dir, it changes some of the metadata (I think mtime, but not sure) used by `git` to decide whether a file may have changed or not. This metadata is updated when running `git status` but if instead user runs `git checkout`, git will overwrite those files unconditionally. On the bots, this caused the build to be dirty (since hardlinked file were now older than src files).\n\nWe tried to use a workaround on the bot to force a `git status`, but were told to revert it (don\u0027t remember why, but I think it was mostly because it was considered a wart).\n\nSo we decided to use `clonefile`. This requires a recent enough version of macOS and of the filesystem (I think it requires AppleFS). Clonefile does not have the issue that existed with hardlink (because it uses copy on write and does not mess with the metadata that is cached by git).\n\nThe fallback for `pax` was a recursive `cp` IIRC.\n\n1.\n\nAccording to cp man page, `cp -a` \u003d\u003d `cp -pPR`. The man page says that `-P` is the default. `-R` is present on the command-line quoted. `-p` means preserve metadata. I think there is an issue with some version of macOS where `cp -p` truncates the timestamp and loses sub-microseconds resolution.\n\nIIRC, this causes trouble with recent version of ninja that use those sub-microsecond resolution information.\n\nSee https://bugs.chromium.org/p/chromium/issues/detail?id\u003d931218#c20\n\nTL;DR:\n\n- `cp -a` is bugged on some version of macOS\n- hardlink interact badly with git + bot scripts\n\nThis is why code use `cp -cR || cp -R`, first try clonefile, and if it fails (src and dst on different disks or clonefile not supported), fallback to a recursive copy *not* preserving timestamps (since -a is broken)",
+      "parentUuid": "0e61719c_cb9078f8",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
