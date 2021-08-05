@@ -70,6 +70,30 @@
       },
       "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "42e1cf7c_260bae22",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-08-05T18:57:23Z",
+      "side": 1,
+      "message": "\u003e I think there is an issue with some version of macOS where `cp -p` truncates the timestamp and loses sub-microseconds resolution.\n\nI’m sure that this was a problem in the past, in the early days of APFS, but I don’t think it is any longer:\n\nmark@sweet16 zsh% touch /tmp/one\nmark@sweet16 zsh% cp -a /tmp/one /tmp/two\nmark@sweet16 zsh% gls -li --full-time /tmp/one /tmp/two\n81155244 -rw-r--r-- 1 mark wheel 0 2021-08-05 14:55:26.735359297 -0400 /tmp/one\n81155249 -rw-r--r-- 1 mark wheel 0 2021-08-05 14:55:26.735359297 -0400 /tmp/two\nmark@sweet16 zsh% sw_vers\nProductName:\tmacOS\nProductVersion:\t11.5.1\nBuildVersion:\t20G80\n\n(gls is GNU ls.)",
+      "parentUuid": "7329d684_a9afd41c",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
