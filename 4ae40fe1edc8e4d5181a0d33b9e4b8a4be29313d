@@ -207,6 +207,30 @@
       },
       "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0639e6a_d67bcb91",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-08-06T14:24:42Z",
+      "side": 1,
+      "message": "\u003e Maybe worth also changing this in Chromium. Though, this would probably require that both bots and developer all use macOS ≥11. IIRC, we only require macOS 10.15.4+ to build Chromium [1].\n\u003e \n\u003e [1]: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/mac_build_instructions.md#System-requirements\n\nYes, it would be good to get the TODO there too. I expect that sometime over the next year, we’ll bump the minimum build requirements.",
+      "parentUuid": "d2f44d47_26aae810",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
