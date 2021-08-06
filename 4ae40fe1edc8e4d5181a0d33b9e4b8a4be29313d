@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b154c24e_0ecfad1b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-08-06T14:06:40Z",
+      "side": 1,
+      "message": "Thanks, Sylvain and Justin.",
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0e61719c_cb9078f8",
@@ -134,6 +151,30 @@
       "side": 1,
       "message": "No.",
       "parentUuid": "03bedc7f_d93a00f9",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35d4d67a_eac9c10d",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-08-06T14:06:40Z",
+      "side": 1,
+      "message": "\u003e Are all the bots already running on macOS 11.5.1?\n\nThey still run 10.15.\n\nI just checked, and this is in fact still broken in 10.15.\n\nlitterbox@Ten-Fifteen-VM zsh% touch /tmp/one\nlitterbox@Ten-Fifteen-VM zsh% cp -a /tmp/one /tmp/two\nlitterbox@Ten-Fifteen-VM zsh% gls -li --full-time /tmp/one /tmp/two\n12884941463 -rw-r--r-- 1 litterbox wheel 0 2021-08-06 14:02:46.051660452 +0000 /tmp/one\n12884941464 -rw-r--r-- 1 litterbox wheel 0 2021-08-06 14:02:46.051660000 +0000 /tmp/two\nlitterbox@Ten-Fifteen-VM zsh% sw_vers\nProductName:\tMac OS X\nProductVersion:\t10.15.7\nBuildVersion:\t19H15\n\nCan you leave a TODO behind to clean this up to use the more correct timestamp-preserving -a in the fallback case once our bots are all upgraded to macOS ≥11?",
+      "parentUuid": "c7f19e8a_f6bcf7aa",
       "range": {
         "startLine": 519,
         "startChar": 36,
