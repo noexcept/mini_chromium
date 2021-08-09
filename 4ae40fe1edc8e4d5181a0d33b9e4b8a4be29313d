@@ -231,6 +231,30 @@
       },
       "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73a7bd05_37b9d81a",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2021-08-09T11:54:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0639e6a_d67bcb91",
+      "range": {
+        "startLine": 519,
+        "startChar": 36,
+        "endLine": 519,
+        "endChar": 64
+      },
+      "revId": "4ae40fe1edc8e4d5181a0d33b9e4b8a4be29313d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
