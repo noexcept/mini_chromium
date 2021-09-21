@@ -35,6 +35,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ed14344_2b91dacc",
+        "filename": "base/logging.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2021-09-21T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6030460f_9727e419",
+      "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9893acc_a3693ba0",
@@ -48,6 +66,24 @@
       "writtenOn": "2021-09-21T15:25:45Z",
       "side": 1,
       "message": "No longer needed (wasn’t before, either).",
+      "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b81cee1_b08e9a35",
+        "filename": "base/macros.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2021-09-21T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9893acc_a3693ba0",
       "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }

@@ -16,6 +16,24 @@
       "message": "Two blank lines in a row, should only be one.",
       "revId": "593a361e645f02c2b2ee33c6a6ae01b5d343dffb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d1c7806_41f912fc",
+        "filename": "base/auto_reset.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2021-09-21T15:30:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4497ccc1_b8714e24",
+      "revId": "593a361e645f02c2b2ee33c6a6ae01b5d343dffb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
