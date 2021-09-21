@@ -15,12 +15,14 @@ namespace base {
 class ScopedClearLastErrorBase {
  public:
   ScopedClearLastErrorBase() : last_errno_(errno) { errno = 0; }
+
+  ScopedClearLastErrorBase(const ScopedClearLastErrorBase&) = delete;
+  ScopedClearLastErrorBase& operator=(const ScopedClearLastErrorBase&) = delete;
+
   ~ScopedClearLastErrorBase() { errno = last_errno_; }
 
  private:
   const int last_errno_;
-
-  DISALLOW_COPY_AND_ASSIGN(ScopedClearLastErrorBase);
 };
 
 #if defined(OS_WIN)
@@ -28,12 +30,14 @@ class ScopedClearLastErrorBase {
 class ScopedClearLastError : public ScopedClearLastErrorBase {
  public:
   ScopedClearLastError();
+
+  ScopedClearLastError(const ScopedClearLastError&) = delete;
+  ScopedClearLastError& operator=(const ScopedClearLastError&) = delete;
+
   ~ScopedClearLastError();
 
  private:
   const unsigned long last_system_error_;
-
-  DISALLOW_COPY_AND_ASSIGN(ScopedClearLastError);
 };
 
 #elif defined(OS_POSIX) || defined(OS_FUCHSIA)

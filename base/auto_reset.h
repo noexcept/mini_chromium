@@ -18,13 +18,14 @@ class AutoReset {
     *scoped_variable_ = new_value;
   }
 
+  AutoReset(const AutoReset&) = delete;
+  AutoReset& operator=(const AutoReset&) = delete;
+
   ~AutoReset() { *scoped_variable_ = original_value_; }
 
  private:
   T* scoped_variable_;
   T original_value_;
-
-  DISALLOW_COPY_AND_ASSIGN(AutoReset);
 };
 
 }  // namespace base

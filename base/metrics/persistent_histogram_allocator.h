@@ -20,6 +20,9 @@ namespace base {
 
 class GlobalHistogramAllocator {
  public:
+  GlobalHistogramAllocator(const GlobalHistogramAllocator&) = delete;
+  GlobalHistogramAllocator& operator=(const GlobalHistogramAllocator&) = delete;
+
   static bool CreateWithActiveFileInDir(const base::FilePath&,
                                         size_t,
                                         uint64_t,
@@ -31,9 +34,6 @@ class GlobalHistogramAllocator {
   void DeletePersistentLocation() {}
 
   static GlobalHistogramAllocator* Get() { return nullptr; }
-
- private:
-  DISALLOW_COPY_AND_ASSIGN(GlobalHistogramAllocator);
 };
 
 }  // namespace base

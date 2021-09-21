@@ -17,6 +17,9 @@
 // depend on googletest.
 class PlatformTest : public testing::Test {
  public:
+  PlatformTest(const PlatformTest&) = delete;
+  PlatformTest& operator=(const PlatformTest&) = delete;
+
   ~PlatformTest() override { [pool_ release]; }
 
  protected:
@@ -29,8 +32,6 @@ class PlatformTest : public testing::Test {
   using PoolType = id;
 #endif
   PoolType pool_;
-
-  DISALLOW_COPY_AND_ASSIGN(PlatformTest);
 };
 #else
 using PlatformTest = testing::Test;

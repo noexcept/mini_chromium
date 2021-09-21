@@ -81,6 +81,9 @@ class ConditionVariable {
   // Construct a cv for use with ONLY one user lock.
   explicit ConditionVariable(Lock* user_lock);
 
+  ConditionVariable(const ConditionVariable&) = delete;
+  ConditionVariable& operator=(const ConditionVariable&) = delete;
+
   ~ConditionVariable();
 
   // Wait() releases the caller's critical section atomically as it starts to
@@ -99,8 +102,6 @@ class ConditionVariable {
 #ifndef NDEBUG
   base::Lock* user_lock_;  // Needed to adjust shadow lock state on wait.
 #endif
-
-  DISALLOW_COPY_AND_ASSIGN(ConditionVariable);
 };
 
 }  // namespace base
