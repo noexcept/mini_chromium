@@ -16,6 +16,40 @@
       "message": "Looks like I don\u0027t have powers to run a tryjob here, but crashpad/ compiles locally with this change after pulling from main as the DISALLOW_* removal just landed.",
       "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6030460f_9727e419",
+        "filename": "base/logging.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-09-21T15:25:45Z",
+      "side": 1,
+      "message": "A lot of these can be removed too.",
+      "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9893acc_a3693ba0",
+        "filename": "base/macros.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-09-21T15:25:45Z",
+      "side": 1,
+      "message": "No longer needed (wasn’t before, either).",
+      "revId": "7909c8bfaed80ecc292eb3eeff3bcfb22604fd0a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
