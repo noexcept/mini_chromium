@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1785b380_21d2fbf7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2021-11-12T21:16:27Z",
+      "side": 1,
+      "message": "Note: Don\u0027t land this before the chromium change lands.",
+      "range": {
+        "startLine": 9,
+        "startChar": 56,
+        "endLine": 9,
+        "endChar": 63
+      },
+      "revId": "ff707fe26ed159bc2bf3eb6288d843b63d2726b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1af36017_dd0cf4dc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2021-11-12T21:16:27Z",
+      "side": 1,
+      "message": "PTAL, putting this out proactively, but since I do need to be ready to roll DEPS in chromium this may be best to submit on Monday.",
+      "revId": "ff707fe26ed159bc2bf3eb6288d843b63d2726b7",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
