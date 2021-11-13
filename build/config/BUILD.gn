@@ -333,6 +333,10 @@ config("default") {
     ]
   }
 
+  if (mini_chromium_is_android) {
+    ldflags += [ "-static-libstdc++" ]
+  }
+
   cflags += common_flags
   asmflags += common_flags
   ldflags += common_flags
