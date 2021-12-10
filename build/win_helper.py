@@ -160,14 +160,21 @@ class WinTool(object):
     return popen.returncode
 
   def ExecGetVisualStudioData(self, outdir, toolchain_path):
+    # cipd packaged SDKs prior to 10.0.19041.0.
     setenv_path = os.path.join('win_sdk', 'bin', 'SetEnv.cmd')
+    # cipd packaged SDKs from 10.0.19041.0 onwards.
+    setenv_path_2 = os.path.join('Windows Kits', '10', 'bin', 'SetEnv.cmd')
 
     def explicit():
+      if os.path.exists(os.path.join(toolchain_path, setenv_path_2)):
+        return toolchain_path, setenv_path_2
       if os.path.exists(os.path.join(toolchain_path, setenv_path)):
         return toolchain_path, setenv_path
 
     def env():
       from_env = os.environ.get('VSINSTALLDIR')
+      if from_env and os.path.exists(os.path.join(from_env, setenv_path_2)):
+        return from_env, setenv_path_2
       if from_env and os.path.exists(os.path.join(from_env, setenv_path)):
         return from_env, setenv_path
 
