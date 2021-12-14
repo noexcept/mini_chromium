@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a84d0892_47377afd",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2021-12-14T16:41:53Z",
+      "side": 1,
+      "message": "Would it be enough to strip {the,all} trailing backslashes? That would help this not have to be a RE.",
+      "revId": "62d92e99c2f3ed800e126ba9399c0516172bdad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
