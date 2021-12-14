@@ -16,6 +16,24 @@
       "message": "Would it be enough to strip {the,all} trailing backslashes? That would help this not have to be a RE.",
       "revId": "62d92e99c2f3ed800e126ba9399c0516172bdad4",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0750a415_3b5808e8",
+        "filename": "build/win_helper.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1348395
+      },
+      "writtenOn": "2021-12-14T16:50:11Z",
+      "side": 1,
+      "message": "Yep, uses rstrip now.",
+      "parentUuid": "a84d0892_47377afd",
+      "revId": "62d92e99c2f3ed800e126ba9399c0516172bdad4",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
