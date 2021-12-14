@@ -210,6 +210,8 @@ class WinTool(object):
 
     x86_file, x64_file, arm64_file = _GenerateEnvironmentFiles(
         install_dir, outdir, script_path)
+    # gn is unhappy with `var = "stuff \"`
+    install_dir = re.sub(r'(\\.)?\\$', '', install_dir)
     result = '''install_dir = "%s"
 x86_environment_file = "%s"
 x64_environment_file = "%s"
