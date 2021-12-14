@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c46b4bd_7604b75c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1348395
+      },
+      "writtenOn": "2021-12-14T16:38:33Z",
+      "side": 1,
+      "message": "we left gn dangling and it didn\u0027t like it. I repro\u0027d this locally with a matching env var and with this fix it did much better.",
+      "revId": "e4521d332b1134521304e2a948e552e1f504ad42",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
