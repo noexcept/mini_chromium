@@ -50,6 +50,24 @@
       "message": "ajgo: I wanted to set cflags_c to \"/std:c11\" here too, as we do for non-Windows above, but this triggers C5105 in the SDK. https://developercommunity2.visualstudio.com/t/std:c17-generates-warning-compiling-Win/1249671 says that this is fixed in SDK 10.0.20348.0, but you just updated us (on the eighth try…and thanks again!) to 10.0.19041.0. I don’t see a newer SDK than that. scottmg had been doing these uploads, and he’s gone now. Do you know if the process to package up a new SDK is documented anywhere?",
       "revId": "b327d82fccb77d78cb18c0c4b061a14a19458bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d01728c1_fc22dbe5",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-06T23:30:44Z",
+      "side": 1,
+      "message": "\u003e ajgo: I wanted to set cflags_c to \"/std:c11\" here too, as we do for non-Windows above, but this triggers C5105 in the SDK. https://developercommunity2.visualstudio.com/t/std:c17-generates-warning-compiling-Win/1249671 says that this is fixed in SDK 10.0.20348.0, but you just updated us (on the eighth try…and thanks again!) to 10.0.19041.0. I don’t see a newer SDK than that. scottmg had been doing these uploads, and he’s gone now. Do you know if the process to package up a new SDK is documented anywhere?",
+      "parentUuid": "2e7c1753_9fd78410",
+      "revId": "b327d82fccb77d78cb18c0c4b061a14a19458bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
