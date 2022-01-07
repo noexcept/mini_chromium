@@ -104,6 +104,24 @@
       "parentUuid": "1b71b24e_ac3c4ca8",
       "revId": "b327d82fccb77d78cb18c0c4b061a14a19458bde",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe9a3434_d2a320a7",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1348395
+      },
+      "writtenOn": "2022-01-07T00:32:36Z",
+      "side": 1,
+      "message": "I took a quick look at:\n\n\u003e go/windows-sdk-cipd-update\n\nand to make things difficult - the version listed currently in vs_toolchain.py is 3bda71a11e \u003d\u003d 19041 and is the latest dated archive in `gsutil ls -L gs://chrome-wintoolchain/` so you might also need to follow:\n\ngo/chromium-msvc-toolchain - I think brucedawson is the best person to check with.",
+      "parentUuid": "7401d3b9_2a140c41",
+      "revId": "b327d82fccb77d78cb18c0c4b061a14a19458bde",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
