@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "486599c5_c7e2b4b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-14T19:51:10Z",
+      "side": 1,
+      "message": "It’d be slightly helpful to write these lines like\n\nALLOW_UNUSED_LOCAL → [[maybe_unused]]\n\nin the commit message, to make the outcome of the transition more immediately apparent.",
+      "revId": "4ae8f62c44ec6fa6cd7eb3e4d9731add4afeb8c0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
