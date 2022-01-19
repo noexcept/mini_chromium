@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3e74dff_300025a4",
+        "filename": "base/mac/scoped_nsautorelease_pool.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T18:16:33Z",
+      "side": 1,
+      "message": "\u003e This one and the one on line 49 don\u0027t have a !.\n\nBecause they’re an #else branch? I don’t think we have a standard for whether we write x or !x at the top and bottom of an #else branch. What was and is now here seems reasonable, though.",
+      "parentUuid": "358e607b_807d5382",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 11
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a71d785_95b967fb",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-01-19T18:07:42Z",
       "side": 1,
       "message": "I thought fuchsia wasn\u0027t considered POSIX anymore?",
+      "range": {
+        "startLine": 70,
+        "startChar": 58,
+        "endLine": 70,
+        "endChar": 59
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00d3d699_11cbb258",
+        "filename": "build/build_config.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T18:16:33Z",
+      "side": 1,
+      "message": "\u003e I thought fuchsia wasn\u0027t considered POSIX anymore?\n\nThis is supposed to be no-change, and Fuchsia was definitely considered POSIX at #b32. It’s not considered POSIX in the Chrome build anymore since 65421f69a6e0, but it is in mini_chromium, and Fuchsia’s own Crashpad build picks up mini_chromium and uses that definition.\n\nI’m reluctant to change anything here because I think it’ll break Fuchsia’s own build. Ideally, mini_chromium and Chromium would agree on whether Fuchsia is POSIX, but I think that this is a question (and possibly task) for someone more familiar with the Crashpad integration on Fuchsia.",
+      "parentUuid": "6a71d785_95b967fb",
       "range": {
         "startLine": 70,
         "startChar": 58,
