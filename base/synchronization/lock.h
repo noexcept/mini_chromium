@@ -6,10 +6,11 @@
 #define MINI_CHROMIUM_BASE_SYNCHRONIZATION_LOCK_H_
 
 #include "build/build_config.h"
+#include "build/buildflag.h"
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 #include <windows.h>
-#elif defined(OS_POSIX)
+#elif BUILDFLAG(IS_POSIX)
 #include <pthread.h>
 #endif
 
@@ -17,9 +18,9 @@
 
 namespace base {
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 typedef DWORD ThreadRefType;
-#elif defined(OS_POSIX)
+#elif BUILDFLAG(IS_POSIX)
 typedef pthread_t ThreadRefType;
 #endif
 
