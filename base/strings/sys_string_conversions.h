@@ -6,8 +6,9 @@
 #define MINI_CHROMIUM_BASE_STRINGS_SYS_STRING_CONVERSIONS_H_
 
 #include "build/build_config.h"
+#include "build/buildflag.h"
 
-#if defined(OS_APPLE)
+#if BUILDFLAG(IS_APPLE)
 
 #include <CoreFoundation/CoreFoundation.h>
 
@@ -28,6 +29,6 @@ NSString* SysUTF8ToNSString(const std::string& utf8);
 
 }  // namespace base
 
-#endif  // defined(OS_APPLE)
+#endif  // BUILDFLAG(IS_APPLE)
 
 #endif  // MINI_CHROMIUM_BASE_STRINGS_SYS_STRING_CONVERSIONS_H_
