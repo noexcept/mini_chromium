@@ -5,15 +5,16 @@
 #ifndef MINI_CHROMIUM_BASE_MAC_SCOPED_NSAUTORELEASE_POOL_H_
 #define MINI_CHROMIUM_BASE_MAC_SCOPED_NSAUTORELEASE_POOL_H_
 
+#include "build/buildflag.h"
 #include "build/build_config.h"
 
-#if defined(OS_APPLE)
+#if BUILDFLAG(IS_APPLE)
 #if defined(__OBJC__)
 @class NSAutoreleasePool;
 #else  // __OBJC__
 class NSAutoreleasePool;
 #endif  // __OBJC__
-#endif  // OS_APPLE
+#endif  // BUILDFLAG(IS_APPLE)
 
 namespace base {
 namespace mac {
@@ -28,10 +29,10 @@ namespace mac {
 // ugly #ifdefs.
 class ScopedNSAutoreleasePool {
  public:
-#if !defined(OS_APPLE)
+#if !BUILDFLAG(IS_APPLE)
   ScopedNSAutoreleasePool() {}
   void Recycle() { }
-#else  // OS_APPLE
+#else  // BUILDFLAG(IS_APPLE)
   ScopedNSAutoreleasePool();
 
   ScopedNSAutoreleasePool(const ScopedNSAutoreleasePool&) = delete;
@@ -46,7 +47,7 @@ class ScopedNSAutoreleasePool {
   void Recycle();
  private:
   NSAutoreleasePool* autorelease_pool_;
-#endif  // OS_APPLE
+#endif  // BUILDFLAG(IS_APPLE)
 };
 
 }  // namespace mac

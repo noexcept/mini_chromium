@@ -6,9 +6,10 @@
 #define MINI_CHROMIUM_BASE_MAC_FOUNDATION_UTIL_H_
 
 #include "base/logging.h"
+#include "build/buildflag.h"
 #include "build/build_config.h"
 
-#if defined(OS_IOS)
+#if BUILDFLAG(IS_IOS)
 #include <CoreText/CoreText.h>
 #else
 #include <ApplicationServices/ApplicationServices.h>
@@ -134,7 +135,7 @@ CF_CAST_DECL(CGColor);
 CF_CAST_DECL(CTFont);
 CF_CAST_DECL(CTRun);
 
-#if !defined(OS_IOS)
+#if !BUILDFLAG(IS_IOS)
 CF_CAST_DECL(SecACL);
 CF_CAST_DECL(SecTrustedApplication);
 #endif
