@@ -83,6 +83,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "650e4421_9c69e4f1",
+        "filename": "base/files/scoped_file.cc",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1002182
+      },
+      "writtenOn": "2022-01-19T19:07:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ebb494b0_6272a44a",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38c58a30_b9bc123c",
