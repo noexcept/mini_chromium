@@ -6,8 +6,9 @@
 #define MINI_CHROMIUM_BASE_FILES_FILE_UTIL_H_
 
 #include "build/build_config.h"
+#include "build/buildflag.h"
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 
 #include <sys/types.h>
 
@@ -17,6 +18,6 @@ bool ReadFromFD(int fd, char* buffer, size_t bytes);
 
 }  // namespace base
 
-#endif  // OS_POSIX
+#endif  // BUILDFLAG(IS_POSIX)
 
 #endif  // MINI_CHROMIUM_BASE_FILES_FILE_UTIL_H_

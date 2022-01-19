@@ -9,6 +9,7 @@
 
 #include "base/logging.h"
 #include "build/build_config.h"
+#include "build/buildflag.h"
 
 // Use the MACH_LOG family of macros along with a mach_error_t (kern_return_t)
 // containing a Mach error. The error value will be decoded so that logged
@@ -91,7 +92,7 @@ class MachLogMessage : public logging::LogMessage {
                 DCHECK_IS_ON && !(condition)) \
     << "Check failed: " # condition << ". "
 
-#if !defined(OS_IOS)
+#if !BUILDFLAG(IS_IOS)
 
 namespace logging {
 
@@ -158,6 +159,6 @@ class BootstrapLogMessage : public logging::LogMessage {
                 DCHECK_IS_ON && !(condition)) \
     << "Check failed: " # condition << ". "
 
-#endif  // !OS_IOS
+#endif  // !BUILDFLAG(IS_IOS)
 
 #endif  // MINI_CHROMIUM_BASE_MAC_MACH_LOGGING_H_

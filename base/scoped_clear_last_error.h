@@ -8,6 +8,7 @@
 #include <errno.h>
 
 #include "build/build_config.h"
+#include "build/buildflag.h"
 
 namespace base {
 
@@ -24,7 +25,7 @@ class ScopedClearLastErrorBase {
   const int last_errno_;
 };
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 
 class ScopedClearLastError : public ScopedClearLastErrorBase {
  public:
@@ -39,11 +40,11 @@ class ScopedClearLastError : public ScopedClearLastErrorBase {
   const unsigned long last_system_error_;
 };
 
-#elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+#elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
 
 using ScopedClearLastError = ScopedClearLastErrorBase;
 
-#endif  // defined(OS_WIN)
+#endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace base
 
