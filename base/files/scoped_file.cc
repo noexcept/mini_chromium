@@ -7,8 +7,9 @@
 #include <stdio.h>
 
 #include "base/logging.h"
+#include "build/buildflag.h"
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 #include <unistd.h>
 #include "base/posix/eintr_wrapper.h"
 #endif
@@ -16,11 +17,11 @@
 namespace base {
 namespace internal {
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 void ScopedFDCloseTraits::Free(int fd) {
   PCHECK(IGNORE_EINTR(close(fd)) == 0);
 }
-#endif  // OS_POSIX
+#endif  // BUILDFLAG(IS_POSIX)
 
 void ScopedFILECloser::operator()(FILE* file) const {
   if (file) {

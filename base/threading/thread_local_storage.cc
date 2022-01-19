@@ -7,6 +7,7 @@
 #include <string.h>
 
 #include "base/atomicops.h"
+#include "build/buildflag.h"
 #include "base/logging.h"
 
 using base::internal::PlatformThreadLocalStorage;
@@ -175,7 +176,7 @@ namespace base {
 
 namespace internal {
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 void PlatformThreadLocalStorage::OnThreadExit() {
   PlatformThreadLocalStorage::TLSKey key =
       base::subtle::NoBarrier_Load(&g_native_tls_key);
@@ -187,11 +188,11 @@ void PlatformThreadLocalStorage::OnThreadExit() {
     return;
   OnThreadExitInternal(tls_data);
 }
-#elif defined(OS_POSIX)
+#elif BUILDFLAG(IS_POSIX)
 void PlatformThreadLocalStorage::OnThreadExit(void* value) {
   OnThreadExitInternal(value);
 }
-#endif  // defined(OS_WIN)
+#endif  // BUILDFLAG(IS_WIN)
 
 }  // namespace internal
 
