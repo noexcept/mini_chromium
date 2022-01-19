@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a912862b_320c7b2c",
+        "filename": "base/files/file_path.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "\u003e BUILDFLAG(IS_POSIX) to match the #if instead of #elif?\n\nAs in scoped_nsautorelease_pool.h.",
+      "parentUuid": "94a46bf2_d286d89d",
+      "range": {
+        "startLine": 241,
+        "startChar": 11,
+        "endLine": 241,
+        "endChar": 28
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6359d0f6_3d706878",
@@ -41,6 +65,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebb494b0_6272a44a",
+        "filename": "base/files/scoped_file.cc",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "\u003e Add include to build_config.h\n\nNot necessary in mini_chromium, because it’s #included by base/files/scoped_file.h, and mini_chromium doesn’t have Chromium’s broken PRESUBMIT check that doesn’t know about headers #included by a .cc’s (or .mm’s) associated .h.\n\nSome “ack”s that follow are using the same pattern.",
+      "parentUuid": "6359d0f6_3d706878",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38c58a30_b9bc123c",
@@ -54,6 +96,24 @@
       "writtenOn": "2022-01-19T18:51:41Z",
       "side": 1,
       "message": "include build_config.h",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dcfe27e1_afc61091",
+        "filename": "base/logging.cc",
+        "patchSetId": 15
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "38c58a30_b9bc123c",
       "revId": "58a6027fb2abe680bedd500f74415093faf28089",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -81,6 +141,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b6d0fe_85285ab8",
+        "filename": "base/logging.cc",
+        "patchSetId": 15
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "\u003e Is IS_* intentional? I saw it\u0027s from existing code.\n\nYes, this is how the #if/#elif/#else group is closed here.",
+      "parentUuid": "61159d62_380889c9",
+      "range": {
+        "startLine": 371,
+        "startChar": 11,
+        "endLine": 371,
+        "endChar": 26
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e32fb869_9bd621f3",
@@ -98,6 +182,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "065bde98_b4a399c0",
+        "filename": "base/mac/foundation_util.mm",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e32fb869_9bd621f3",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d56986c_c90b0beb",
@@ -111,6 +213,24 @@
       "writtenOn": "2022-01-19T18:51:41Z",
       "side": 1,
       "message": "Include build_config.h",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "821a2312_3bca1a68",
+        "filename": "base/mac/mach_logging.cc",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1d56986c_c90b0beb",
       "revId": "58a6027fb2abe680bedd500f74415093faf28089",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -186,6 +306,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e2b235b_a6e8ab7e",
+        "filename": "base/mac/scoped_nsautorelease_pool.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "\u003e FYI, thakis@ and I have been following the pattern where the comment on #else and #endif both match what\u0027s after #if.\n\nThat doesn’t make it a standard, and it’s particularly nonsensical on a group that has intervening #elif branches.",
+      "parentUuid": "961c6d4c_c9d4706f",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 11
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "da279fc6_9bfe923c",
@@ -199,6 +343,24 @@
       "writtenOn": "2022-01-19T18:51:41Z",
       "side": 1,
       "message": "Include build_config.h",
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4a264c2_b95a3217",
+        "filename": "base/strings/string_util.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-01-19T19:02:35Z",
+      "side": 1,
+      "message": "\u003e Include build_config.h\n\nYup, this one’s real. I’ll add it in a follow-up: https://chromium-review.googlesource.com/c/3402360/.",
+      "parentUuid": "da279fc6_9bfe923c",
       "revId": "58a6027fb2abe680bedd500f74415093faf28089",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
