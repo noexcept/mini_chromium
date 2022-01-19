@@ -5,6 +5,7 @@
 #ifndef MINI_CHROMIUM_BASE_COMPILER_SPECIFIC_H_
 #define MINI_CHROMIUM_BASE_COMPILER_SPECIFIC_H_
 
+#include "build/buildflag.h"
 #include "build/build_config.h"
 
 // Specify memory alignment for structs, classes, etc.
@@ -35,7 +36,7 @@
 #endif
 
 // DISABLE_CFI_ICALL -- Disable Control Flow Integrity indirect call checks.
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 // Windows also needs __declspec(guard(nocf)).
 #define DISABLE_CFI_ICALL NO_SANITIZE("cfi-icall") __declspec(guard(nocf))
 #else

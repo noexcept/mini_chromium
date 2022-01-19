@@ -21,9 +21,10 @@
 //   printf("xyz: %" PRIuS, size);
 // The "u" in the macro corresponds to %u, and S is for "size".
 
+#include "build/buildflag.h"
 #include "build/build_config.h"
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 
 #if (defined(_INTTYPES_H) || defined(_INTTYPES_H_)) && !defined(PRId64)
 #error "inttypes.h has already been included before this header file, but "
@@ -50,7 +51,7 @@
 // architectures and Apple does not provides standard format macros and
 // recommends casting. This has many drawbacks, so instead define macros
 // for formatting those types.
-#if defined(OS_APPLE)
+#if BUILDFLAG(IS_APPLE)
 #if defined(ARCH_CPU_64_BITS)
 #if !defined(PRIdNS)
 #define PRIdNS "ld"
@@ -72,9 +73,9 @@
 #define PRIxNS "x"
 #endif
 #endif
-#endif  // defined(OS_APPLE)
+#endif  // BUILDFLAG(IS_APPLE)
 
-#else  // OS_WIN
+#else  // BUILDFLAG(IS_WIN)
 
 #if !defined(PRId64)
 #define PRId64 "I64d"
