@@ -7,19 +7,20 @@
 
 #include "build/build_config.h"
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 #include <windows.h>
-#elif defined(OS_POSIX)
+#elif BUILDFLAG(IS_POSIX)
 #include <pthread.h>
 #endif
 
+#include "build/buildflag.h"
 #include "base/synchronization/lock_impl.h"
 
 namespace base {
 
-#if defined(OS_WIN)
+#if BUILDFLAG(IS_WIN)
 typedef DWORD ThreadRefType;
-#elif defined(OS_POSIX)
+#elif BUILDFLAG(IS_POSIX)
 typedef pthread_t ThreadRefType;
 #endif
 
