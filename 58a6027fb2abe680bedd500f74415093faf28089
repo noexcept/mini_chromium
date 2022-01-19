@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "358e607b_807d5382",
+        "filename": "base/mac/scoped_nsautorelease_pool.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2022-01-19T18:07:42Z",
+      "side": 1,
+      "message": "This one and the one on line 49 don\u0027t have a !.",
+      "range": {
+        "startLine": 34,
+        "startChar": 10,
+        "endLine": 34,
+        "endChar": 11
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a71d785_95b967fb",
+        "filename": "build/build_config.h",
+        "patchSetId": 15
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1172779
+      },
+      "writtenOn": "2022-01-19T18:07:42Z",
+      "side": 1,
+      "message": "I thought fuchsia wasn\u0027t considered POSIX anymore?",
+      "range": {
+        "startLine": 70,
+        "startChar": 58,
+        "endLine": 70,
+        "endChar": 59
+      },
+      "revId": "58a6027fb2abe680bedd500f74415093faf28089",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
