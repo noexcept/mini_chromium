@@ -91,7 +91,7 @@ class MachLogMessage : public logging::LogMessage {
                 DCHECK_IS_ON && !(condition)) \
     << "Check failed: " # condition << ". "
 
-#if !defined(OS_IOS)
+#if !BUILDFLAG(IS_IOS)
 
 namespace logging {
 

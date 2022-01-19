@@ -7,7 +7,7 @@
 
 #include "build/build_config.h"
 
-#if defined(OS_APPLE)
+#if BUILDFLAG(IS_APPLE)
 #if defined(__OBJC__)
 @class NSAutoreleasePool;
 #else  // __OBJC__
@@ -28,7 +28,7 @@ namespace mac {
 // ugly #ifdefs.
 class ScopedNSAutoreleasePool {
  public:
-#if !defined(OS_APPLE)
+#if !BUILDFLAG(IS_APPLE)
   ScopedNSAutoreleasePool() {}
   void Recycle() { }
 #else  // OS_APPLE

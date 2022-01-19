@@ -8,7 +8,7 @@
 #include "build/build_config.h"
 #include "gtest/gtest.h"
 
-#if defined(OS_APPLE)
+#if BUILDFLAG(IS_APPLE)
 #import <Foundation/Foundation.h>
 
 // The implementation is in this header because mini_chromium does not directly

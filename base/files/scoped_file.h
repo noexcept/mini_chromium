@@ -16,7 +16,7 @@ namespace base {
 
 namespace internal {
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 struct ScopedFDCloseTraits {
   static int InvalidValue() {
     return -1;
@@ -31,7 +31,7 @@ struct ScopedFILECloser {
 
 }  // namespace internal
 
-#if defined(OS_POSIX)
+#if BUILDFLAG(IS_POSIX)
 typedef ScopedGeneric<int, internal::ScopedFDCloseTraits> ScopedFD;
 #endif  // OS_POSIX
 typedef std::unique_ptr<FILE, internal::ScopedFILECloser> ScopedFILE;
