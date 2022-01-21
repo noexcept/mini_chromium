@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a162027_f3f57546",
+        "filename": ".style.yapf",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1532397
+      },
+      "writtenOn": "2022-01-21T17:41:20Z",
+      "side": 1,
+      "message": "Should this be the BSD 3-Clause license to match the rest of mini_chromium?\n\nhttps://chromium.googlesource.com/chromium/mini_chromium/+/refs/heads/main/LICENSE",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "f41420eb45faabea65a07b9ce2140f072f8237c8",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "f9ca42e5_deac186b",
