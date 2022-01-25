@@ -5,7 +5,7 @@
 #ifndef MINI_CHROMIUM_BUILD_BUILD_CONFIG_H_
 #define MINI_CHROMIUM_BUILD_BUILD_CONFIG_H_
 
-#include "build/buildflag.h"
+#include "mini_chromium/build/buildflag.h"
 
 #if defined(__APPLE__)
 #include <TargetConditionals.h>
