@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fac87d86_3ec9be63",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1383098
+      },
+      "writtenOn": "2022-01-25T12:24:09Z",
+      "side": 1,
+      "message": "I rechecked the config and it looks good to me. +2 from my side.",
+      "revId": "9e788c22d9dfaa8c916354b18b11bba6ef13087d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f29a27e_323ee2d8",
@@ -14,6 +31,24 @@
       "writtenOn": "2022-01-19T20:50:03Z",
       "side": 1,
       "message": "Just to confirm, this doesn\u0027t set true always, but only when Commit-Queue is set to +2? We don\u0027t need label:Commit-Queue\u003dMAX ?",
+      "revId": "9e788c22d9dfaa8c916354b18b11bba6ef13087d",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fddb1b10_25aa4fb1",
+        "filename": "project.config",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1383098
+      },
+      "writtenOn": "2022-01-25T12:24:09Z",
+      "side": 1,
+      "message": "The applicableIf (is:false) is taking precedence, hence this SR won\u0027t be applicable to this project.\n\nThe reason we are doing that is from the definition of the label in line 3: the project is redefining the label with no values, hence disabling it. We are creating a corresponding SR that is disabled as a safety net so that, if this SR is defined in a parent project, it won\u0027t still apply to this project.",
+      "parentUuid": "7f29a27e_323ee2d8",
       "revId": "9e788c22d9dfaa8c916354b18b11bba6ef13087d",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
