@@ -31,23 +31,23 @@ def _ExtractImportantEnvironment(output_of_set):
   """Extracts environment variables required for the toolchain to run from
   a textual dump output by the cmd.exe 'set' command."""
   envvars_to_save = (
-      'include',
-      'lib',
-      'libpath',
-      'path',
-      'pathext',
-      'systemroot',
-      'temp',
-      'tmp',
+      b'include',
+      b'lib',
+      b'libpath',
+      b'path',
+      b'pathext',
+      b'systemroot',
+      b'temp',
+      b'tmp',
       )
   env = {}
   for line in output_of_set.splitlines():
     for envvar in envvars_to_save:
-      if re.match(envvar + '=', line.lower()):
+      if re.match(envvar + b'=', str(line.lower()):
         var, setting = line.split('=', 1)
         env[var.upper()] = setting
         break
-  for required in ('SYSTEMROOT', 'TEMP', 'TMP'):
+  for required in (b'SYSTEMROOT', b'TEMP', b'TMP'):
     if required not in env:
       raise Exception('Environment variable "%s" '
                       'required to be set to valid path' % required)
@@ -58,10 +58,10 @@ def _FormatAsEnvironmentBlock(envvar_dict):
   """Format as an 'environment block' directly suitable for CreateProcess.
   Briefly this is a list of key=value\0, terminated by an additional \0. See
   CreateProcess() documentation for more details."""
-  block = ''
-  nul = '\0'
+  block = b''
+  nul = b'\0'
   for key, value in envvar_dict.iteritems():
-    block += key + '=' + value + nul
+    block += key + b'=' + value + nul
   block += nul
   return block
 
