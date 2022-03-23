@@ -42,6 +42,7 @@ def _ExtractImportantEnvironment(output_of_set):
       )
   env = {}
   for line in output_of_set.splitlines():
+    line = str(line)
     for envvar in envvars_to_save:
       if re.match(envvar + '=', line.lower()):
         var, setting = line.split('=', 1)
@@ -60,7 +61,7 @@ def _FormatAsEnvironmentBlock(envvar_dict):
   CreateProcess() documentation for more details."""
   block = ''
   nul = '\0'
-  for key, value in envvar_dict.iteritems():
+  for key, value in envvar_dict.items():
     block += key + '=' + value + nul
   block += nul
   return block
