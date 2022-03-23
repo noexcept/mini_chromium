@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "bcba6cab_65245d8a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1373732
+      },
+      "writtenOn": "2022-03-23T18:53:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2abb086e_993706ec",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "9aa8257e8677adf6acd62a2bf6e0f750ba4d7777",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "3fa853a3_eef51076",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 1
@@ -54,6 +78,30 @@
       "writtenOn": "2022-03-23T18:40:30Z",
       "side": 1,
       "message": "Do we need to try both? Can we just do the Python 3 thing?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "9aa8257e8677adf6acd62a2bf6e0f750ba4d7777",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e2997df_b8ed660e",
+        "filename": "build/win_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1373732
+      },
+      "writtenOn": "2022-03-23T18:53:45Z",
+      "side": 1,
+      "message": "Discuss this with Justin and Rohit. The mini_chromium patch this is fixing, https://chromium.googlesource.com/chromium/mini_chromium/+/4a0b8ebb12758e056b0438844f8ce798784bfc82, maintains Python 2 compatibility, and I am not comfortable unilaterally breaking that. Note that the crashpad CL that Justin and I are working on together *does* go Python 3 only, but the mini_chromium patch did not.",
+      "parentUuid": "bcaa787b_62f9a2db",
       "range": {
         "startLine": 7,
         "startChar": 0,
