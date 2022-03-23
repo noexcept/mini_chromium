@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fe2e2c9_41a96de8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1373732
+      },
+      "writtenOn": "2022-03-23T19:50:47Z",
+      "side": 1,
+      "message": "oops, marking comment as resolved.\n\nCan someone with CQ permissions put this on a trybot?",
+      "revId": "1ed9d05dd6adf88b24584e8d1741f3d0557a74f0",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
