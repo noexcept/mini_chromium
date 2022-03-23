@@ -4,7 +4,11 @@
 
 from __future__ import print_function
 
-import _winreg
+try:
+  import _winreg
+except ImportError:
+  import winreg as _winreg
+
 import os
 import re
 import subprocess
