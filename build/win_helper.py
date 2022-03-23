@@ -43,9 +43,9 @@ def _ExtractImportantEnvironment(output_of_set):
   env = {}
   for line in output_of_set.splitlines():
     for envvar in envvars_to_save:
-      if re.match(envvar + '=', line.lower()):
+      if re.match(envvar + '=', str(line.lower())):
         var, setting = line.split('=', 1)
-        env[var.upper()] = setting
+        env[str(var.upper())] = str(setting)
         break
   for required in ('SYSTEMROOT', 'TEMP', 'TMP'):
     if required not in env:
@@ -60,7 +60,7 @@ def _FormatAsEnvironmentBlock(envvar_dict):
   CreateProcess() documentation for more details."""
   block = ''
   nul = '\0'
-  for key, value in envvar_dict.iteritems():
+  for key, value in envvar_dict.items():
     block += key + '=' + value + nul
   block += nul
   return block
