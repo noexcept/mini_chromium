@@ -42,6 +42,7 @@ def _ExtractImportantEnvironment(output_of_set):
       )
   env = {}
   for line in output_of_set.splitlines():
+    line = line.decode("utf-8")
     for envvar in envvars_to_save:
       if re.match(envvar + '=', line.lower()):
         var, setting = line.split('=', 1)
@@ -60,7 +61,7 @@ def _FormatAsEnvironmentBlock(envvar_dict):
   CreateProcess() documentation for more details."""
   block = ''
   nul = '\0'
-  for key, value in envvar_dict.iteritems():
+  for key, value in envvar_dict.items():
     block += key + '=' + value + nul
   block += nul
   return block
@@ -97,7 +98,7 @@ def _GenerateEnvironmentFiles(install_dir, out_dir, script_path):
     env_block = _FormatAsEnvironmentBlock(env)
     basename = 'environment.' + arch
     with open(os.path.join(out_dir, basename), 'wb') as f:
-      f.write(env_block)
+      f.write(env_block.encode())
     result.append(basename)
   return result
 
@@ -185,7 +186,7 @@ class WinTool(object):
         installation_path = subprocess.check_output(
             [vswhere_path, '-latest', '-property', 'installationPath']).strip()
         if installation_path:
-          return (installation_path,
+          return (installation_path.decode("utf-8"),
                   os.path.join('VC', 'Auxiliary', 'Build', 'vcvarsall.bat'))
 
       # Otherwise, try VS2015.
