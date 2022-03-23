@@ -134,6 +134,30 @@
       },
       "revId": "9aa8257e8677adf6acd62a2bf6e0f750ba4d7777",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2eef10f_8a6e3454",
+        "filename": "build/win_helper.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1373732
+      },
+      "writtenOn": "2022-03-23T19:23:07Z",
+      "side": 1,
+      "message": "That decision conflicts with https://chromium.googlesource.com/chromium/mini_chromium/+/58700549ea9ae648ed4ca8955c2739318a01c7eb. Does that CL need to be rewritten and reapplied?",
+      "parentUuid": "5da202ab_ddca216e",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "9aa8257e8677adf6acd62a2bf6e0f750ba4d7777",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
