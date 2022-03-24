@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dcb6b09_9654ceeb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-03-24T02:34:01Z",
+      "side": 1,
+      "message": "For a lot of these, it probably would have been better to open the affected files or pipes in text mode.",
+      "revId": "f87a38442a9e7ba88d1c4f479e9167927eae84ed",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
