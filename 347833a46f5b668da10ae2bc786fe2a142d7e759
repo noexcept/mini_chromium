@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "769e7194_df00152d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1532397
+      },
+      "writtenOn": "2022-03-29T19:28:18Z",
+      "side": 1,
+      "message": "It\u0027s the Apple Silicon *simulator* that this supports, right?",
+      "range": {
+        "startLine": 7,
+        "startChar": 39,
+        "endLine": 7,
+        "endChar": 60
+      },
+      "revId": "347833a46f5b668da10ae2bc786fe2a142d7e759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "a2114141_97c6efb2",
