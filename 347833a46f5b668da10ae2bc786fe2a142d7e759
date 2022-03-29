@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2114141_97c6efb2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2022-03-29T19:03:56Z",
+      "side": 1,
+      "message": "Various fixes for getting things working on my M1 laptop.\n\nPTAL!",
+      "revId": "347833a46f5b668da10ae2bc786fe2a142d7e759",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
