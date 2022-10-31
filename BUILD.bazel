@@ -1,0 +1,168 @@
+# Copyright 2022 The Chromium Authors
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+load(
+    ":buildflags.bzl",
+    "buildflags",
+)
+
+package(default_visibility = ["//visibility:public"])
+
+MINI_CHROMIUM_BASE_SOURCES = [
+    "base/compiler_specific.h",
+    "base/debug/alias.cc",
+    "base/debug/alias.h",
+    "base/files/file_path.cc",
+    "base/files/file_util.h",
+    "base/files/scoped_file.cc",
+    "base/logging.cc",
+    "base/memory/scoped_policy.h",
+    "base/numerics/checked_math_impl.h",
+    "base/numerics/clamped_math_impl.h",
+    "base/numerics/safe_math_clang_gcc_impl.h",
+    "base/numerics/safe_math_shared_impl.h",
+    "base/process/memory.cc",
+    "base/process/memory.h",
+    "base/rand_util.cc",
+    "base/strings/string_number_conversions.cc",
+    "base/strings/stringprintf.cc",
+    "base/strings/sys_string_conversions.h",
+    "base/strings/utf_string_conversion_utils.cc",
+    "base/strings/utf_string_conversion_utils.h",
+    "base/strings/utf_string_conversions.cc",
+    "base/synchronization/condition_variable.h",
+    "base/synchronization/lock.cc",
+    "base/synchronization/lock_impl.h",
+    "base/template_util.h",
+    "base/third_party/icu/icu_utf.cc",
+    "base/third_party/icu/icu_utf.h",
+    "base/threading/thread_local_storage.cc",
+]
+
+MINI_CHROMIUM_BASE_HEADERS = [
+    "base/atomicops.h",
+    "base/auto_reset.h",
+    "base/bit_cast.h",
+    "base/check.h",
+    "base/check_op.h",
+    "base/compiler_specific.h",
+    "base/cxx17_backports.h",
+    "base/files/file_path.h",
+    "base/files/scoped_file.h",
+    "base/format_macros.h",
+    "base/logging.h",
+    "base/memory/free_deleter.h",
+    "base/memory/page_size.h",
+    "base/metrics/histogram_functions.h",
+    "base/metrics/histogram_macros.h",
+    "base/metrics/persistent_histogram_allocator.h",
+    "base/notreached.h",
+    "base/numerics/checked_math.h",
+    "base/numerics/clamped_math.h",
+    "base/numerics/safe_conversions.h",
+    "base/numerics/safe_math.h",
+    "base/posix/eintr_wrapper.h",
+    "base/rand_util.h",
+    "base/scoped_clear_last_error.h",
+    "base/scoped_generic.h",
+    "base/strings/string_number_conversions.h",
+    "base/strings/string_piece.h",
+    "base/strings/string_util.h",
+    "base/strings/stringprintf.h",
+    "base/strings/utf_string_conversions.h",
+    "base/synchronization/lock.h",
+    "base/threading/thread_local_storage.h",
+    "build/build_config.h",
+    "build/buildflag.h",
+    ":chromeos_buildflags",
+]
+
+MINI_CHROMIUM_BASE_POSIX_SOURCES = [
+    "base/files/file_util_posix.cc",
+    "base/memory/page_size_posix.cc",
+    "base/posix/safe_strerror.cc",
+    "base/strings/string_util_posix.h",
+    "base/synchronization/condition_variable_posix.cc",
+    "base/synchronization/lock_impl_posix.cc",
+    "base/threading/thread_local_storage_posix.cc",
+]
+
+MINI_CHROMIUM_BASE_POSIX_HEADERS = [
+    "base/posix/safe_strerror.h",
+]
+
+MINI_CHROMIUM_BASE_WINDOWS_SOURCES = [
+    "base/memory/page_size_win.cc",
+    "base/scoped_clear_last_error_win.cc",
+    "base/strings/string_util_win.cc",
+    "base/strings/string_util_win.h",
+    "base/synchronization/lock_impl_win.cc",
+    "base/threading/thread_local_storage_win.cc",
+]
+
+MINI_CHROMIUM_BASE_WINDOWS_HEADERS = [
+]
+
+cc_library(
+    name = "base",
+    srcs = MINI_CHROMIUM_BASE_SOURCES +
+           select({
+               "@platforms//os:osx": MINI_CHROMIUM_BASE_POSIX_SOURCES,
+               "@platforms//os:windows": MINI_CHROMIUM_BASE_WINDOWS_SOURCES,
+               "//conditions:default": MINI_CHROMIUM_BASE_POSIX_SOURCES,
+           }),
+    hdrs = MINI_CHROMIUM_BASE_HEADERS +
+           select({
+               "@platforms//os:osx": MINI_CHROMIUM_BASE_POSIX_HEADERS,
+               "@platforms//os:windows": MINI_CHROMIUM_BASE_WINDOWS_HEADERS,
+               "//conditions:default": MINI_CHROMIUM_BASE_POSIX_HEADERS,
+           }),
+    copts = select({
+        "@platforms//os:osx": [
+            "-DNOMINMAX",
+            "-DUNICODE",
+            "-DWIN32_LEAN_AND_MEAN",
+            "-D_CRT_SECURE_NO_WARNINGS",
+            "-D_HAS_EXCEPTIONS=0",
+            "-D_UNICODE",
+        ],
+        "//conditions:default": [],
+    }),
+    includes = [
+        ".",
+    ],
+    linkopts = select({
+        "@platforms//os:android": [
+            "-llog",
+        ],
+        "@platforms//os:osx": [
+            "-framework ApplicationServices",
+            "-framework CoreFoundation",
+            "-framework Foundation",
+            "-framework IOKit",
+            "-framework Security",
+        ],
+        "@platforms//os:windows": [
+            "advapi32.lib",
+        ],
+        "//conditions:default": [],
+    }),
+    textual_hdrs = [
+        "base/atomicops_internals_atomicword_compat.h",
+        "base/atomicops_internals_portable.h",
+        "base/numerics/safe_conversions_impl.h",
+        "base/numerics/safe_math_arm_impl.h",
+        "base/numerics/safe_conversions_arm_impl.h",
+        "base/sys_byteorder.h",
+    ],
+)
+
+buildflags(
+    name = "chromeos_buildflags",
+    out = "build/chromeos_buildflags.h",
+    flags = {
+        "IS_CHROMEOS_ASH": "0",
+        "IS_CHROMEOS_LACROS": "0",
+    },
+)
