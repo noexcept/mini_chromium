@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fdf8e36_0890c875",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1456088
+      },
+      "writtenOn": "2022-11-01T13:05:38Z",
+      "side": 1,
+      "message": "Hey Mark, we are enabling Bazel builds in Fuchsia, and we need these files for Bazel to work.\n\nI took the blaze BUILD file from google3 and made it work in Bazel, also made everything as generic as possible so it\u0027s not coupled with Fuchsia\u0027s Bazel build, although I\u0027ve only tested this with Fuchsia.",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
