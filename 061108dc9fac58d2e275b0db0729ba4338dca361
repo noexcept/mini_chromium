@@ -16,6 +16,23 @@
       "message": "Hey Mark, we are enabling Bazel builds in Fuchsia, and we need these files for Bazel to work.\n\nI took the blaze BUILD file from google3 and made it work in Bazel, also made everything as generic as possible so it\u0027s not coupled with Fuchsia\u0027s Bazel build, although I\u0027ve only tested this with Fuchsia.",
       "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "17d64680_a51f5770",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-11-01T13:35:34Z",
+      "side": 1,
+      "message": "This is a whole separate build description. I don’t think we want that in this upstream tree.\n\nWe used to have two build systems in this tree, and it was a pain. In https://chromium-review.googlesource.com/c/3032786 last year, we were finally able to remove the GYP build. I’m not keen on regressing that.",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
