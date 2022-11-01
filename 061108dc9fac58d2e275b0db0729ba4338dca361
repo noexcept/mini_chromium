@@ -33,6 +33,41 @@
       "message": "This is a whole separate build description. I don’t think we want that in this upstream tree.\n\nWe used to have two build systems in this tree, and it was a pain. In https://chromium-review.googlesource.com/c/3032786 last year, we were finally able to remove the GYP build. I’m not keen on regressing that.",
       "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1008b563_da19235a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2022-11-01T16:14:27Z",
+      "side": 1,
+      "message": "Understood, Mark.\nWould this work if the Fuchsia team and other teams that consume your code with Bazel were responsible for the build definitions?\nOne upside is that we won\u0027t need to litter your GN files with `if is_fuchsia` etc statements.",
+      "parentUuid": "17d64680_a51f5770",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33efac9d_c0e0cddb",
+        "filename": "BUILD.bazel",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1374378
+      },
+      "writtenOn": "2022-11-01T16:14:27Z",
+      "side": 1,
+      "message": "How viable is it to reduce some of these statements to globs so that the build defs become more robust to source changes?",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
