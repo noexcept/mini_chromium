@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c5b89914_668ffaf8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-11-01T16:22:54Z",
+      "side": 1,
+      "message": "\u003e Understood, Mark.\n\u003e Would this work if the Fuchsia team and other teams that consume your code with Bazel were responsible for the build definitions?\n\nIf the file’s in your own repository, you could easily be responsible for it.",
+      "parentUuid": "1008b563_da19235a",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "33efac9d_c0e0cddb",
         "filename": "BUILD.bazel",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "writtenOn": "2022-11-01T16:14:27Z",
       "side": 1,
       "message": "How viable is it to reduce some of these statements to globs so that the build defs become more robust to source changes?",
+      "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f22abbd6_d26f1ad7",
+        "filename": "BUILD.bazel",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2022-11-01T16:22:54Z",
+      "side": 1,
+      "message": "\u003e How viable is it to reduce some of these statements to globs so that the build defs become more robust to source changes?\n\nWe disfavor globs because they make the build description imprecise and subject to surprising external factors.",
+      "parentUuid": "33efac9d_c0e0cddb",
       "revId": "061108dc9fac58d2e275b0db0729ba4338dca361",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
