@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70467043_f9966153",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 4
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-05-23T21:05:13Z",
+      "side": 1,
+      "message": "Is `--target\u003driscv64` enough?",
+      "revId": "ef40f4004b778d5d5e3d3e769516803b874d529a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
