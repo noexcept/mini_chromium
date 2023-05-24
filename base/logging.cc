@@ -101,7 +101,7 @@ std::string SystemErrorCodeToString(unsigned long error_code) {
                             error_code,
                             0,
                             msgbuf,
-                            static_cast<DWORD>(base::size(msgbuf)),
+                            static_cast<DWORD>(std::size(msgbuf)),
                             nullptr);
   if (len) {
     // Most system messages end in a period and a space. Remove the space if
