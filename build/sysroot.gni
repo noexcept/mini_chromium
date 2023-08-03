@@ -6,9 +6,11 @@ import("platform.gni")
 
 if (mini_chromium_is_posix || mini_chromium_is_fuchsia) {
   declare_args() {
-    # A directory containing the system’s header files and libraries. If empty,
-    # a suitable default will be chosen.
-    target_sysroot = ""
+    if (!(defined(is_fuchsia_tree) && is_fuchsia_tree)) {
+      # A directory containing the system’s header files and libraries. If empty,
+      # a suitable default will be chosen.
+      target_sysroot = ""
+    }
   }
 }
 
@@ -19,11 +21,13 @@ if (mini_chromium_is_mac) {
     # a suitable default will be chosen. See also |mac_sdk_min|.
     mac_sdk = ""
 
-    # The minimum version of the macOS system SDK to use. SDK versions older
-    # than this will be rejected. If |target_sysroot| and |mac_sdk| are both
-    # empty, the oldest SDK that’s at least this version will be chosen. If
-    # empty, the system’s default SDK will be chosen.
-    mac_sdk_min = ""
+    if (!(defined(is_fuchsia_tree) && is_fuchsia_tree)) {
+      # The minimum version of the macOS system SDK to use. SDK versions older
+      # than this will be rejected. If |target_sysroot| and |mac_sdk| are both
+      # empty, the oldest SDK that’s at least this version will be chosen. If
+      # empty, the system’s default SDK will be chosen.
+      mac_sdk_min = ""
+    }
   }
 
   find_mac_sdk_args = []
