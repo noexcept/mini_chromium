@@ -25,6 +25,17 @@ size_t wcslcpy(wchar_t* dst, const wchar_t* src, size_t dst_size);
 #include "base/strings/string_util_posix.h"
 #endif
 
+// Determines the type of ASCII character, independent of locale (the C
+// library versions will change based on locale).
+template <typename Char>
+inline bool IsAsciiWhitespace(Char c) {
+  return c == ' ' || (c >= 0x09 && c <= 0x0d);
+}
+template <typename Char>
+inline bool IsAsciiDigit(Char c) {
+  return c >= '0' && c <= '9';
+}
+
 template <class string_type>
 inline typename string_type::value_type* WriteInto(string_type* str,
                                                    size_t length_with_null) {
