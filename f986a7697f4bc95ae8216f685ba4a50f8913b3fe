@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e80829a_33c5a2d9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1522490
+      },
+      "writtenOn": "2023-08-04T08:53:12Z",
+      "side": 1,
+      "message": "Hi Mark, Could you PTAL and help to run CQ.",
+      "revId": "f986a7697f4bc95ae8216f685ba4a50f8913b3fe",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
