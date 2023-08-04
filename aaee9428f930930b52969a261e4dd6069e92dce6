@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1441eb90_3ae80bd1",
+        "filename": "base/strings/string_util.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-08-04T14:39:03Z",
+      "side": 1,
+      "message": "This can be `\"base/check_op.h\"` (and move it to keep things sorted) since it seems that the only logging feature used here is `DCHECK_NE`.",
+      "revId": "aaee9428f930930b52969a261e4dd6069e92dce6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb6b943_3015b0a5",
+        "filename": "base/strings/string_util.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-08-04T14:39:03Z",
+      "side": 1,
+      "message": "Oh, that sneaky inline definition…",
+      "revId": "aaee9428f930930b52969a261e4dd6069e92dce6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
