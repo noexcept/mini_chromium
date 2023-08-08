@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "457aeedf_01edb094",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1576252
+      },
+      "writtenOn": "2023-08-08T16:46:24Z",
+      "side": 1,
+      "message": "Hi Joshua, mind submitting this for me? I don\u0027t have permission for mini_chromium",
+      "revId": "9354bbe05f6be0269748a7f116c47eed9981e0ba",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
