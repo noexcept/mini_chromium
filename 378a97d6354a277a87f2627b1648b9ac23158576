@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1eb2f38f_929887f6",
+        "filename": "base/base_export.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-27T18:22:08Z",
+      "side": 1,
+      "message": "We don’t need or want BASE_EXPORT in mini_chromium.",
+      "revId": "378a97d6354a277a87f2627b1648b9ac23158576",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
