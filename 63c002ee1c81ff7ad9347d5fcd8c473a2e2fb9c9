@@ -16,6 +16,24 @@
       "message": "I\u0027m thumb sucking these types from the compile error for CBU8_NEXT and this size_t since that is how CBU16_NEXT is used by other Chromium code. Is there a way to build this without having to commit and test against my [other CLs dry run](https://crrev.com/c/4894239)?",
       "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9078cbe0_8142ee6a",
+        "filename": "base/strings/pattern.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-28T16:00:24Z",
+      "side": 1,
+      "message": "\u003e I\u0027m thumb sucking these types from the compile error for CBU8_NEXT and this size_t since that is how CBU16_NEXT is used by other Chromium code. Is there a way to build this without having to commit and test against my [other CLs dry run](https://crrev.com/c/4894239)?\n\nThere are no mini_chromium bots, but you should be able to test your Crashpad change against an uncommitted but under-review mini_chromium change by putting its hash in the DEPS file. This patch set’s hash is 63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9. You’d get that from https://chromium-review.googlesource.com/c/4900186, under Files, just to the right of where it says Base → Patchset 1, it has 63c0002e.",
+      "parentUuid": "9aa7ca69_fef035a7",
+      "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
