@@ -16,6 +16,24 @@
       "message": "Can you revise the commit message now?",
       "revId": "5eb7fcff0429cf5e184deaea339dc73f4aa37323",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4be6961a_d29bbe46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T18:32:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4636be74_97266865",
+      "revId": "5eb7fcff0429cf5e184deaea339dc73f4aa37323",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
