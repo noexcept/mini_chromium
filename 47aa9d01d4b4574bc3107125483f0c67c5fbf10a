@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00a7a754_933ebc4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T18:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "12314ef0_b19d7cff",
+      "range": {
+        "startLine": 9,
+        "startChar": 5,
+        "endLine": 9,
+        "endChar": 7
+      },
+      "revId": "47aa9d01d4b4574bc3107125483f0c67c5fbf10a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b30a7390_177c5979",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-09-28T18:38:59Z",
       "side": 1,
       "message": "This isn’t a valid bug number.\n\nIf you mean to refer to a Chromium bug, since you’re not in the Chromium repository, you’d need to write this as `chromium:4894239`. But there’s no bug by that number.\n\nWhat is this supposed to reference?",
+      "range": {
+        "startLine": 14,
+        "startChar": 5,
+        "endLine": 14,
+        "endChar": 12
+      },
+      "revId": "47aa9d01d4b4574bc3107125483f0c67c5fbf10a",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e1be268_1902cce0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T18:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b30a7390_177c5979",
       "range": {
         "startLine": 14,
         "startChar": 5,
