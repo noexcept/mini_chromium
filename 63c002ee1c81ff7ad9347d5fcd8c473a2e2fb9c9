@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aa7ca69_fef035a7",
+        "filename": "base/strings/pattern.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T15:47:58Z",
+      "side": 1,
+      "message": "I\u0027m thumb sucking these types from the compile error for CBU8_NEXT and this size_t since that is how CBU16_NEXT is used by other Chromium code. Is there a way to build this without having to commit and test against my [other CLs dry run](https://crrev.com/c/4894239)?",
+      "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
