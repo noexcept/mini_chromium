@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "87fda556_bbefb2ac",
+        "filename": "base/strings/pattern.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T16:58:45Z",
+      "side": 1,
+      "message": "Ah okay cool thanks! Turns out the problem was a few turtles down.\n\nIt looks like the issue is there we are comparing addresses here on a 64 bit system.\n\nThe downstream chromium implementation of CBU8_NEXT is changed to not rely on this so I think that is likely the ultimate fix here. It looks like there isn\u0027t a large amount extra to bring in to fix this.\n\nI\u0027ve updated the CL and verified it against crashpad dry run.",
+      "parentUuid": "834bf2c8_97ba42a6",
+      "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9aa7ca69_fef035a7",
@@ -49,6 +67,24 @@
       "side": 1,
       "message": "\u003e I\u0027m thumb sucking these types from the compile error for CBU8_NEXT and this size_t since that is how CBU16_NEXT is used by other Chromium code. Is there a way to build this without having to commit and test against my [other CLs dry run](https://crrev.com/c/4894239)?\n\nThere are no mini_chromium bots, but you should be able to test your Crashpad change against an uncommitted but under-review mini_chromium change by putting its hash in the DEPS file. This patch set’s hash is 63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9. You’d get that from https://chromium-review.googlesource.com/c/4900186, under Files, just to the right of where it says Base → Patchset 1, it has 63c0002e.",
       "parentUuid": "9aa7ca69_fef035a7",
+      "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5a5bbe5_a05171a1",
+        "filename": "base/strings/pattern.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-28T16:58:45Z",
+      "side": 1,
+      "message": "Ah nifty! Didn\u0027t know the commit could be anything remote. Thanks!",
+      "parentUuid": "9078cbe0_8142ee6a",
       "revId": "63c002ee1c81ff7ad9347d5fcd8c473a2e2fb9c9",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
