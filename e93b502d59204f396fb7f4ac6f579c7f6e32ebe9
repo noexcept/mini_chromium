@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09865c75_15f8a66e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T20:05:25Z",
+      "side": 1,
+      "message": "Extra blank line?",
+      "revId": "e93b502d59204f396fb7f4ac6f579c7f6e32ebe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e76dea0_1d5132a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T20:05:25Z",
+      "side": 1,
+      "message": "If done properly, this line would be longer.",
+      "revId": "e93b502d59204f396fb7f4ac6f579c7f6e32ebe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae1ed8fc_d5e1ab2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T20:05:25Z",
+      "side": 1,
+      "message": "and these three would be shorter.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 0
+      },
+      "revId": "e93b502d59204f396fb7f4ac6f579c7f6e32ebe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "050f85a6_0c8789cb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T20:05:25Z",
+      "side": 1,
+      "message": "This looks really raggedy. Are you rewrapping manually? We have machines that can handle the rewrapping, you should let a machine do it for you.\n\nI’ll just edit it myself.",
+      "revId": "e93b502d59204f396fb7f4ac6f579c7f6e32ebe9",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
