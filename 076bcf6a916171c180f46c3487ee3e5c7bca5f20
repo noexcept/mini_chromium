@@ -16,6 +16,24 @@
       "message": "FYI this line is causing build failures in the Fuchsia tree [1]: `error: implicit conversion loses integer precision: \u0027int\u0027 to \u0027uint8_t\u0027 (aka \u0027unsigned char\u0027) [-Werror,-Wimplicit-int-conversion]`\n\n[1] https://logs.chromium.org/logs/turquoise/buildbucket/cr-buildbucket/8768601768413030897/+/u/build/ninja/stdout",
       "revId": "076bcf6a916171c180f46c3487ee3e5c7bca5f20",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94136c13_c778e0ef",
+        "filename": "base/third_party/icu/icu_utf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-29T19:51:12Z",
+      "side": 1,
+      "message": "Sorry for causing the breakage! It looks like the Chromium\u0027s [utf_string_conversion_utils.cc](https://source.chromium.org/chromium/chromium/src/+/main:base/strings/utf_string_conversion_utils.cc;l\u003d33-43;drc\u003dd996a81c5036be6917819f2dce16e17b24d5b121) has since been updated and no longer has this issue so the easiest thing to do is to probably just update that too.\n\nI quickly reproduced this with godbolt.\n- [Reproduced the breakage with existing code and compiler options](https://godbolt.org/z/Wcze3Ejhe)\n- [Fixed after bringing Chromium changes over](https://godbolt.org/z/jjWjYT8jz)\n\nI\u0027ve prepared the fix here: https://crrev.com/c/4902018",
+      "parentUuid": "b6acfb68_13f6a432",
+      "revId": "076bcf6a916171c180f46c3487ee3e5c7bca5f20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
