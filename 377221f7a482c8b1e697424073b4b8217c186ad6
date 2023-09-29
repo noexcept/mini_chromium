@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e044c996_750a158f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1539202
+      },
+      "writtenOn": "2023-09-29T19:55:15Z",
+      "side": 1,
+      "message": "Looks like it was the link to the file.",
+      "parentUuid": "8a0a08eb_9d58e607",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 7
+      },
+      "revId": "377221f7a482c8b1e697424073b4b8217c186ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "20a761f9_d07bf388",
