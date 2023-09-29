@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20a761f9_d07bf388",
+        "filename": "base/strings/utf_string_conversion_utils.cc",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T19:53:37Z",
+      "side": 1,
+      "message": "This is the kind of comment that never should be.",
+      "revId": "377221f7a482c8b1e697424073b4b8217c186ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
