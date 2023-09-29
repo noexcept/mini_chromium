@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "533447e8_4ee179d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-09-29T19:58:47Z",
+      "side": 1,
+      "message": "It’s still not wrapped to 72. I can’t really tell what it is. It looks mostly like 50, but there are a few lines that are over, and a few that seem to have wrapped at even less.\n\nIt’s unnecessarily difficult to read. Can you rewrap the whole thing at 72?",
+      "parentUuid": "e044c996_750a158f",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 7
+      },
+      "revId": "377221f7a482c8b1e697424073b4b8217c186ad6",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "20a761f9_d07bf388",
         "filename": "base/strings/utf_string_conversion_utils.cc",
         "patchSetId": 2
