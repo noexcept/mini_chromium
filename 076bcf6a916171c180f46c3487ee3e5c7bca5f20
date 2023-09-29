@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b6acfb68_13f6a432",
+        "filename": "base/third_party/icu/icu_utf.h",
+        "patchSetId": 8
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1576252
+      },
+      "writtenOn": "2023-09-29T17:58:04Z",
+      "side": 1,
+      "message": "FYI this line is causing build failures in the Fuchsia tree [1]: `error: implicit conversion loses integer precision: \u0027int\u0027 to \u0027uint8_t\u0027 (aka \u0027unsigned char\u0027) [-Werror,-Wimplicit-int-conversion]`\n\n[1] https://logs.chromium.org/logs/turquoise/buildbucket/cr-buildbucket/8768601768413030897/+/u/build/ninja/stdout",
+      "revId": "076bcf6a916171c180f46c3487ee3e5c7bca5f20",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
