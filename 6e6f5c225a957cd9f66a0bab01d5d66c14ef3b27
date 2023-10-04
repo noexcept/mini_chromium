@@ -70,6 +70,30 @@
       },
       "revId": "6e6f5c225a957cd9f66a0bab01d5d66c14ef3b27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e1f8f78_c4f2ccc6",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2023-10-04T18:27:49Z",
+      "side": 1,
+      "message": "I don\u0027t think so, but double checking here: https://chromium-review.googlesource.com/c/crashpad/crashpad/+/4911575?tab\u003dchecks\n\nand in Chromium here, just incase:\nhttps://chromium-review.googlesource.com/c/chromium/src/+/4912114?tab\u003dchecks\n\nAssuming green, removed googletest, PTAL!",
+      "parentUuid": "1f2f5487_7df37724",
+      "range": {
+        "startLine": 233,
+        "startChar": 52,
+        "endLine": 233,
+        "endChar": 62
+      },
+      "revId": "6e6f5c225a957cd9f66a0bab01d5d66c14ef3b27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
