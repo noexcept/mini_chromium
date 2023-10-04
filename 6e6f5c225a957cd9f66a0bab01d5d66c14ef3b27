@@ -22,6 +22,30 @@
       },
       "revId": "6e6f5c225a957cd9f66a0bab01d5d66c14ef3b27",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "632a564b_cc16d1fd",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2023-10-04T17:21:44Z",
+      "side": 1,
+      "message": "This used to be ${IOS_BUNDLE_ID_PREFIX}.googletest.${EXECUTABLE_NAME:rfc1034identifier} in this one plist, but we are letting the ios_app_bundle override the entire BundleIdentifier now.  This way the default value is the same.",
+      "parentUuid": "03f1cf79_02d0b9c6",
+      "range": {
+        "startLine": 233,
+        "startChar": 52,
+        "endLine": 233,
+        "endChar": 62
+      },
+      "revId": "6e6f5c225a957cd9f66a0bab01d5d66c14ef3b27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
