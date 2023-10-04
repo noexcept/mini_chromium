@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf50059e_c9e9cda3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1116294
+      },
+      "writtenOn": "2023-10-04T17:08:04Z",
+      "side": 1,
+      "message": "https://chromium-review.googlesource.com/c/crashpad/crashpad/+/4911575 looks better.",
+      "revId": "97f42d5fee2f875ef26db9c1f2e3bbd7619001ab",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
