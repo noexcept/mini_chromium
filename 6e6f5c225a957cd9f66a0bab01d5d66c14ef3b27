@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03f1cf79_02d0b9c6",
+        "filename": "build/ios/rules.gni",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-04T17:13:15Z",
+      "side": 1,
+      "message": "Is this googletest hard-code correct?",
+      "range": {
+        "startLine": 233,
+        "startChar": 52,
+        "endLine": 233,
+        "endChar": 62
+      },
+      "revId": "6e6f5c225a957cd9f66a0bab01d5d66c14ef3b27",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
