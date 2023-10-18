@@ -68,6 +68,30 @@
       },
       "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "76a47447_62e65e8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2023-10-18T15:27:09Z",
+      "side": 1,
+      "message": "At least for the time being, the idea is to try swapping out the guts of `base::StringPrintf()`. In thepry, mini_chromium could keep the old impl even if Chrome switched to the new one.\n\nI am also pondering std::format() and the {fmt} library, which benefit from these preparatory changes too.",
+      "parentUuid": "6feb1964_37b225a9",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
