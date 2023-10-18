@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3051b469_344980b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-18T14:50:33Z",
+      "side": 1,
+      "message": "I agree, we can’t rely on C++20 here yet.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 48
+      },
+      "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee6b853c_4926da00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-18T14:50:33Z",
+      "side": 1,
+      "message": "Thanks.",
+      "range": {
+        "startLine": 10,
+        "startChar": 50,
+        "endLine": 12,
+        "endChar": 52
+      },
+      "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6feb1964_37b225a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-18T14:50:33Z",
+      "side": 1,
+      "message": "This might be tricky for Crashpad because we don’t have an absl dependency and I’m not sure we want to introduce one.",
+      "range": {
+        "startLine": 19,
+        "startChar": 5,
+        "endLine": 19,
+        "endChar": 12
+      },
+      "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
