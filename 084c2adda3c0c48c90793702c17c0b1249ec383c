@@ -16,6 +16,24 @@
       "message": "Doing a DEPS roll for crashpad/third_party/mini_chromium/mini_chromium in a standalone Crashpad repo result in a failing build, as Crashpad is still building with C++17 by default. See: mini_chromium\u0027s build/config/BUILD.gn",
       "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ce0b9b1_97278091",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2023-10-18T19:07:37Z",
+      "side": 1,
+      "message": "Sample DEPS roll with failing bots: https://chromium-review.googlesource.com/c/crashpad/crashpad/+/4950201",
+      "parentUuid": "d48f55d5_2a3714ef",
+      "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
