@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d48f55d5_2a3714ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001934
+      },
+      "writtenOn": "2023-10-18T18:38:50Z",
+      "side": 1,
+      "message": "Doing a DEPS roll for crashpad/third_party/mini_chromium/mini_chromium in a standalone Crashpad repo result in a failing build, as Crashpad is still building with C++17 by default. See: mini_chromium\u0027s build/config/BUILD.gn",
+      "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
