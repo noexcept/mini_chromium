@@ -92,6 +92,23 @@
       },
       "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5a65c531_2fe6c9fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2023-10-18T15:27:35Z",
+      "side": 1,
+      "message": "Apparently I don\u0027t have permission to submit. Can you do so?",
+      "revId": "ff57009e9a243f080b7916dac38061abf54e9acd",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
