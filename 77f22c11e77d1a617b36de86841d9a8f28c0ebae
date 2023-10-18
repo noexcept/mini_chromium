@@ -16,6 +16,23 @@
       "message": "Mark, if you are OK with this, please submit.",
       "revId": "77f22c11e77d1a617b36de86841d9a8f28c0ebae",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2daf0147_d2a90d0c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-18T20:23:32Z",
+      "side": 1,
+      "message": "Thanks for the fix.",
+      "revId": "77f22c11e77d1a617b36de86841d9a8f28c0ebae",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
