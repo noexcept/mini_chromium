@@ -34,6 +34,24 @@
       "parentUuid": "d48f55d5_2a3714ef",
       "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "858c4ddf_8164e2e5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2023-10-18T19:20:34Z",
+      "side": 1,
+      "message": "Thanks, Lei.\n\nPeter, in light of the change description’s bit about not using C++20 `std::span` directly, I expected we also wouldn’t be using any other portion of the library that’s new in C++20, such as `std::iter_reference_t`.\n\nhttps://ci.chromium.org/ui/p/crashpad/builders/try/crashpad_linux_x64_rel/1114/overview → 6. compile with ninja → stdout → https://logs.chromium.org/logs/crashpad/buildbucket/cr-buildbucket/8766872882597903041/+/u/compile_with_ninja/stdout\n```\n[92/498] CXX obj/third_party/mini_chromium/mini_chromium/base/strings/base.strcat.o\nFAILED: obj/third_party/mini_chromium/mini_chromium/base/strings/base.strcat.o \n../../third_party/linux/clang/linux-amd64/bin/clang++ -MMD -MF obj/third_party/mini_chromium/mini_chromium/base/strings/base.strcat.o.d -D_FILE_OFFSET_BITS\u003d64 -DNDEBUG -I../../third_party/mini_chromium/mini_chromium -Igen  -Wall -Wendif-labels -Werror -Wextra -Wextra-semi -Wheader-hygiene -Wnewline-eof -Wno-missing-field-initializers -Wno-unused-parameter -Wsign-compare -Wstring-conversion -Wvla -fno-exceptions -fno-rtti -fno-strict-aliasing -fobjc-call-cxx-cdtors -fstack-protector-all -fvisibility-inlines-hidden -fvisibility\u003dhidden -fPIC --sysroot\u003d../../third_party/linux/sysroot -pthread -m64 -O3 -fdata-sections -ffunction-sections -Wexit-time-destructors -Wimplicit-fallthrough -std\u003dc++17 -c ../../third_party/mini_chromium/mini_chromium/base/strings/strcat.cc -o obj/third_party/mini_chromium/mini_chromium/base/strings/base.strcat.o\nIn file included from ../../third_party/mini_chromium/mini_chromium/base/strings/strcat.cc:5:\nIn file included from ../../third_party/mini_chromium/mini_chromium/base/strings/strcat.h:10:\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:426:48: error: use of undeclared identifier \u0027iter_reference_t\u0027\n  426 |           typename T \u003d std::remove_reference_t\u003citer_reference_t\u003cIt\u003e\u003e\u003e\n      |                                                ^\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:427:1: error: deduction guide template contains a template parameter that cannot be deduced\n  427 | span(It, StrictNumeric\u003csize_t\u003e) -\u003e span\u003cT\u003e;\n      | ^\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:426:20: note: non-deducible template parameter \u0027T\u0027\n  426 |           typename T \u003d std::remove_reference_t\u003citer_reference_t\u003cIt\u003e\u003e\u003e\n      |                    ^\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:432:48: error: use of undeclared identifier \u0027iter_reference_t\u0027\n  432 |           typename T \u003d std::remove_reference_t\u003citer_reference_t\u003cIt\u003e\u003e\u003e\n      |                                                ^\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:433:1: error: deduction guide template contains a template parameter that cannot be deduced\n  433 | span(It, End) -\u003e span\u003cT\u003e;\n      | ^\n../../third_party/mini_chromium/mini_chromium/base/containers/span.h:432:20: note: non-deducible template parameter \u0027T\u0027\n  432 |           typename T \u003d std::remove_reference_t\u003citer_reference_t\u003cIt\u003e\u003e\u003e\n      |                    ^\n4 errors generated.\n```",
+      "parentUuid": "5ce0b9b1_97278091",
+      "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
