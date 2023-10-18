@@ -52,6 +52,24 @@
       "parentUuid": "5ce0b9b1_97278091",
       "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07d2750b_7bb9634a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000805
+      },
+      "writtenOn": "2023-10-18T20:23:17Z",
+      "side": 1,
+      "message": "Whoops, not intentional. Upstream defines this in template_util.h and the clear intent of this code is to use that definition, but apparently it compiled for me locally in testing without it due to C++20 and ADL. Argh. Sent a CL to fix.",
+      "parentUuid": "858c4ddf_8164e2e5",
+      "revId": "084c2adda3c0c48c90793702c17c0b1249ec383c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
