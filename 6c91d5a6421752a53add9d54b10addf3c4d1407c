@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "afa842cb_b5028e6d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-01-10T20:36:57Z",
+      "side": 1,
+      "message": "PTAL, crashpad still builds locally with this checked out so it\u0027s at least tested on my clang/Linux setup. The inline stuff is taken from chromium.",
+      "revId": "6c91d5a6421752a53add9d54b10addf3c4d1407c",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
