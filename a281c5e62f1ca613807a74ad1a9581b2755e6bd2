@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83d52f49_e543e32c",
+        "filename": "base/compiler_specific.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-01T18:03:38Z",
+      "side": 1,
+      "message": "Use #include guards namespaced to MINI_CHROMIUM, and (for existing files) leave the copyright at the original researched date. Throughout.",
+      "revId": "a281c5e62f1ca613807a74ad1a9581b2755e6bd2",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
