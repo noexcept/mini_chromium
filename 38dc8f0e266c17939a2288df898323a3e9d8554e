@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0876f30_1239e56d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-02T19:03:09Z",
+      "side": 1,
+      "message": "I’m happy to give this a try but it may turn out that the version of MSVC that the Crashpad bots use (yes, this still builds with MSVC) does not support C++20.",
+      "revId": "38dc8f0e266c17939a2288df898323a3e9d8554e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e01361c8_cda9d5f8",
+        "filename": "build/config/BUILD.gn",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-04-02T19:03:09Z",
+      "side": 1,
+      "message": "This?",
+      "revId": "38dc8f0e266c17939a2288df898323a3e9d8554e",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
