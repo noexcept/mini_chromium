@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0500e982_03e9c2f6",
+        "filename": "base/containers/heap_array.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-18T20:53:55Z",
+      "side": 1,
+      "message": "There is a MINI_CHROMIUM prefix (see other headers)",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 37
+      },
+      "revId": "32635905810c0c77ca477f564ab3959ab9faff93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "97f02449_b242f94c",
+        "filename": "base/containers/heap_array_unittest.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-04-18T20:53:55Z",
+      "side": 1,
+      "message": "Skip the unittests",
+      "revId": "32635905810c0c77ca477f564ab3959ab9faff93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
