@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2179816b_79dbfdf8",
+        "filename": "base/containers/heap_array.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1376756
+      },
+      "writtenOn": "2024-04-18T20:57:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0500e982_03e9c2f6",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 37
+      },
+      "revId": "32635905810c0c77ca477f564ab3959ab9faff93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "97f02449_b242f94c",
@@ -37,6 +61,24 @@
       "writtenOn": "2024-04-18T20:53:55Z",
       "side": 1,
       "message": "Skip the unittests",
+      "revId": "32635905810c0c77ca477f564ab3959ab9faff93",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcf03db3_22daa29b",
+        "filename": "base/containers/heap_array_unittest.cc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1376756
+      },
+      "writtenOn": "2024-04-18T20:57:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97f02449_b242f94c",
       "revId": "32635905810c0c77ca477f564ab3959ab9faff93",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
