@@ -4,6 +4,8 @@
 // found in the LICENSE file.
 -->
 
+TEST
+
 # mini_chromium
 
 This is mini_chromium, a small collection of useful low-level (“base”) routines
