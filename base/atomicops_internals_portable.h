@@ -19,20 +19,18 @@
 //  * Compare exchange's failure ordering is always the same as the success one
 //    (except for release, which fails as relaxed): using a weaker ordering is
 //    only valid under certain uses of compare exchange.
-//  * Acquire store doesn't exist in the C11 memory model, it is instead
-//    implemented as a relaxed store followed by a sequentially consistent
-//    fence.
-//  * Release load doesn't exist in the C11 memory model, it is instead
-//    implemented as sequentially consistent fence followed by a relaxed load.
 //  * Atomic increment is expected to return the post-incremented value, whereas
 //    C11 fetch add returns the previous value. The implementation therefore
 //    needs to increment twice (which the compiler should be able to detect and
 //    optimize).
 
-#ifndef MINI_CHROMIUM_BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
-#define MINI_CHROMIUM_BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
+#ifndef BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
+#define BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
 
 #include <atomic>
+
+#include "base/numerics/wrapping_math.h"
+#include "build/build_config.h"
 
 namespace base {
 namespace subtle {
@@ -49,16 +47,6 @@ namespace subtle {
 typedef volatile std::atomic<Atomic32>* AtomicLocation32;
 static_assert(sizeof(*(AtomicLocation32) nullptr) == sizeof(Atomic32),
               "incompatible 32-bit atomic layout");
-
-inline void MemoryBarrier() {
-#if defined(__GLIBCXX__)
-  // Work around libstdc++ bug 51038 where atomic_thread_fence was declared but
-  // not defined, leading to the linker complaining about undefined references.
-  __atomic_thread_fence(std::memory_order_seq_cst);
-#else
-  std::atomic_thread_fence(std::memory_order_seq_cst);
-#endif
-}
 
 inline Atomic32 NoBarrier_CompareAndSwap(volatile Atomic32* ptr,
                                          Atomic32 old_value,
@@ -79,14 +67,15 @@ inline Atomic32 NoBarrier_AtomicExchange(volatile Atomic32* ptr,
 
 inline Atomic32 NoBarrier_AtomicIncrement(volatile Atomic32* ptr,
                                           Atomic32 increment) {
-  return increment +
-         ((AtomicLocation32)ptr)
-             ->fetch_add(increment, std::memory_order_relaxed);
+  return base::WrappingAdd(
+      ((AtomicLocation32)ptr)->fetch_add(increment, std::memory_order_relaxed),
+      increment);
 }
 
 inline Atomic32 Barrier_AtomicIncrement(volatile Atomic32* ptr,
                                         Atomic32 increment) {
-  return increment + ((AtomicLocation32)ptr)->fetch_add(increment);
+  return base::WrappingAdd(((AtomicLocation32)ptr)->fetch_add(increment),
+                           increment);
 }
 
 inline Atomic32 Acquire_CompareAndSwap(volatile Atomic32* ptr,
@@ -115,11 +104,6 @@ inline void NoBarrier_Store(volatile Atomic32* ptr, Atomic32 value) {
   ((AtomicLocation32)ptr)->store(value, std::memory_order_relaxed);
 }
 
-inline void Acquire_Store(volatile Atomic32* ptr, Atomic32 value) {
-  ((AtomicLocation32)ptr)->store(value, std::memory_order_relaxed);
-  MemoryBarrier();
-}
-
 inline void Release_Store(volatile Atomic32* ptr, Atomic32 value) {
   ((AtomicLocation32)ptr)->store(value, std::memory_order_release);
 }
@@ -132,12 +116,9 @@ inline Atomic32 Acquire_Load(volatile const Atomic32* ptr) {
   return ((AtomicLocation32)ptr)->load(std::memory_order_acquire);
 }
 
-inline Atomic32 Release_Load(volatile const Atomic32* ptr) {
-  MemoryBarrier();
-  return ((AtomicLocation32)ptr)->load(std::memory_order_relaxed);
-}
-
 #if defined(ARCH_CPU_64_BITS)
+
+using AtomicU64 = std::make_unsigned_t<Atomic64>;
 
 typedef volatile std::atomic<Atomic64>* AtomicLocation64;
 static_assert(sizeof(*(AtomicLocation64) nullptr) == sizeof(Atomic64),
@@ -162,14 +143,15 @@ inline Atomic64 NoBarrier_AtomicExchange(volatile Atomic64* ptr,
 
 inline Atomic64 NoBarrier_AtomicIncrement(volatile Atomic64* ptr,
                                           Atomic64 increment) {
-  return increment +
-         ((AtomicLocation64)ptr)
-             ->fetch_add(increment, std::memory_order_relaxed);
+  return base::WrappingAdd(
+      ((AtomicLocation64)ptr)->fetch_add(increment, std::memory_order_relaxed),
+      increment);
 }
 
 inline Atomic64 Barrier_AtomicIncrement(volatile Atomic64* ptr,
                                         Atomic64 increment) {
-  return increment + ((AtomicLocation64)ptr)->fetch_add(increment);
+  return base::WrappingAdd(((AtomicLocation64)ptr)->fetch_add(increment),
+                           increment);
 }
 
 inline Atomic64 Acquire_CompareAndSwap(volatile Atomic64* ptr,
@@ -194,15 +176,6 @@ inline Atomic64 Release_CompareAndSwap(volatile Atomic64* ptr,
   return old_value;
 }
 
-inline void NoBarrier_Store(volatile Atomic64* ptr, Atomic64 value) {
-  ((AtomicLocation64)ptr)->store(value, std::memory_order_relaxed);
-}
-
-inline void Acquire_Store(volatile Atomic64* ptr, Atomic64 value) {
-  ((AtomicLocation64)ptr)->store(value, std::memory_order_relaxed);
-  MemoryBarrier();
-}
-
 inline void Release_Store(volatile Atomic64* ptr, Atomic64 value) {
   ((AtomicLocation64)ptr)->store(value, std::memory_order_release);
 }
@@ -215,13 +188,8 @@ inline Atomic64 Acquire_Load(volatile const Atomic64* ptr) {
   return ((AtomicLocation64)ptr)->load(std::memory_order_acquire);
 }
 
-inline Atomic64 Release_Load(volatile const Atomic64* ptr) {
-  MemoryBarrier();
-  return ((AtomicLocation64)ptr)->load(std::memory_order_relaxed);
-}
-
 #endif  // defined(ARCH_CPU_64_BITS)
-}
-}  // namespace base::subtle
+}  // namespace subtle
+}  // namespace base
 
-#endif  // MINI_CHROMIUM_BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
+#endif  // BASE_ATOMICOPS_INTERNALS_PORTABLE_H_
