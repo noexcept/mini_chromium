@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d524db1d_51a0de53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-06T13:51:10Z",
+      "side": 1,
+      "message": "LGTM in that it’s not wrong. But it also shouldn’t be necessary.\n\nI’m afraid that we have a deeper problem (https://chromium-review.googlesource.com/c/crashpad/crashpad/+/5512569/comments/15031f8f_e3a27c79) and adding the `typename` here is just a kick-the-can solution.",
+      "revId": "566ed948f55a09efff3e08cad0bdc2c8a234fa56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
