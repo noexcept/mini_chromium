@@ -16,6 +16,24 @@
       "message": "LGTM in that it’s not wrong. But it also shouldn’t be necessary.\n\nI’m afraid that we have a deeper problem (https://chromium-review.googlesource.com/c/crashpad/crashpad/+/5512569/comments/15031f8f_e3a27c79) and adding the `typename` here is just a kick-the-can solution.",
       "revId": "566ed948f55a09efff3e08cad0bdc2c8a234fa56",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5bb46a5_4c613d16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-05-06T13:53:40Z",
+      "side": 1,
+      "message": "yes, it\u0027s needed for the xcode in mac 13, but not in mac 14. Until we stop using any mac 13 bots, this is needed.",
+      "parentUuid": "d524db1d_51a0de53",
+      "revId": "566ed948f55a09efff3e08cad0bdc2c8a234fa56",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
