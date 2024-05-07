@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "9139fd86_28c2da92",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "There’s no such thing as `//mini_chromium`.\n\nAnyway, you don’t need to name the repository itself when you’re committing to it.\n\nJust remove this.",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 64
+      },
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8be768e_e965610c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "A full sentence, maybe?",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "34d4a3bd_d5e8b0c5",
@@ -14,6 +54,223 @@
       "writtenOn": "2024-05-07T19:27:08Z",
       "side": 1,
       "message": "@mark@chromium.org i am trying to solve https://crbug.com/40506050\npart of it - is in crashpad, which depend\u0027s on mini_chromium - TIL! \n\nnot sure if this approach is correct, had a hard time compiling this locally - and no bots/tests on it.\n\n\nwhat i did so far:\n\n```\n# fetched crashpad\nmodified files in third_party/mini_chromium/....\nninja -C out/Default\n# run the \"crashtest_test....\" binarys\n```\n\n\nafter that, manually cloned mini_chromium (as it was not available with `fetch`)\ncopied over the files from crashpad/third_party/mini_chromium/... to the git-clone.\n\n(it feels like i did it the most un-cool way possible; but it worked)\n\nlet me know what you think and if this might be a feasible approach or if you\u0027d want me to change anything.\n\n\nnext step would be (if my understanding is correct) - to get https://crrev.com/c/5491220 merged (DEP update)",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0381cd2f_2a90b3aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "I’m stopping here because it’s clear that the same pattern of comments will repeat, and you can work through them throughout the change without me having to repeat myself for each occurrence.\n\nBut it’s highly unorthodox to propose a base API change in mini_chromium before making it in Chromium. The proper protocol is for mini_chromium to follow Chromium. Propose your changes in Chromium and obtain base OWNER review there first. Then, you can carry your changes back to mini_chromium to be able to update Crashpad.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c4ecb978_71c8e349",
+        "filename": "base/metrics/persistent_histogram_allocator.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "You left an extra blank line here. Just delete the entire line.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87d4790a_1dbef732",
+        "filename": "base/metrics/persistent_histogram_allocator.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "`#include` something for this.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a4c711f_1a8f3570",
+        "filename": "base/strings/pattern.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "These changes haven’t been made in Chromium’s base yet.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 75
+      },
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48bd44d0_e2a00f30",
+        "filename": "base/strings/strcat.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "As before.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab748ab6_d8016d16",
+        "filename": "base/strings/strcat.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "This line now goes past 80 columns. Reflow the comment.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f9b94ea1_fa02bcbc",
+        "filename": "base/strings/strcat.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "Need an `#include` for this.",
+      "range": {
+        "startLine": 57,
+        "startChar": 44,
+        "endLine": 57,
+        "endChar": 60
+      },
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0d257fc2_ba38658f",
+        "filename": "base/strings/strcat.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "These changes haven’t been made in Chromium’s base yet.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 75
+      },
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c5b676c_6b118ff5",
+        "filename": "base/strings/string_number_conversions.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "As before, except this time, there are three blank lines in a row.",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1d0fcb6_791df5ee",
+        "filename": "base/strings/string_number_conversions.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "Need an `#include` for this.",
+      "range": {
+        "startLine": 17,
+        "startChar": 17,
+        "endLine": 17,
+        "endChar": 33
+      },
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2ae52d61_efe7bebf",
+        "filename": "base/strings/string_number_conversions.h",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-07T19:57:28Z",
+      "side": 1,
+      "message": "These changes haven’t been made in Chromium’s base yet.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 57
+      },
       "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
