@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34d4a3bd_d5e8b0c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1606504
+      },
+      "writtenOn": "2024-05-07T19:27:08Z",
+      "side": 1,
+      "message": "@mark@chromium.org i am trying to solve https://crbug.com/40506050\npart of it - is in crashpad, which depend\u0027s on mini_chromium - TIL! \n\nnot sure if this approach is correct, had a hard time compiling this locally - and no bots/tests on it.\n\n\nwhat i did so far:\n\n```\n# fetched crashpad\nmodified files in third_party/mini_chromium/....\nninja -C out/Default\n# run the \"crashtest_test....\" binarys\n```\n\n\nafter that, manually cloned mini_chromium (as it was not available with `fetch`)\ncopied over the files from crashpad/third_party/mini_chromium/... to the git-clone.\n\n(it feels like i did it the most un-cool way possible; but it worked)\n\nlet me know what you think and if this might be a feasible approach or if you\u0027d want me to change anything.\n\n\nnext step would be (if my understanding is correct) - to get https://crrev.com/c/5491220 merged (DEP update)",
+      "revId": "09647bd24c2ce7fab7492177a8d713d9efe900a3",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
