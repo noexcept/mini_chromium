@@ -10,7 +10,7 @@
 
 namespace base {
 
-std::string StrCat(span<const StringPiece> pieces) {
+std::string StrCat(span<const std::string_view> pieces) {
   return internal::StrCatT(pieces);
 }
 
