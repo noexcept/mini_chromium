@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7fa2e5e_3e7b590c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3423709
+      },
+      "writtenOn": "2024-05-10T07:53:52Z",
+      "side": 1,
+      "message": "I am trying to fix compilation error with gcc Linux. In atomicops_internals_portable.h Line 57 : __atomic_thread_fence(std::memory_order_seq_cst);\nstd::memory_order is an enum class, not an enum, which removes implicit conversions in c++20.\n\nBest regards",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
