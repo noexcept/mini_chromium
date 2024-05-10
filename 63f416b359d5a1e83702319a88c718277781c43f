@@ -1,6 +1,40 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "a24fa93e_bced1ef6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-10T13:51:12Z",
+      "side": 1,
+      "message": "Wrap git commit messages at 72 columns.",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7c523ac_d401882d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-10T13:51:12Z",
+      "side": 1,
+      "message": "This is not a Chromium or Crashpad bug number.",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "f7fa2e5e_3e7b590c",
@@ -14,6 +48,29 @@
       "writtenOn": "2024-05-10T07:53:52Z",
       "side": 1,
       "message": "I am trying to fix compilation error with gcc Linux. In atomicops_internals_portable.h Line 57 : __atomic_thread_fence(std::memory_order_seq_cst);\nstd::memory_order is an enum class, not an enum, which removes implicit conversions in c++20.\n\nBest regards",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f68032c_61f36b3b",
+        "filename": "base/atomicops_internals_portable.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-10T13:51:12Z",
+      "side": 1,
+      "message": "If your libstdc++ is new enough to have C++20 support, is it also new enough for this bug to be fixed?\n\nhttps://gcc.gnu.org/bugzilla/show_bug.cgi?id\u003d51038\n\nIt was fixed in 2011. Maybe we don’t need this branch at all any longer.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 79
+      },
       "revId": "63f416b359d5a1e83702319a88c718277781c43f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
