@@ -18,6 +18,24 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0978eac_7aeffda7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 3423709
+      },
+      "writtenOn": "2024-05-15T01:42:34Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "a24fa93e_bced1ef6",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7c523ac_d401882d",
@@ -31,6 +49,24 @@
       "writtenOn": "2024-05-10T13:51:12Z",
       "side": 1,
       "message": "This is not a Chromium or Crashpad bug number.",
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "367b88fd_5c975bc8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 3423709
+      },
+      "writtenOn": "2024-05-15T01:42:34Z",
+      "side": 1,
+      "message": "Sry about this, I just raised a new issue.",
+      "parentUuid": "c7c523ac_d401882d",
       "revId": "63f416b359d5a1e83702319a88c718277781c43f",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
@@ -65,6 +101,30 @@
       "writtenOn": "2024-05-10T13:51:12Z",
       "side": 1,
       "message": "If your libstdc++ is new enough to have C++20 support, is it also new enough for this bug to be fixed?\n\nhttps://gcc.gnu.org/bugzilla/show_bug.cgi?id\u003d51038\n\nIt was fixed in 2011. Maybe we don’t need this branch at all any longer.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 79
+      },
+      "revId": "63f416b359d5a1e83702319a88c718277781c43f",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e3acfd6a_9bfcb4df",
+        "filename": "base/atomicops_internals_portable.h",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 3423709
+      },
+      "writtenOn": "2024-05-15T01:42:34Z",
+      "side": 1,
+      "message": "Yes, I noticed that minichromium and crashpad have recently enabled C++20. Compilers that support C++20 should be able to fix this bug. I think we should remove this branch.",
+      "parentUuid": "0f68032c_61f36b3b",
       "range": {
         "startLine": 55,
         "startChar": 0,
