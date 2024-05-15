@@ -16,6 +16,24 @@
       "message": "I made some small improvements to the commit message, mostly for accuracy. LGTM.",
       "revId": "87ca640aa4f3a62a2663ef5c1180362c04e85cc5",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d9f884f_68d09fd1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-05-15T14:13:38Z",
+      "side": 1,
+      "message": "\u003e I made some small improvements to the commit message, mostly for accuracy. LGTM.\n\n…but that has rendered me ineligible to review, so, +danakj",
+      "parentUuid": "0e256f46_8451ea43",
+      "revId": "87ca640aa4f3a62a2663ef5c1180362c04e85cc5",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
