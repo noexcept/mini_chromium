@@ -24,6 +24,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aa0ce8b_b8ca75d5",
+        "filename": "base/notreached.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-05-16T18:04:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac510695_c3ea7c66",
+      "range": {
+        "startLine": 10,
+        "startChar": 57,
+        "endLine": 10,
+        "endChar": 60
+      },
+      "revId": "f23f05fe61075d688ef7733bf3517f61fcf2f568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fcd3be5c_471c2d41",
@@ -47,6 +71,30 @@
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16f1faeb_cbbbf95b",
+        "filename": "base/notreached.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-05-16T18:04:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fcd3be5c_471c2d41",
+      "range": {
+        "startLine": 11,
+        "startChar": 3,
+        "endLine": 11,
+        "endChar": 24
+      },
+      "revId": "f23f05fe61075d688ef7733bf3517f61fcf2f568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c291c416_4acfa55a",
@@ -60,6 +108,30 @@
       "writtenOn": "2024-05-16T17:52:03Z",
       "side": 1,
       "message": "What’s preventing that?",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 15,
+        "endChar": 29
+      },
+      "revId": "f23f05fe61075d688ef7733bf3517f61fcf2f568",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5351c5de_b0ee6728",
+        "filename": "base/notreached.h",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-05-16T18:04:00Z",
+      "side": 1,
+      "message": "TODO added to base/logging.h instead and back referenced here. LMK if that makes sense.",
+      "parentUuid": "c291c416_4acfa55a",
       "range": {
         "startLine": 13,
         "startChar": 27,
