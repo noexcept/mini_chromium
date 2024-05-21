@@ -34,6 +34,24 @@
       "parentUuid": "2914e634_2e26add9",
       "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1246eb6_4e4d5ff6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1532397
+      },
+      "writtenOn": "2024-05-21T18:39:20Z",
+      "side": 1,
+      "message": "(where \"this\" is `base/containers/util.h` and `base/containers/checked_iterators.h`).",
+      "parentUuid": "2914e634_2e26add9",
+      "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
