@@ -52,6 +52,24 @@
       "parentUuid": "2914e634_2e26add9",
       "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "409977c5_b8f41bc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1532397
+      },
+      "writtenOn": "2024-05-21T18:39:54Z",
+      "side": 1,
+      "message": "Sure, I can send a CL. I\u0027m surprised it builds without that, but I\u0027m not a `gn` expert.",
+      "parentUuid": "d1246eb6_4e4d5ff6",
+      "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
