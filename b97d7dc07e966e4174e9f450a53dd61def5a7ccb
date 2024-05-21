@@ -70,6 +70,24 @@
       "parentUuid": "d1246eb6_4e4d5ff6",
       "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5f48b12_7bfe36e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000887
+      },
+      "writtenOn": "2024-05-21T18:41:26Z",
+      "side": 1,
+      "message": "it would i think only have an issue with remote compilation if it depends on the GN to upload files, which i guess crashpad does not or something. thanks  :)",
+      "parentUuid": "409977c5_b8f41bc2",
+      "revId": "b97d7dc07e966e4174e9f450a53dd61def5a7ccb",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
