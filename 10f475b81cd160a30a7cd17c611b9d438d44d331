@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0fd8f0a5_179ba962",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-08-12T04:37:34Z",
+      "side": 1,
+      "message": "PTAL, this was tested by s/NOTREACHED_IN_MIGRATION/NOTREACHED in crashpad and removing dead code + testing with -Wunreachable-code-aggressive.\n\ns/NOTREACHED_IN_MIGRATION/NOTREACHED in crashpad will follow this one, then NOTREACHED_IN_MIGRATION will be removed.",
+      "revId": "10f475b81cd160a30a7cd17c611b9d438d44d331",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
