@@ -16,6 +16,23 @@
       "message": "PTAL, this was tested by s/NOTREACHED_IN_MIGRATION/NOTREACHED in crashpad and removing dead code + testing with -Wunreachable-code-aggressive.\n\ns/NOTREACHED_IN_MIGRATION/NOTREACHED in crashpad will follow this one, then NOTREACHED_IN_MIGRATION will be removed.",
       "revId": "10f475b81cd160a30a7cd17c611b9d438d44d331",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a223a97_c3c9acfe",
+        "filename": "base/notreached.h",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-08-12T14:12:46Z",
+      "side": 1,
+      "message": "We don’t usually use the C++ headers that overlay the C headers. Is there a reason that this isn’t `\u003cstdlib.h\u003e` and `abort`?",
+      "revId": "10f475b81cd160a30a7cd17c611b9d438d44d331",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
