@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78613adb_76b3349f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-10-03T04:50:40Z",
+      "side": 1,
+      "message": "I.. cannot tell you why this works but the [[noreturn]] is understood in godbolt at least. I also like getting rid of LogMessageVoidify, that\u0027s nice.\n\nNo idea what error level we build with, hopefully not W4? C4127 is presumably violated somewhere in the codebase already...? This is enough to trigger it:\n\n```\n    constexpr int kFoo \u003d 1;\n    if (kFoo)\n      return 0;\n```\n\nhttps://godbolt.org/z/Y87drqPGb has the new LAZY_STREAM, you can see the error by replacing /W3 with /W4.",
+      "revId": "6f76cbad4a28f0a94c0c6d60f6eba3f94ae99603",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
