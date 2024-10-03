@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "265bf33b_59180bb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-10-03T14:23:53Z",
+      "side": 1,
+      "message": "https://chromium.googlesource.com/chromium/mini_chromium/+/56d78c09f249abe33104c668f59000ef3f883bb4/build/config/BUILD.gn#251",
+      "revId": "5c2eff1b9dddbfc3ed3b43ba6b5c920fdbc4f676",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd37bbbf_b0f745b9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1174099
+      },
+      "writtenOn": "2024-10-03T14:23:53Z",
+      "side": 1,
+      "message": "I’m going to be honest, I’m not completely convinced that this is OK in the general sense, but it’s “probably” OK for the limited stuff we do with it, where we’re just using it to implement a variety of other log streams in exactly the same way.",
+      "revId": "5c2eff1b9dddbfc3ed3b43ba6b5c920fdbc4f676",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    }
+  ]
+}
