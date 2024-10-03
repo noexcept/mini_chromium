@@ -476,6 +476,13 @@ void LogMessage::Init(const char* function) {
   message_start_ = stream_.str().size();
 }
 
+// We intentionally don't return from these destructors. Disable MSVC's warning
+// about the destructor never returning as we do so intentionally here.
+#if defined(_MSC_VER) && !defined(__clang__)
+#pragma warning(push)
+#pragma warning(disable : 4722)
+#endif
+
 LogMessageFatal::~LogMessageFatal() {
   Flush();
   base::ImmediateCrash();
@@ -508,6 +515,10 @@ Win32ErrorLogMessageFatal::~Win32ErrorLogMessageFatal() {
   Flush();
   base::ImmediateCrash();
 }
+
+#if defined(_MSC_VER) && !defined(__clang__)
+#pragma warning(pop)
+#endif
 
 #elif BUILDFLAG(IS_POSIX)
 
