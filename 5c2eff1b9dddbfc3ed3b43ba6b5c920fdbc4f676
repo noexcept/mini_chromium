@@ -33,6 +33,24 @@
       "message": "I’m going to be honest, I’m not completely convinced that this is OK in the general sense, but it’s “probably” OK for the limited stuff we do with it, where we’re just using it to implement a variety of other log streams in exactly the same way.",
       "revId": "5c2eff1b9dddbfc3ed3b43ba6b5c920fdbc4f676",
       "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a1407e8_8a8956f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1126912
+      },
+      "writtenOn": "2024-10-04T00:22:19Z",
+      "side": 1,
+      "message": "Fingers crossed that this can roll into crashpad, and I guess at least buy us some time to figure out more stuff.",
+      "parentUuid": "dd37bbbf_b0f745b9",
+      "revId": "5c2eff1b9dddbfc3ed3b43ba6b5c920fdbc4f676",
+      "serverId": "3ce6091f-6c88-37e8-8c75-72f92ae8dfba"
     }
   ]
 }
